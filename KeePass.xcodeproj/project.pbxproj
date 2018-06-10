@@ -15,6 +15,16 @@
 		F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */; };
 		F16D5BB820CC6958008B6F12 /* KeePassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BB720CC6958008B6F12 /* KeePassTests.swift */; };
 		F16D5BC320CC6958008B6F12 /* KeePassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BC220CC6958008B6F12 /* KeePassUITests.swift */; };
+		F16D5BDE20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
+		F16D5BE520CC6971008B6F12 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */; };
+		F16D5BE720CC6971008B6F12 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F16D5BD720CC6970008B6F12 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
+		F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F16D5BF420CC69A2008B6F12 /* KDBXParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */; };
+		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
+		F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
+		F16D5BFB20CC6A62008B6F12 /* Test.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BFA20CC6A62008B6F12 /* Test.kdbx */; };
+		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +42,84 @@
 			remoteGlobalIDString = F16D5B9C20CC6956008B6F12;
 			remoteInfo = KeePass;
 		};
+		F16D5BDF20CC6971008B6F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F16D5BD420CC6970008B6F12;
+			remoteInfo = KeePassSupport;
+		};
+		F16D5BE120CC6971008B6F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F16D5B9C20CC6956008B6F12;
+			remoteInfo = KeePass;
+		};
+		F16D5BE820CC6971008B6F12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F16D5BD420CC6970008B6F12;
+			remoteInfo = KeePassSupport;
+		};
+		F1AF720D20CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AE050881D4A2C070040E4C9;
+			remoteInfo = "Gzip macOS";
+		};
+		F1AF720F20CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AE050991D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
+		};
+		F1AF721120CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A321EE71D4A6138002B0245;
+			remoteInfo = "Gzip watchOS";
+		};
+		F1AF721320CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A321F071D4A635F002B0245;
+			remoteInfo = "Gzip tvOS";
+		};
+		F1AF721520CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A58A7571B00F414005FBBC2;
+			remoteInfo = "Tests macOS";
+		};
+		F1AF721720CD95B400F79799 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A58A77D1B00FBEF005FBBC2;
+			remoteInfo = "Tests iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F16D5BEF20CC6971008B6F12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F16D5B9D20CC6956008B6F12 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +136,28 @@
 		F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16D5BC220CC6958008B6F12 /* KeePassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassUITests.swift; sourceTree = "<group>"; };
 		F16D5BC420CC6958008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F16D5BD720CC6970008B6F12 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
+		F16D5BD820CC6970008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassSupportTests.swift; sourceTree = "<group>"; };
+		F16D5BE620CC6971008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXParse.swift; sourceTree = "<group>"; };
+		F16D5BF620CC69AB008B6F12 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
+		F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
+		F16D5BFA20CC6A62008B6F12 /* Test.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.kdbx; sourceTree = "<group>"; };
+		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
+		F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRandom.h; sourceTree = "<group>"; };
+		F1A25D1F20CC78B4007F0FD1 /* CommonCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptor.h; sourceTree = "<group>"; };
+		F1A25D2020CC78B4007F0FD1 /* CommonHMAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHMAC.h; sourceTree = "<group>"; };
+		F1A25D2120CC78B4007F0FD1 /* CommonDigest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
+		F1A25D2220CC78B4007F0FD1 /* CommonCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
+		F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKeyDerivation.h; sourceTree = "<group>"; };
+		F1A25D2420CC78B4007F0FD1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
+		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
+		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,16 +183,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F16D5BD220CC6970008B6F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16D5BDA20CC6970008B6F12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16D5BDE20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F16D5B9420CC6956008B6F12 = {
 			isa = PBXGroup;
 			children = (
+				F1AF720320CD95B400F79799 /* Gzip.xcodeproj */,
 				F16D5B9F20CC6956008B6F12 /* KeePass */,
 				F16D5BB620CC6957008B6F12 /* KeePassTests */,
 				F16D5BC120CC6958008B6F12 /* KeePassUITests */,
+				F16D5BD620CC6970008B6F12 /* KeePassSupport */,
+				F16D5BE320CC6971008B6F12 /* KeePassSupportTests */,
 				F16D5B9E20CC6956008B6F12 /* Products */,
+				F1A25D1920CC7868007F0FD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +222,8 @@
 				F16D5B9D20CC6956008B6F12 /* KeePass.app */,
 				F16D5BB320CC6957008B6F12 /* KeePassTests.xctest */,
 				F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */,
+				F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */,
+				F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +231,9 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F16D5BFA20CC6A62008B6F12 /* Test.kdbx */,
+				F16D5BF520CC69AB008B6F12 /* Crypto */,
+				F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */,
 				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
@@ -106,6 +241,7 @@
 				F16D5BA920CC6957008B6F12 /* Assets.xcassets */,
 				F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */,
 				F16D5BAE20CC6957008B6F12 /* Info.plist */,
+				F1E89E8D20CC6FF400AE8A2C /* Playground.playground */,
 			);
 			path = KeePass;
 			sourceTree = "<group>";
@@ -128,7 +264,84 @@
 			path = KeePassUITests;
 			sourceTree = "<group>";
 		};
+		F16D5BD620CC6970008B6F12 /* KeePassSupport */ = {
+			isa = PBXGroup;
+			children = (
+				F16D5BD720CC6970008B6F12 /* KeePassSupport.h */,
+				F16D5BD820CC6970008B6F12 /* Info.plist */,
+			);
+			path = KeePassSupport;
+			sourceTree = "<group>";
+		};
+		F16D5BE320CC6971008B6F12 /* KeePassSupportTests */ = {
+			isa = PBXGroup;
+			children = (
+				F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */,
+				F16D5BE620CC6971008B6F12 /* Info.plist */,
+			);
+			path = KeePassSupportTests;
+			sourceTree = "<group>";
+		};
+		F16D5BF520CC69AB008B6F12 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				F16D5BF620CC69AB008B6F12 /* AES.swift */,
+				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		F1A25D1920CC7868007F0FD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1A25D1C20CC78B4007F0FD1 /* CommonCrypto */,
+				F1A25D1A20CC7868007F0FD1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1A25D1C20CC78B4007F0FD1 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */,
+				F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */,
+				F1A25D1F20CC78B4007F0FD1 /* CommonCryptor.h */,
+				F1A25D2020CC78B4007F0FD1 /* CommonHMAC.h */,
+				F1A25D2120CC78B4007F0FD1 /* CommonDigest.h */,
+				F1A25D2220CC78B4007F0FD1 /* CommonCrypto.h */,
+				F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */,
+				F1A25D2420CC78B4007F0FD1 /* module.modulemap */,
+				F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */,
+			);
+			name = CommonCrypto;
+			path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/CommonCrypto;
+			sourceTree = DEVELOPER_DIR;
+		};
+		F1AF720420CD95B400F79799 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1AF720E20CD95B400F79799 /* Gzip.framework */,
+				F1AF721020CD95B400F79799 /* Gzip.framework */,
+				F1AF721220CD95B400F79799 /* Gzip.framework */,
+				F1AF721420CD95B400F79799 /* Gzip.framework */,
+				F1AF721620CD95B400F79799 /* Tests macOS.xctest */,
+				F1AF721820CD95B400F79799 /* Tests iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F16D5BD020CC6970008B6F12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16D5BE720CC6971008B6F12 /* KeePassSupport.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F16D5B9C20CC6956008B6F12 /* KeePass */ = {
@@ -138,10 +351,12 @@
 				F16D5B9920CC6956008B6F12 /* Sources */,
 				F16D5B9A20CC6956008B6F12 /* Frameworks */,
 				F16D5B9B20CC6956008B6F12 /* Resources */,
+				F16D5BEF20CC6971008B6F12 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F16D5BE920CC6971008B6F12 /* PBXTargetDependency */,
 			);
 			name = KeePass;
 			productName = KeePass;
@@ -184,6 +399,43 @@
 			productReference = F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F16D5BD420CC6970008B6F12 /* KeePassSupport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F16D5BEC20CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupport" */;
+			buildPhases = (
+				F16D5BD020CC6970008B6F12 /* Headers */,
+				F16D5BD120CC6970008B6F12 /* Sources */,
+				F16D5BD220CC6970008B6F12 /* Frameworks */,
+				F16D5BD320CC6970008B6F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeePassSupport;
+			productName = KeePassSupport;
+			productReference = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F16D5BDC20CC6970008B6F12 /* KeePassSupportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F16D5BF020CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */;
+			buildPhases = (
+				F16D5BD920CC6970008B6F12 /* Sources */,
+				F16D5BDA20CC6970008B6F12 /* Frameworks */,
+				F16D5BDB20CC6970008B6F12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F16D5BE020CC6971008B6F12 /* PBXTargetDependency */,
+				F16D5BE220CC6971008B6F12 /* PBXTargetDependency */,
+			);
+			name = KeePassSupportTests;
+			productName = KeePassSupportTests;
+			productReference = F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +457,14 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = F16D5B9C20CC6956008B6F12;
 					};
+					F16D5BD420CC6970008B6F12 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+					};
+					F16D5BDC20CC6970008B6F12 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F16D5B9C20CC6956008B6F12;
+					};
 				};
 			};
 			buildConfigurationList = F16D5B9820CC6956008B6F12 /* Build configuration list for PBXProject "KeePass" */;
@@ -218,20 +478,74 @@
 			mainGroup = F16D5B9420CC6956008B6F12;
 			productRefGroup = F16D5B9E20CC6956008B6F12 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F1AF720420CD95B400F79799 /* Products */;
+					ProjectRef = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F16D5B9C20CC6956008B6F12 /* KeePass */,
 				F16D5BB220CC6957008B6F12 /* KeePassTests */,
 				F16D5BBD20CC6958008B6F12 /* KeePassUITests */,
+				F16D5BD420CC6970008B6F12 /* KeePassSupport */,
+				F16D5BDC20CC6970008B6F12 /* KeePassSupportTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F1AF720E20CD95B400F79799 /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F1AF720D20CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1AF721020CD95B400F79799 /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F1AF720F20CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1AF721220CD95B400F79799 /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F1AF721120CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1AF721420CD95B400F79799 /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F1AF721320CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1AF721620CD95B400F79799 /* Tests macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Tests macOS.xctest";
+			remoteRef = F1AF721520CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1AF721820CD95B400F79799 /* Tests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Tests iOS.xctest";
+			remoteRef = F1AF721720CD95B400F79799 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F16D5B9B20CC6956008B6F12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16D5BFB20CC6A62008B6F12 /* Test.kdbx in Resources */,
 				F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */,
 				F16D5BAA20CC6957008B6F12 /* Assets.xcassets in Resources */,
 				F16D5BA820CC6956008B6F12 /* Main.storyboard in Resources */,
@@ -246,6 +560,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F16D5BBC20CC6958008B6F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16D5BD320CC6970008B6F12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16D5BDB20CC6970008B6F12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +609,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F16D5BD120CC6970008B6F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16D5BF420CC69A2008B6F12 /* KDBXParse.swift in Sources */,
+				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
+				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16D5BD920CC6970008B6F12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F16D5BE520CC6971008B6F12 /* KeePassSupportTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +639,21 @@
 			isa = PBXTargetDependency;
 			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
 			targetProxy = F16D5BBF20CC6958008B6F12 /* PBXContainerItemProxy */;
+		};
+		F16D5BE020CC6971008B6F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F16D5BD420CC6970008B6F12 /* KeePassSupport */;
+			targetProxy = F16D5BDF20CC6971008B6F12 /* PBXContainerItemProxy */;
+		};
+		F16D5BE220CC6971008B6F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
+			targetProxy = F16D5BE120CC6971008B6F12 /* PBXContainerItemProxy */;
+		};
+		F16D5BE920CC6971008B6F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F16D5BD420CC6970008B6F12 /* KeePassSupport */;
+			targetProxy = F16D5BE820CC6971008B6F12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -433,10 +794,12 @@
 		F16D5BC820CC6958008B6F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,10 +814,12 @@
 		F16D5BC920CC6958008B6F12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,6 +913,111 @@
 			};
 			name = Release;
 		};
+		F16D5BED20CC6971008B6F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KeePassSupport/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F16D5BEE20CC6971008B6F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KeePassSupport/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F16D5BF120CC6971008B6F12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = KeePassSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
+			};
+			name = Debug;
+		};
+		F16D5BF220CC6971008B6F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = KeePassSupportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +1053,24 @@
 			buildConfigurations = (
 				F16D5BCE20CC6958008B6F12 /* Debug */,
 				F16D5BCF20CC6958008B6F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F16D5BEC20CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F16D5BED20CC6971008B6F12 /* Debug */,
+				F16D5BEE20CC6971008B6F12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F16D5BF020CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F16D5BF120CC6971008B6F12 /* Debug */,
+				F16D5BF220CC6971008B6F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
