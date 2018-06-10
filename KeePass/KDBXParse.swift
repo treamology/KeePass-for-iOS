@@ -126,7 +126,7 @@ public class KDBXFile {
     }
 
     var transformedKey = compositeKey
-    for i in 1...transformRounds {
+    for _ in 1...transformRounds {
       transformedKey = AESEncryptContext.performOperation(transformedKey)
     }
     transformedKey = transformedKey.sha256()
@@ -148,14 +148,18 @@ public class KDBXFile {
       return
     }
 
-    let payloadStart = cb
     let encryptedPayload = [UInt8](bytes[cb...])
     let decryptedPayload = AESDecryptContext.performOperation(encryptedPayload)
 
+    if streamStartBytes != [UInt8](decryptedPayload[..<32]) {
+      print("Payload start does not match streamStartBytes")
+      return
+    }
+    
     cb = 32
     var payload = [UInt8]()
     while true {
-      let blockID = decryptedPayload[cb..<cb + 4]; cb += 4
+      cb += 4 // block ID
       let blockHash = decryptedPayload[cb..<cb + 32]; cb += 32
       let blockSize = Int(decryptedPayload[cb..<cb + 4].toUInt32()!); cb += 4
       let blockData = decryptedPayload[cb..<cb + blockSize]; cb += blockSize
@@ -176,10 +180,20 @@ public class KDBXFile {
     
     // Now that we have the payload, gunzip it if we need to
     var decompressedPayload = payload
-    if (compressionFlags == .GZIP) {
-      decompressedPayload = try! [UInt8](Data(payload).gunzipped())
+    if compressionFlags == .GZIP {
+      do {
+        decompressedPayload = try [UInt8](Data(payload).gunzipped())
+      } catch {
+        print("Error decompressing the GZIP payload")
+        return
+      }
+      
     }
 
-    self.payload = String(bytes: decompressedPayload, encoding: .utf8)!
+    self.payload = String(bytes: decompressedPayload, encoding: .utf8)
+    if self.payload == nil {
+      print("Couldn't turn the decompressed payload into a string")
+      return
+    }
   }
 }
