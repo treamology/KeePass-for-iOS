@@ -9,15 +9,11 @@
 import Foundation
 import Gzip
 
-public class TestClass {
-  public init() {
-    
-  }
-}
-
 public class KDBXFile {
-  static let KDBX3_MAGIC = [0x03,0xD9,0xA2,0x9A];
-  enum DynHeaderID: UInt8 {
+  static let KDBX3_MAGIC: [UInt8] = [0x03,0xD9,0xA2,0x9A]
+  static let KDBX3_HEADER_SIZE = 12
+  
+  public enum DynHeaderID: UInt8 {
     case end, comment, cipherID, compressionFlags, masterSeed, transformSeed,
     transformRounds, encryptionIV, protectedStreamKey, streamStartBytes,
     innerRandomStreamID
@@ -25,13 +21,38 @@ public class KDBXFile {
   enum CompressionFlags: UInt32 {
     case None, GZIP
   }
+  public enum ParseError: Error {
+    case badHeaderID
+    case badCompressionFlags
+    case couldntCreateCryptoContext
+    case badStreamStartBytes(actualStartBytes: [UInt8])
+    case payloadHashMismatch
+    case couldntDecompressPayload
+    case badPayloadString
+    case badKDBXFile
+  }
   
   let secondaryID: UInt32
   let version: (major: UInt16, minor: UInt16)
   var payload: String!
+  let rawBytes: [UInt8]
   
-  public init?(withKDBX3Bytes bytes: [UInt8]) {
-    // FIXME: We can probably not use the Data type to avoid conversions
+  public convenience init?(withBytes bytes: [UInt8]) throws {
+    guard bytes.count >= 12 else {
+      throw ParseError.badKDBXFile
+    }
+    
+    // Get the basic information we know is in the header.
+    let magic = [UInt8](bytes[0...3])
+    if magic == KDBXFile.KDBX3_MAGIC {
+      try self.init(withKDBX3Bytes: bytes)
+    }
+    return nil
+  }
+  
+  private init?(withKDBX3Bytes bytes: [UInt8]) throws {
+    self.rawBytes = bytes
+    
     var cipherID: [UInt8]
     var compressionFlags: CompressionFlags!
     var masterSeed: [UInt8]!
@@ -42,9 +63,6 @@ public class KDBXFile {
     var streamStartBytes: [UInt8]!
     var innerRandomStreamID: UInt32
     
-    // Get the basic information we know is in the header.
-    let magic = bytes[0...3]
-//    self.secondaryID = UInt32(withData: bytes[4...7])
     self.secondaryID = bytes[4...7].toUInt32()!
     
     let minorVersion = bytes[8...9].toUInt16()!
@@ -55,18 +73,20 @@ public class KDBXFile {
     // and some can be missing.
     print("Parsing dynamic header...")
     var reachedHeaderEnd = false
-    var cb = 12 // current byte
+    var cb = KDBXFile.KDBX3_HEADER_SIZE // current byte
     while (!reachedHeaderEnd) {
       let headerID = DynHeaderID(rawValue: bytes[cb]); cb += 1
+      guard let unwrappedID = headerID else {
+        throw ParseError.badHeaderID
+      }
       
       let headerSize = bytes[cb...cb + 1]; cb += 2
       let hsInt = Int(headerSize.toUInt16()!)
-      let headerPayload = bytes[cb..<cb + hsInt]; cb += hsInt;
-      
-      guard let unwrappedID = headerID else {
-        print("Unknown header ID")
-        continue
+      guard bytes.count > cb + hsInt else {
+        throw ParseError.badKDBXFile
       }
+      
+      let headerPayload = bytes[cb..<cb + hsInt]; cb += hsInt;
       
       switch (unwrappedID) {
       case .end:
@@ -79,8 +99,7 @@ public class KDBXFile {
         let flags =
           CompressionFlags(rawValue:headerPayload.toUInt32()!)
         if flags == nil {
-          print("Invalid compression flags")
-          continue
+          throw ParseError.badCompressionFlags
         }
         compressionFlags = flags!
       case .masterSeed:
@@ -121,8 +140,7 @@ public class KDBXFile {
                                       padding: false,
                                       key: transformSeed,
                                       iv: iv) else {
-      print("Error creating the AES context for encrypting.")
-      return
+      throw ParseError.couldntCreateCryptoContext
     }
 
     var transformedKey = compositeKey
@@ -144,16 +162,15 @@ public class KDBXFile {
                                       padding: true,
                                       key: masterKeyArray,
                                       iv: encryptionIVArray) else {
-      print("Error creating the AES context for decrypting.")
-      return
+      throw ParseError.couldntCreateCryptoContext
     }
 
     let encryptedPayload = [UInt8](bytes[cb...])
     let decryptedPayload = AESDecryptContext.performOperation(encryptedPayload)
 
-    if streamStartBytes != [UInt8](decryptedPayload[..<32]) {
-      print("Payload start does not match streamStartBytes")
-      return
+    let actualStartBytes = [UInt8](decryptedPayload[..<32])
+    if streamStartBytes != actualStartBytes {
+      throw ParseError.badStreamStartBytes(actualStartBytes: actualStartBytes)
     }
     
     cb = 32
@@ -171,8 +188,7 @@ public class KDBXFile {
       
       let trueHash = blockData.sha256()
       if ([UInt8](blockHash) != trueHash) {
-        print("Error decrypting payload blocks")
-        return
+        throw ParseError.payloadHashMismatch
       }
 
       payload.append(contentsOf: blockData)
@@ -184,16 +200,14 @@ public class KDBXFile {
       do {
         decompressedPayload = try [UInt8](Data(payload).gunzipped())
       } catch {
-        print("Error decompressing the GZIP payload")
-        return
+        throw ParseError.couldntDecompressPayload
       }
       
     }
 
     self.payload = String(bytes: decompressedPayload, encoding: .utf8)
     if self.payload == nil {
-      print("Couldn't turn the decompressed payload into a string")
-      return
+      throw ParseError.badPayloadString
     }
   }
 }

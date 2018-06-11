@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     let fileURL = Bundle.main.url(forResource: "Test", withExtension: "kdbx")
     let fileData = try? Data(contentsOf: fileURL!)
-    let kdbxFile = KDBXFile(withKDBX3Bytes: [UInt8](fileData!))
+    let kdbxFile = try! KDBXFile(withBytes: [UInt8](fileData!))
     
     return true
   }
