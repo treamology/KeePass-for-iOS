@@ -16,15 +16,15 @@ class MasterViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    navigationItem.leftBarButtonItem = editButtonItem
 
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-    navigationItem.rightBarButtonItem = addButton
     if let split = splitViewController {
         let controllers = split.viewControllers
         detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
     }
+    
+    // Turning this on from within IB doesn't work for some reason
+    self.navigationController?.navigationBar.prefersLargeTitles = true
+    self.navigationController?.navigationItem.largeTitleDisplayMode = .always
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -32,13 +32,31 @@ class MasterViewController: UITableViewController {
     super.viewWillAppear(animated)
   }
 
-  @objc
-  func insertNewObject(_ sender: Any) {
-    objects.insert(NSDate(), at: 0)
-    let indexPath = IndexPath(row: 0, section: 0)
-    tableView.insertRows(at: [indexPath], with: .automatic)
+  @IBAction
+  func addButtonPressed(_ sender: Any) {
+    let alert = UIAlertController(title: nil,
+                                  message: nil,
+                                  preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "Add Existing...",
+                                  style: .default,
+                                  handler: addExistingDatabase))
+    alert.addAction(UIAlertAction(title: "Create New...",
+                                  style: .default,
+                                  handler: createNewDatabase))
+    alert.addAction(UIAlertAction(title: "Cancel",
+                                  style: .cancel,
+                                  handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
 
+  func addExistingDatabase(action: UIAlertAction) {
+    
+  }
+  
+  func createNewDatabase(action: UIAlertAction) {
+    
+  }
+  
   // MARK: - Segues
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
