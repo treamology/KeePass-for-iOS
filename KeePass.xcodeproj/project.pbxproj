@@ -122,6 +122,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 		F16D5B9D20CC6956008B6F12 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16D5BA020CC6956008B6F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16D5BA220CC6956008B6F12 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
 				F16D5BFA20CC6A62008B6F12 /* Test.kdbx */,
 				F16D5BF520CC69AB008B6F12 /* Crypto */,
 				F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */,
@@ -448,6 +450,11 @@
 				TargetAttributes = {
 					F16D5B9C20CC6956008B6F12 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					F16D5BB220CC6957008B6F12 = {
 						CreatedOnToolsVersion = 10.0;
@@ -796,6 +803,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
@@ -816,6 +824,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
