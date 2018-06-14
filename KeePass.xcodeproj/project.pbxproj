@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA020CC6956008B6F12 /* AppDelegate.swift */; };
 		F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA220CC6956008B6F12 /* MasterViewController.swift */; };
 		F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
@@ -123,6 +124,7 @@
 
 /* Begin PBXFileReference section */
 		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
+		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		F16D5B9D20CC6956008B6F12 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16D5BA020CC6956008B6F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16D5BA220CC6956008B6F12 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				F16D5BF520CC69AB008B6F12 /* Crypto */,
 				F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */,
 				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
+				F16AABC620D2B304009807E5 /* FileManagement.swift */,
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
 				F16D5BA620CC6956008B6F12 /* Main.storyboard */,
@@ -594,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
