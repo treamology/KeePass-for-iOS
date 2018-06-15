@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
     splitViewController.delegate = self
     
-    let fileURL = Bundle.main.url(forResource: "Test", withExtension: "kdbx")
-    let fileData = try? Data(contentsOf: fileURL!)
-    let kdbxFile = try! KDBXFile(withBytes: [UInt8](fileData!))
+//    let fileURL = Bundle.main.url(forResource: "Test", withExtension: "kdbx")
+//    let fileData = try? Data(contentsOf: fileURL!)
+//    let kdbxFile = try! KDBXCryptoHandler(withBytes: [UInt8](fileData!))
     
     return true
   }

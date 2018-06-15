@@ -47,10 +47,14 @@ class FileManagement {
   }
   
   static func createNewDatabase(name: String) {
-    let success = filesManager.createFile(atPath: (documentsURL?.appendingPathComponent("\(name).kdbx",
-      isDirectory: false).path)!,
-                                          contents: Data(),
-                                          attributes: nil)
-    print(success)
+//    let success = filesManager.createFile(atPath: (documentsURL?.appendingPathComponent("\(name).kdbx",
+//      isDirectory: false).path)!,
+//                                          contents: Data(bytes: [0, 0, 0, 0]),
+//                                          attributes: nil)
+    let document = KDBXDocument.init(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
+    document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
+      print("Saved")
+    }
+//    print(success)
   }
 }

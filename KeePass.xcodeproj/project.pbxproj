@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
+		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
+		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
+		F16AABFF20D32C43009807E5 /* AEXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA020CC6956008B6F12 /* AppDelegate.swift */; };
 		F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA220CC6956008B6F12 /* MasterViewController.swift */; };
 		F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
@@ -21,14 +24,73 @@
 		F16D5BE720CC6971008B6F12 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F16D5BD720CC6970008B6F12 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
 		F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F16D5BF420CC69A2008B6F12 /* KDBXParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */; };
+		F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */; };
 		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
 		F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
 		F16D5BFB20CC6A62008B6F12 /* Test.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BFA20CC6A62008B6F12 /* Test.kdbx */; };
+		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
+		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F16AABF020D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92791BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F16AABF220D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92DF1BDD5D330011F36F;
+			remoteInfo = "AEXML watchOS";
+		};
+		F16AABF420D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92991BDD4CEF0011F36F;
+			remoteInfo = "AEXML iOS Tests";
+		};
+		F16AABF620D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92BE1BDD5B300011F36F;
+			remoteInfo = "AEXML tvOS";
+		};
+		F16AABF820D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92CC1BDD5BB20011F36F;
+			remoteInfo = "AEXML tvOS Tests";
+		};
+		F16AABFA20D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A928A1BDD49390011F36F;
+			remoteInfo = "AEXML OSX";
+		};
+		F16AABFC20D32BE5009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92AB1BDD54F50011F36F;
+			remoteInfo = "AEXML OSX Tests";
+		};
+		F16AAC0020D32C43009807E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
 		F16D5BB420CC6957008B6F12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
@@ -63,6 +125,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = F16D5BD420CC6970008B6F12;
 			remoteInfo = KeePassSupport;
+		};
+		F18BB44B20D402EB00F92235 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
 		};
 		F1AF720D20CD95B400F79799 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -115,7 +184,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F16AABFF20D32C43009807E5 /* AEXML.framework in Embed Frameworks */,
 				F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */,
+				F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +196,8 @@
 /* Begin PBXFileReference section */
 		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
+		F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
+		F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AEXML.xcodeproj; path = Dependencies/AEXML/AEXML.xcodeproj; sourceTree = "<group>"; };
 		F16D5B9D20CC6956008B6F12 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16D5BA020CC6956008B6F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16D5BA220CC6956008B6F12 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -145,10 +218,12 @@
 		F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassSupportTests.swift; sourceTree = "<group>"; };
 		F16D5BE620CC6971008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXParse.swift; sourceTree = "<group>"; };
+		F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
 		F16D5BF620CC69AB008B6F12 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 		F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
 		F16D5BFA20CC6A62008B6F12 /* Test.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.kdbx; sourceTree = "<group>"; };
+		F18BB45320D4074400F92235 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
+		F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
 		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
 		F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRandom.h; sourceTree = "<group>"; };
@@ -168,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */,
 				F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,9 +281,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F16AABE720D32BE5009807E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F16AABF120D32BE5009807E5 /* AEXML.framework */,
+				F16AABF320D32BE5009807E5 /* AEXML.framework */,
+				F16AABF520D32BE5009807E5 /* AEXML iOS Tests.xctest */,
+				F16AABF720D32BE5009807E5 /* AEXML.framework */,
+				F16AABF920D32BE5009807E5 /* AEXML tvOS Tests.xctest */,
+				F16AABFB20D32BE5009807E5 /* AEXML.framework */,
+				F16AABFD20D32BE5009807E5 /* AEXML OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F16D5B9420CC6956008B6F12 = {
 			isa = PBXGroup;
 			children = (
+				F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */,
 				F1AF720320CD95B400F79799 /* Gzip.xcodeproj */,
 				F16D5B9F20CC6956008B6F12 /* KeePass */,
 				F16D5BB620CC6957008B6F12 /* KeePassTests */,
@@ -234,10 +325,12 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F18BB45320D4074400F92235 /* Default.xml */,
 				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
 				F16D5BFA20CC6A62008B6F12 /* Test.kdbx */,
 				F16D5BF520CC69AB008B6F12 /* Crypto */,
-				F16D5BF320CC69A2008B6F12 /* KDBXParse.swift */,
+				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
+				F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */,
 				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
 				F16AABC620D2B304009807E5 /* FileManagement.swift */,
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
@@ -292,6 +385,7 @@
 			children = (
 				F16D5BF620CC69AB008B6F12 /* AES.swift */,
 				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
+				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -362,6 +456,8 @@
 			);
 			dependencies = (
 				F16D5BE920CC6971008B6F12 /* PBXTargetDependency */,
+				F16AAC0120D32C43009807E5 /* PBXTargetDependency */,
+				F18BB44C20D402EB00F92235 /* PBXTargetDependency */,
 			);
 			name = KeePass;
 			productName = KeePass;
@@ -490,6 +586,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = F16AABE720D32BE5009807E5 /* Products */;
+					ProjectRef = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+				},
+				{
 					ProductGroup = F1AF720420CD95B400F79799 /* Products */;
 					ProjectRef = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
 				},
@@ -506,6 +606,55 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		F16AABF120D32BE5009807E5 /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F16AABF020D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABF320D32BE5009807E5 /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F16AABF220D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABF520D32BE5009807E5 /* AEXML iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML iOS Tests.xctest";
+			remoteRef = F16AABF420D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABF720D32BE5009807E5 /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F16AABF620D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABF920D32BE5009807E5 /* AEXML tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML tvOS Tests.xctest";
+			remoteRef = F16AABF820D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABFB20D32BE5009807E5 /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F16AABFA20D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F16AABFD20D32BE5009807E5 /* AEXML OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML OSX Tests.xctest";
+			remoteRef = F16AABFC20D32BE5009807E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F1AF720E20CD95B400F79799 /* Gzip.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -559,6 +708,7 @@
 				F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */,
 				F16D5BAA20CC6957008B6F12 /* Assets.xcassets in Resources */,
 				F16D5BA820CC6956008B6F12 /* Main.storyboard in Resources */,
+				F18BB45420D4074400F92235 /* Default.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +749,7 @@
 			files = (
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
+				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
 			);
@@ -624,7 +775,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D5BF420CC69A2008B6F12 /* KDBXParse.swift in Sources */,
+				F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */,
+				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
 				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
 				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
 			);
@@ -641,6 +793,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F16AAC0120D32C43009807E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AEXML iOS";
+			targetProxy = F16AAC0020D32C43009807E5 /* PBXContainerItemProxy */;
+		};
 		F16D5BB520CC6957008B6F12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
@@ -665,6 +822,11 @@
 			isa = PBXTargetDependency;
 			target = F16D5BD420CC6970008B6F12 /* KeePassSupport */;
 			targetProxy = F16D5BE820CC6971008B6F12 /* PBXContainerItemProxy */;
+		};
+		F18BB44C20D402EB00F92235 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Gzip iOS";
+			targetProxy = F18BB44B20D402EB00F92235 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
