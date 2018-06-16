@@ -46,14 +46,17 @@ class FileManagement {
     }
   }
   
-  static func createNewDatabase(name: String) {
+  static func createNewDatabase(name: String, completed: @escaping (Bool) -> Void) {
 //    let success = filesManager.createFile(atPath: (documentsURL?.appendingPathComponent("\(name).kdbx",
 //      isDirectory: false).path)!,
 //                                          contents: Data(bytes: [0, 0, 0, 0]),
 //                                          attributes: nil)
     let document = KDBXDocument.init(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
     document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
-      print("Saved")
+      if success {
+        try! Persistence.addFileBookmark(bookmark: document.fileURL.bookmarkData() as NSData)
+      }
+      completed(success)
     }
 //    print(success)
   }

@@ -22,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
     splitViewController.delegate = self
     
-    // Check if we're logged into iCloud or not.
-    FileManagement.checkCloudStatus()
-    
     // Get change notifications and sync
     Persistence.registerForCloudNotifications()
+    // Initialize the persistence structures
+    Persistence.initStorage()
+    
+    // Check if we're logged into iCloud or not
+    FileManagement.checkCloudStatus()
     
     return true
   }

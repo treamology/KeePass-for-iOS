@@ -16,7 +16,22 @@ class Persistence {
   
   typealias ValueChange = (added: Bool, value: Any)
   enum PersistenceKey: String {
-    case lastUpdate, bookmarkedFiles
+    case lastUpdate, bookmarkedFiles, storageInitialized
+  }
+  
+  static var bookmarkedFiles: [Data] {
+    get {
+      var bookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as! [Data]
+      return bookmarks
+    }
+  }
+  
+  static func initStorage() {
+    let alreadyInitialized = UserDefaults.standard.bool(forKey: PersistenceKey.storageInitialized.rawValue)
+    guard !alreadyInitialized else { return }
+    UserDefaults.standard.set([Data](), forKey: PersistenceKey.bookmarkedFiles.rawValue)
+    UserDefaults.standard.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
+    UserDefaults.standard.set(true, forKey: PersistenceKey.storageInitialized.rawValue)
   }
   
   static func registerForCloudNotifications() {
@@ -24,17 +39,10 @@ class Persistence {
     // The keystore only syncs when it wants to, so we have to do some weird stuff
     // to make sure changes are propagated correctly.
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(cloudDataChanged),
+                                           selector: #selector(cloudDataChanged(notification:)),
                                            name: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
                                            object: NSUbiquitousKeyValueStore.default)
     NSUbiquitousKeyValueStore.default.synchronize()
-  }
-  
-  private static func setValueLocally(object: Any?, forKey key: String) {
-    UserDefaults.standard.set(object, forKey: key)
-    UserDefaults.standard.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
-    NSUbiquitousKeyValueStore.default.set(object, forKey: key)
-    NSUbiquitousKeyValueStore.default.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
   }
   
   static func addFileBookmark(bookmark: NSData) {
@@ -49,7 +57,16 @@ class Persistence {
     setValueLocally(object: currentBookmarks, forKey: PersistenceKey.bookmarkedFiles.rawValue)
   }
   
-  @objc static func cloudDataChanged(notification: NSNotification) {
+  // MARK: - Internal Methods
+  
+  private static func setValueLocally(object: Any?, forKey key: String) {
+    UserDefaults.standard.set(object, forKey: key)
+    UserDefaults.standard.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
+    NSUbiquitousKeyValueStore.default.set(object, forKey: key)
+    NSUbiquitousKeyValueStore.default.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
+  }
+  
+  @objc private static func cloudDataChanged(notification: NSNotification) {
     guard let userInfo = notification.userInfo else { return }
     let currentDefaults = UserDefaults.standard
     let remoteValues = NSUbiquitousKeyValueStore.default
@@ -59,6 +76,9 @@ class Persistence {
    
     switch changeReason {
     case NSUbiquitousKeyValueStoreServerChange:
+      if UserDefaults.standard.bool(forKey: PersistenceKey.storageInitialized.rawValue) == false {
+        initStorage()
+      }
       // Something was changed from some other device, so update our local copy.
       for key in changedKeys {
         guard let persistenceKey = PersistenceKey(rawValue: key) else {
@@ -75,8 +95,8 @@ class Persistence {
           currentDefaults.set(localBookmarks, forKey: key)
           
           let deletions = Set(localBookmarks).subtracting(remoteBookmarks)
-          let lastRemoteUpdate = remoteValues.value(forKey: PersistenceKey.lastUpdate.rawValue) as! Int
-          let lastLocalUpdate = currentDefaults.value(forKey: PersistenceKey.lastUpdate.rawValue) as! Int
+          let lastRemoteUpdate = Int(truncating: remoteValues.object(forKey: PersistenceKey.lastUpdate.rawValue) as! NSNumber)
+          let lastLocalUpdate = Int(truncating: currentDefaults.object(forKey: PersistenceKey.lastUpdate.rawValue) as! NSNumber)
           if lastRemoteUpdate > lastLocalUpdate {
             // The remote deletions are more recent, so have them correspond locally.
             var localDeletedSet = Set(localBookmarks)
@@ -90,7 +110,7 @@ class Persistence {
             remoteValues.set(localBookmarks, forKey: key)
             remoteValues.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
           }
-        case .lastUpdate:
+        default:
           break
         }
       }
@@ -107,7 +127,7 @@ class Persistence {
           let remoteBookmarks = remoteValues.array(forKey: key) as! Array<Data>
           localBookmarks.append(contentsOf: remoteBookmarks)
           setValueLocally(object: localBookmarks, forKey: key)
-        case .lastUpdate:
+        default:
           break
         }
       }
