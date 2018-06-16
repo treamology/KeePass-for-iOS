@@ -28,8 +28,6 @@ class MasterViewController: UITableViewController {
     self.navigationController?.navigationBar.prefersLargeTitles = true
     self.navigationController?.navigationItem.largeTitleDisplayMode = .always
     
-    FileManagement.checkCloudStatus()
-    
     // Go ahead and load the file picker controller.
     filePickerController = UIDocumentPickerViewController(documentTypes:["org.keepassx.kdbx"],
                                                           in: .open)
@@ -39,6 +37,8 @@ class MasterViewController: UITableViewController {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
     super.viewWillAppear(animated)
   }
+  
+  // MARK: - User Actions
   
   @IBAction
   func addButtonPressed(_ sender: Any) {

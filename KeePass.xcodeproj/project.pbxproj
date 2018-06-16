@@ -31,6 +31,7 @@
 		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
+		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +225,7 @@
 		F16D5BFA20CC6A62008B6F12 /* Test.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.kdbx; sourceTree = "<group>"; };
 		F18BB45320D4074400F92235 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
 		F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
+		F18FC50820D47D200070301A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
 		F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRandom.h; sourceTree = "<group>"; };
@@ -329,12 +331,12 @@
 				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
 				F16D5BFA20CC6A62008B6F12 /* Test.kdbx */,
 				F16D5BF520CC69AB008B6F12 /* Crypto */,
-				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 				F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */,
 				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
 				F16AABC620D2B304009807E5 /* FileManagement.swift */,
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
+				F18FC50820D47D200070301A /* Persistence.swift */,
 				F16D5BA620CC6956008B6F12 /* Main.storyboard */,
 				F16D5BA920CC6957008B6F12 /* Assets.xcassets */,
 				F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */,
@@ -386,6 +388,7 @@
 				F16D5BF620CC69AB008B6F12 /* AES.swift */,
 				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
 				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
+				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
+				F18FC50920D47D200070301A /* Persistence.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
 			);
