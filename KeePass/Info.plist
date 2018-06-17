@@ -86,9 +86,20 @@
 	</array>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
-	<key>UTImportedTypeDeclarations</key>
+	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>kdbx</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/kdbx</string>
+				</array>
+			</dict>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
@@ -101,17 +112,6 @@
 			<array/>
 			<key>UTTypeIdentifier</key>
 			<string>org.keepassx.kdbx</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>kdbx</string>
-				</array>
-				<key>public.mime-type</key>
-				<array>
-					<string>application/kdbx</string>
-				</array>
-			</dict>
 		</dict>
 	</array>
 </dict>
