@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController {
   var detailViewController: DetailViewController? = nil
   
   var filePickerController: UIDocumentPickerViewController!
+  var selectedIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,6 +42,7 @@ class MasterViewController: UITableViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+    
     super.viewWillAppear(animated)
   }
   
@@ -80,9 +82,16 @@ class MasterViewController: UITableViewController {
         return
       }
       
+      // While the database is being created, disable user interaction
+      // so the user won't select something else
+      self.view.isUserInteractionEnabled = false
+      
       FileManagement.createNewDatabase(name: name, completed: {(success: Bool) in
         if success {
-          self.bookmarkTableView?.reloadData()
+          self.selectedIndex = Persistence.bookmarkedFiles.count - 1
+          self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+          self.performSegue(withIdentifier: "showDetail", sender: self)
+          self.view.isUserInteractionEnabled = true
         }
       })
       return
@@ -99,12 +108,10 @@ class MasterViewController: UITableViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showDetail" {
-      if let indexPath = tableView.indexPathForSelectedRow {
-        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-        controller.detailItem = Persistence.bookmarkedFiles[indexPath.row]
-        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        controller.navigationItem.leftItemsSupplementBackButton = true
-      }
+      let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+      controller.detailItem = Persistence.bookmarkedFiles[selectedIndex]
+      controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+      controller.navigationItem.leftItemsSupplementBackButton = true
     }
   }
   
@@ -152,6 +159,11 @@ class MasterViewController: UITableViewController {
       Persistence.removeFileBookmark(index: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
+  }
+  
+  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    selectedIndex = indexPath.row
+    return indexPath
   }
 }
 
