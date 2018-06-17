@@ -60,4 +60,25 @@ class FileManagement {
     }
 //    print(success)
   }
+  
+  static func resolveBookmark(bookmark: Data, persistenceIndex: Int?) -> URL? {
+    var dataIsStale = false
+    var resolved: URL?
+    do {
+      resolved = try URL(resolvingBookmarkData: bookmark, bookmarkDataIsStale: &dataIsStale)
+    } catch {
+      print("Couldn't resolve bookmark data")
+    }
+    if let resolvedURL = resolved {
+      if dataIsStale && persistenceIndex != nil {
+        do {
+          try Persistence.replaceFileBookmark(with: resolvedURL.bookmarkData(), index: persistenceIndex!)
+        } catch {
+          print("Couldn't create a fresh bookmark for previous stale data.")
+        }
+      }
+      return resolvedURL
+    }
+    return nil
+  }
 }

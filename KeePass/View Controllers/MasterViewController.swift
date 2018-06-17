@@ -98,15 +98,14 @@ class MasterViewController: UITableViewController {
   // MARK: - Segues
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if segue.identifier == "showDetail" {
-//      if let indexPath = tableView.indexPathForSelectedRow {
-//        let object = objects[indexPath.row] as! NSDate
-//        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-//        controller.detailItem = object
-//        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-//        controller.navigationItem.leftItemsSupplementBackButton = true
-//      }
-//    }
+    if segue.identifier == "showDetail" {
+      if let indexPath = tableView.indexPathForSelectedRow {
+        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+        controller.detailItem = Persistence.bookmarkedFiles[indexPath.row]
+        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        controller.navigationItem.leftItemsSupplementBackButton = true
+      }
+    }
   }
   
   // MARK: - Table View
@@ -126,11 +125,21 @@ class MasterViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     
     let fileBookmark = Persistence.bookmarkedFiles[indexPath.row]
-    var bookmarkIsStale = false
-    let fileURL = try! URL.init(resolvingBookmarkData: fileBookmark, bookmarkDataIsStale: &bookmarkIsStale)
-    // FIXME: Do something if the bookmark is stale.
-    cell.textLabel!.text = fileURL?.lastPathComponent
+    let fileURL = FileManagement.resolveBookmark(bookmark: fileBookmark, persistenceIndex: indexPath.row)
+    if fileURL != nil {
+      var titleText = String(fileURL!.lastPathComponent)
+      titleText.removeLast(5)
+      cell.textLabel!.text = titleText
+    }
+    
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if section == 0 {
+      return "Bookmarked Files"
+    }
+    return ""
   }
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

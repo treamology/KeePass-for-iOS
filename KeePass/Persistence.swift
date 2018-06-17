@@ -21,8 +21,7 @@ class Persistence {
   
   static var bookmarkedFiles: [Data] {
     get {
-      var bookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as! [Data]
-      return bookmarks
+      return UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as! [Data]
     }
   }
   
@@ -54,6 +53,12 @@ class Persistence {
   static func removeFileBookmark(index: Int) {
     var currentBookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue)
     currentBookmarks?.remove(at: index)
+    setValueLocally(object: currentBookmarks, forKey: PersistenceKey.bookmarkedFiles.rawValue)
+  }
+  
+  static func replaceFileBookmark(with bookmark: Data, index: Int) {
+    var currentBookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue)
+    currentBookmarks?[index] = bookmark
     setValueLocally(object: currentBookmarks, forKey: PersistenceKey.bookmarkedFiles.rawValue)
   }
   

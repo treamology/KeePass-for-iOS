@@ -32,6 +32,7 @@
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
+		F1A3533E20D5E7E9000AABB3 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 /* End PBXBuildFile section */
 
@@ -236,6 +237,7 @@
 		F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKeyDerivation.h; sourceTree = "<group>"; };
 		F1A25D2420CC78B4007F0FD1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
+		F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
 		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -327,6 +329,7 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F1A3533020D5E7A9000AABB3 /* View Controllers */,
 				F18BB45320D4074400F92235 /* Default.xml */,
 				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
 				F16D5BFA20CC6A62008B6F12 /* Test.kdbx */,
@@ -334,8 +337,6 @@
 				F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */,
 				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
 				F16AABC620D2B304009807E5 /* FileManagement.swift */,
-				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
-				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
 				F18FC50820D47D200070301A /* Persistence.swift */,
 				F16D5BA620CC6956008B6F12 /* Main.storyboard */,
 				F16D5BA920CC6957008B6F12 /* Assets.xcassets */,
@@ -418,6 +419,16 @@
 			name = CommonCrypto;
 			path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/CommonCrypto;
 			sourceTree = DEVELOPER_DIR;
+		};
+		F1A3533020D5E7A9000AABB3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
+				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
+				F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
 		};
 		F1AF720420CD95B400F79799 /* Products */ = {
 			isa = PBXGroup;
@@ -753,6 +764,7 @@
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
+				F1A3533E20D5E7E9000AABB3 /* PasswordViewController.swift in Sources */,
 				F18FC50920D47D200070301A /* Persistence.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,

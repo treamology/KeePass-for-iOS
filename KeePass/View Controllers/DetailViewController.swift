@@ -10,14 +10,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
   
-  @IBOutlet weak var detailDescriptionLabel: UILabel!
-  
-  
   func configureView() {
     // Update the user interface for the detail item.
     if let detail = detailItem {
-      if let label = detailDescriptionLabel {
-        label.text = detail.description
+      let resolvedURL = FileManagement.resolveBookmark(bookmark: detail, persistenceIndex: nil)
+      if resolvedURL != nil {
+        var titleText = String(resolvedURL!.lastPathComponent)
+        titleText.removeLast(5) // .kdbx
+        self.navigationItem.title = titleText
       }
     }
   }
@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     configureView()
   }
   
-  var detailItem: NSDate? {
+  var detailItem: Data? {
     didSet {
       // Update the view.
       configureView()
