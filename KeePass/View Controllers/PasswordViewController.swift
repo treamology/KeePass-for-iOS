@@ -11,9 +11,13 @@ import UIKit
 class PasswordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet var tableView: UITableView?
+  var passwordCell: PasswordTableViewCell?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardAppeared), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappeared), name: UIResponder.keyboardWillHideNotification, object: nil)
     
     // Do any additional setup after loading the view.
   }
@@ -23,6 +27,45 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     
     updateTableViewContentInset()
   }
+  
+  @objc func keyboardAppeared(notification: Notification) {
+    if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+      updateTableViewContentInset(animated: true, offset: 0)
+    }
+  }
+  
+  @objc func keyboardDisappeared(notification: Notification) {
+    updateTableViewContentInset(animated: true)
+  }
+  
+  // MARK: - User Actions
+  
+  @IBAction func unlockButtonPressed() {
+    guard let parentController = parent as? DetailViewController else {
+      return
+    }
+    if let url = parentController.resolvedURL {
+      parentController.document = KDBXDocument(fileURL: url)
+      guard let document = parentController.document else {
+        return
+      }
+      
+      document.password = passwordCell!.textField!.text!
+      
+      document.open(completionHandler: { (success) in
+        if success {
+          print(document.parsedData?.xml)
+        } else {
+          let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)
+          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+        }
+      })
+    }
+  }
+  
+  
+  // MARK: - Table View
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 0 || section == 1{
@@ -36,7 +79,7 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 20
+    return 32
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -53,6 +96,7 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     if indexPath.section == 0 {
       if indexPath.row == 0 {
         cell = tableView.dequeueReusableCell(withIdentifier: "PasswordCell", for: indexPath)
+        passwordCell = cell as? PasswordTableViewCell
       } else if indexPath.row == 1 {
         cell = tableView.dequeueReusableCell(withIdentifier: "AndOrCell", for: indexPath)
       }
@@ -69,12 +113,23 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     return cell
   }
   
-  func updateTableViewContentInset() {
+  func updateTableViewContentInset(animated: Bool = false, offset: CGFloat? = nil) {
     let viewHeight: CGFloat = view.frame.size.height
     if let table = tableView {
       let tableViewContentHeight: CGFloat = table.contentSize.height
       let marginHeight: CGFloat = (viewHeight - tableViewContentHeight) / 2.0
-      table.contentInset = UIEdgeInsets(top: marginHeight, left: 0, bottom:  -marginHeight, right: 0)
+      var theOffset: CGFloat! = offset
+      if offset == nil {
+        theOffset = marginHeight
+      }
+      let edgeInsets = UIEdgeInsets(top: theOffset, left: 0, bottom: -theOffset, right: 0)
+      if animated {
+        UIView.animate(withDuration: 0.5, animations: {
+          table.contentInset = edgeInsets
+        })
+      } else {
+        table.contentInset = edgeInsets
+      }
     }
   }
   

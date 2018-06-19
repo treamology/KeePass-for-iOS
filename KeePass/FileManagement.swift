@@ -13,6 +13,8 @@ class FileManagement {
   static var signedIntoCloud = false
   static var documentsURL: URL?
   
+  static var currentOpenFile: KDBXDocument?
+  
   static func checkCloudStatus() {
     // Choose the location to store new databases depending on if the user is signed into iCloud
     // or not.
@@ -51,7 +53,7 @@ class FileManagement {
 //      isDirectory: false).path)!,
 //                                          contents: Data(bytes: [0, 0, 0, 0]),
 //                                          attributes: nil)
-    let document = KDBXDocument.init(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
+    let document = KDBXDocument(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
     document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
       if success {
         try! Persistence.addFileBookmark(bookmark: document.fileURL.bookmarkData() as NSData)

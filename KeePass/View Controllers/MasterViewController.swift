@@ -8,9 +8,11 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   
   @IBOutlet var bookmarkTableView: UITableView?
+  @IBOutlet var addBarButton: UIBarButtonItem?
+  
   var detailViewController: DetailViewController? = nil
   
   var filePickerController: UIDocumentPickerViewController!
@@ -38,6 +40,7 @@ class MasterViewController: UITableViewController {
     // Go ahead and load the file picker controller.
     filePickerController = UIDocumentPickerViewController(documentTypes:["org.keepassx.kdbx"],
                                                           in: .open)
+    filePickerController.delegate = self
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +66,7 @@ class MasterViewController: UITableViewController {
     alert.addAction(UIAlertAction(title: "Cancel",
                                   style: .cancel,
                                   handler: nil))
+    alert.popoverPresentationController?.barButtonItem = addBarButton
     present(alert, animated: true, completion: nil)
   }
   
@@ -164,6 +168,29 @@ class MasterViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
     selectedIndex = indexPath.row
     return indexPath
+  }
+  
+//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    tableView.deselectRow(at: indexPath, animated: true)
+//  }
+  
+  // MARK: - Document Picker
+  func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+    let url = urls[0]
+    let canAccess = url.startAccessingSecurityScopedResource()
+    if canAccess {
+      do {
+        try Persistence.addFileBookmark(bookmark: url.bookmarkData() as NSData)
+      } catch {
+        print("Couldn't create bookmark data from opened file")
+        return
+      }
+      
+      selectedIndex = Persistence.bookmarkedFiles.count - 1
+      tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+      performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    url.stopAccessingSecurityScopedResource()
   }
 }
 

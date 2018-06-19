@@ -88,7 +88,7 @@ public class KDBXCryptoHandler {
   let filePassword: [UInt8]
   let keyfileData: [UInt8]?
   
-  public convenience init?(withBytes bytes: [UInt8]) throws {
+  public convenience init?(withBytes bytes: [UInt8], password: String?) throws {
     guard bytes.count >= 12 else {
       throw ParseError.badKDBXFile
     }
@@ -96,7 +96,8 @@ public class KDBXCryptoHandler {
     // Get the basic information we know is in the header.
     let magic = [UInt8](bytes[0...3])
     if magic == KDBXCryptoHandler.KDBX3_MAGIC {
-      try self.init(withKDBX3Bytes: bytes, password: "password", keyfileData: nil)
+      try self.init(withKDBX3Bytes: bytes, password: password, keyfileData: nil)
+      return
     }
     return nil
   }

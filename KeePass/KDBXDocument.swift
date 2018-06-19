@@ -15,6 +15,8 @@ class KDBXDocument: UIDocument {
   var cryptoHandler: KDBXCryptoHandler?
   var parsedData: AEXMLDocument?
   
+  var password: String?
+  
   override func contents(forType typeName: String) throws -> Any {
     if parsedData == nil {
       let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
@@ -29,10 +31,18 @@ class KDBXDocument: UIDocument {
   
   override func load(fromContents contents: Any, ofType typeName: String?) throws {
     let rawData = contents as! Data
-    cryptoHandler = try KDBXCryptoHandler(withBytes: [UInt8](rawData))
+    do {
+      cryptoHandler = try KDBXCryptoHandler(withBytes: [UInt8](rawData), password: password)
+    } catch {
+      print(error)
+    }
     guard cryptoHandler != nil else {
       return
     }
-    parsedData = try AEXMLDocument(xml: (cryptoHandler?.payload)!)
+    do {
+      parsedData = try AEXMLDocument(xml: (cryptoHandler?.payload)!)
+    } catch {
+      print(error)
+    }
   }
 }

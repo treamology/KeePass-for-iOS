@@ -28,6 +28,8 @@
 		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
 		F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
 		F16D5BFB20CC6A62008B6F12 /* Test.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BFA20CC6A62008B6F12 /* Test.kdbx */; };
+		F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
+		F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFEF20D814E500C48FC9 /* SplitViewController.swift */; };
 		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
@@ -224,6 +226,8 @@
 		F16D5BF620CC69AB008B6F12 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 		F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
 		F16D5BFA20CC6A62008B6F12 /* Test.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.kdbx; sourceTree = "<group>"; };
+		F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
+		F179FFEF20D814E500C48FC9 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		F18BB45320D4074400F92235 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
 		F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
 		F18FC50820D47D200070301A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F179FFCD20D6FBB700C48FC9 /* Views */,
 				F1A3533020D5E7A9000AABB3 /* View Controllers */,
 				F18BB45320D4074400F92235 /* Default.xml */,
 				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
@@ -394,6 +399,14 @@
 			path = Crypto;
 			sourceTree = "<group>";
 		};
+		F179FFCD20D6FBB700C48FC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F1A25D1920CC7868007F0FD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +439,7 @@
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
 				F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */,
+				F179FFEF20D814E500C48FC9 /* SplitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -765,6 +779,8 @@
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
 				F1A3533E20D5E7E9000AABB3 /* PasswordViewController.swift in Sources */,
+				F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */,
+				F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */,
 				F18FC50920D47D200070301A /* Persistence.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
