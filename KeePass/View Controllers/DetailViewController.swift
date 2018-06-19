@@ -27,9 +27,16 @@ class DetailViewController: UIViewController {
         titleText.removeLast(5) // .kdbx
         self.navigationItem.title = titleText
       }
+      
+      // You can't hide bar button items so we'll have to do this hack.
+      self.navigationItem.leftBarButtonItem?.isEnabled = true
+      self.navigationItem.leftBarButtonItem?.tintColor = nil
     } else {
       self.navigationItem.title = ""
       self.containerView?.isHidden = true
+      
+      self.navigationItem.leftBarButtonItem?.isEnabled = false
+      self.navigationItem.leftBarButtonItem?.tintColor = UIColor.clear
     }
   }
   
