@@ -1,17 +1,15 @@
-import KeePassSupport
-import CommonCrypto
+//
+//  KDBXDatabase.swift
+//  KeePassSupport
+//
+//  Created by Donny Lawrence on 6/20/18.
+//  Copyright © 2018 Donny Lawrence. All rights reserved.
+//
+
+import Foundation
 import AEXML
 
-let file = Bundle.main.url(forResource: "Test", withExtension: "kdbx")
-let data = Data(contentsOf: file!)
-
-let cryptoHandler = KDBXCryptoHandler(withBytes: [UInt8](data), password: "password")
-let payload = cryptoHandler?.payload
-
-let xml = AEXMLDocument(xml: payload!)
-let root = xml.root["Meta"]["Generator"]
-
-class KDBXDatabase {
+public class KDBXDatabase {
   
   private var dateFormatter: DateFormatter
   
@@ -26,10 +24,9 @@ class KDBXDatabase {
   var dateOfMasterKeyChange: Date = Date()
   var dateOfRecycleBinChange: Date = Date()
   
-  var groups = [Group]()
+  var groups = [KDBXGroup]()
   
   init(withXML xml: AEXMLDocument) {
-    let now = Date()
     dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
     
@@ -55,27 +52,9 @@ class KDBXDatabase {
     if let recycleBinChangeString = meta["RecycleBinChanged"].value {
       dateOfRecycleBinChange = dateFormatter.date(from: recycleBinChangeString) ?? dateOfRecycleBinChange
     }
+    
+    for groupXML in xml.root["Root"].children {
+      groups.append(KDBXGroup(withXML: groupXML))
+    }
   }
 }
-
-class KDBXGroup {
-  let uuid: String
-  let name: String
-  let website: String
-  let iconID: UInt8
-
-  let notes: String
-
-  init(withXML xml: AEXMLElement) {
-    // Loads only basic information
-    uuid = xml["UUID"].value ?? UUID().uuidString
-    name = xml["Name"].value ?? ""
-    website = xml["Website"].value ?? ""
-    iconID = xml["IconID"].value ?? ""
-  }
-
-  func initDetails() {
-
-  }
-}
-let database = KDBXDatabase(withXML: xml)

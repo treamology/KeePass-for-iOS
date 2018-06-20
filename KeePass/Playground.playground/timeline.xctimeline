@@ -2,5 +2,10 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/Donny/Documents/Projects/KeePass/KeePass/Playground.playground#CharacterRangeLen=8&amp;CharacterRangeLoc=2352&amp;EndingColumnNumber=13&amp;EndingLineNumber=80&amp;StartingColumnNumber=5&amp;StartingLineNumber=80&amp;Timestamp=551209755.266946"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>

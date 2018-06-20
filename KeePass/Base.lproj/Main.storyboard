@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" rowHeight="58" id="xJE-kI-gzz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="DatabaseEntryCell" rowHeight="58" id="xJE-kI-gzz" customClass="DatabaseEntryTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xJE-kI-gzz" id="Kre-iO-amX">
@@ -88,25 +88,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.website.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Up2-We-s7g">
-                                                    <rect key="frame" x="16" y="32" width="116" height="17"/>
+                                                    <rect key="frame" x="16" y="32" width="304" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TN-sF-nQ2">
-                                                    <rect key="frame" x="16" y="8" width="124" height="21"/>
+                                                    <rect key="frame" x="16" y="8" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Up2-We-s7g" secondAttribute="trailing" constant="8" id="4jV-ej-E0e"/>
                                                 <constraint firstItem="2TN-sF-nQ2" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leading" constant="16" id="AL1-rp-3lt"/>
                                                 <constraint firstItem="2TN-sF-nQ2" firstAttribute="centerY" secondItem="Kre-iO-amX" secondAttribute="centerY" constant="-10.25" id="J6o-Hs-ysm"/>
                                                 <constraint firstItem="Up2-We-s7g" firstAttribute="centerY" secondItem="Kre-iO-amX" secondAttribute="centerY" constant="11.75" id="LGo-NV-Afw"/>
+                                                <constraint firstAttribute="trailing" secondItem="2TN-sF-nQ2" secondAttribute="trailing" constant="8" id="cw3-tg-poW"/>
                                                 <constraint firstItem="Up2-We-s7g" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leading" constant="16" id="ssu-Qq-uxY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="2TN-sF-nQ2" id="Qin-Sz-L42"/>
+                                            <outlet property="siteLabel" destination="Up2-We-s7g" id="qdz-RD-ohc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
