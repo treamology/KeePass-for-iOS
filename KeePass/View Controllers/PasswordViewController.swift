@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeePassSupport
 
 class PasswordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -44,6 +45,7 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     guard let parentController = parent as? DetailViewController else {
       return
     }
+    
     parentController.document = KDBXDocument(fileURL: parentController.resolvedURL)
     guard let document = parentController.document else {
       return
@@ -53,7 +55,8 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     
     document.open(completionHandler: { (success) in
       if success {
-        print(document.parsedData?.xml)
+        parentController.database = KDBXDatabase(withXML: document.parsedData!)
+        parentController.unlockDatabase()
       } else {
         let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

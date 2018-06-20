@@ -26,7 +26,7 @@ public class KDBXDatabase {
   
   var groups = [KDBXGroup]()
   
-  init(withXML xml: AEXMLDocument) {
+  public init(withXML xml: AEXMLDocument) {
     dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
     

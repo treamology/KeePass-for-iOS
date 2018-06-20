@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeePassSupport
 
 class DetailViewController: UIViewController {
   
@@ -15,6 +16,7 @@ class DetailViewController: UIViewController {
   
   var resolvedURL: URL!
   var document: KDBXDocument?
+  var database: KDBXDatabase?
   
   func configureView() {
     // Update the user interface for the detail item.
@@ -42,6 +44,11 @@ class DetailViewController: UIViewController {
       self.navigationItem.leftBarButtonItem?.isEnabled = false
       self.navigationItem.leftBarButtonItem?.tintColor = UIColor.clear
     }
+  }
+  
+  func unlockDatabase() {
+    self.databaseContainerView?.isHidden = false
+    self.passwordContainerView?.isHidden = true
   }
   
   override func viewDidLoad() {

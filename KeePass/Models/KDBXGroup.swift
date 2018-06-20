@@ -23,7 +23,7 @@ public class KDBXGroup {
   
   var details: KDBXGroupDetails?
   
-  init(withXML xml: AEXMLElement) {
+  public init(withXML xml: AEXMLElement) {
     // Loads only basic information
     uuid = xml["UUID"].value ?? UUID().uuidString
     name = xml["Name"].value ?? ""
