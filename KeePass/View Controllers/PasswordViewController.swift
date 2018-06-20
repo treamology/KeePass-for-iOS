@@ -44,24 +44,22 @@ class PasswordViewController: UIViewController, UITableViewDelegate, UITableView
     guard let parentController = parent as? DetailViewController else {
       return
     }
-    if let url = parentController.resolvedURL {
-      parentController.document = KDBXDocument(fileURL: url)
-      guard let document = parentController.document else {
-        return
-      }
-      
-      document.password = passwordCell!.textField!.text!
-      
-      document.open(completionHandler: { (success) in
-        if success {
-          print(document.parsedData?.xml)
-        } else {
-          let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-        }
-      })
+    parentController.document = KDBXDocument(fileURL: parentController.resolvedURL)
+    guard let document = parentController.document else {
+      return
     }
+    
+    document.password = passwordCell!.textField!.text!
+    
+    document.open(completionHandler: { (success) in
+      if success {
+        print(document.parsedData?.xml)
+      } else {
+        let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+      }
+    })
   }
   
   

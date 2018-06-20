@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
 		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
 		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
@@ -198,6 +199,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F10FE08620DAB1860030B033 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
 		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
 				F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */,
 				F179FFEF20D814E500C48FC9 /* SplitViewController.swift */,
+				F10FE08620DAB1860030B033 /* DatabaseViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				F18FC50920D47D200070301A /* Persistence.swift in Sources */,
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
+				F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
