@@ -32,7 +32,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardAppeared), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappeared), name: UIResponder.keyboardWillHideNotification, object: nil)
     
-    navigationParent = self.parent as! UINavigationController
+    navigationParent = self.parent as? UINavigationController
     navigationParent.delegate = self
   }
   
@@ -78,15 +78,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var viewControllers = self.navigationParent.viewControllers
     viewControllers[viewControllers.count - 1] = databaseVC
     self.navigationParent.setViewControllers(viewControllers, animated: false)
-//    databaseVC.didMove(toParent: self)
-//    databaseVC.view.alpha = 0
-//
-//    UIView.animate(withDuration: 0.25, animations: {
-//      databaseVC.view.alpha = 1
-//      passwordView!.alpha = 0
-//    }) { (finished) in
-//      passwordVC.removeFromParent()
-//    }
   }
   
   var detailItem: Data? {
