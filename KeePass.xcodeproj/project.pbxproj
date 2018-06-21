@@ -40,6 +40,10 @@
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
+		F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */; };
+		F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */; };
+		F1F7BA0E20DC444B00F22B81 /* ValidFile.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */; };
+		F1F7BA1020DC452700F22B81 /* ValidFileXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */; };
 		F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +257,10 @@
 		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
 		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
 		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadDynamicHeader.kdbx; sourceTree = "<group>"; };
+		F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadPayload.kdbx; sourceTree = "<group>"; };
+		F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ValidFile.kdbx; sourceTree = "<group>"; };
+		F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidFileXML.xml; sourceTree = "<group>"; };
 		F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -402,6 +410,10 @@
 		F16D5BE320CC6971008B6F12 /* KeePassSupportTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */,
+				F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */,
+				F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */,
+				F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */,
 				F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */,
 				F16D5BE620CC6971008B6F12 /* Info.plist */,
 			);
@@ -787,6 +799,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F7BA1020DC452700F22B81 /* ValidFileXML.xml in Resources */,
+				F1F7BA0E20DC444B00F22B81 /* ValidFile.kdbx in Resources */,
+				F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */,
+				F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

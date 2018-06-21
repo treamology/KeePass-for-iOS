@@ -10,27 +10,63 @@ import XCTest
 @testable import KeePassSupport
 
 class KDBXParseTests: XCTestCase {
-  
-  override func setUp() {
-    super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-  }
-  
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
-  }
-  
   func testNoData() {
-    XCTAssertThrowsError(try KDBXFile(withBytes: []))
-    let file = try? KDBXFile(withBytes: [])
-    XCTAssertNil(file)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [], password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badKDBXFile = error {}
+      else { XCTFail() }
+    }
   }
   
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
+  func testBadHeader() {
+    var data = Data(repeating: 0x00, count: 4)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badKDBXFile = error {}
+      else { XCTFail() }
     }
+    
+    data = Data(repeating: 0x00, count: 12)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badKDBXFile = error {}
+      else { XCTFail() }
+    }
+    
+    data = Data(repeating: 0x00, count: 200)
+    data.replaceSubrange(0..<4, with: KDBXCryptoHandler.KDBX3_MAGIC)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badKDBXFile = error {}
+      else { XCTFail() }
+    }
+  }
+  
+  func testBadDynamicHeader() {
+    let url = Bundle(for: type(of: self)).url(forResource: "BadDynamicHeader", withExtension: "kdbx")
+    let data = try! Data(contentsOf: url!)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badHeaderID = error {}
+      else { XCTFail("Threw: \(error)") }
+    }
+  }
+  
+  func testBadPayload() {
+    let url = Bundle(for: type(of: self)).url(forResource: "BadPayload", withExtension: "kdbx")
+    let data = try! Data(contentsOf: url!)
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: ""), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badStreamStartBytes = error {}
+      else { XCTFail("Threw: \(error)") }
+    }
+  }
+  
+  func testOpenValidFile() {
+    let url = Bundle(for: type(of: self)).url(forResource: "ValidFile", withExtension: "kdbx")
+    let data = try! Data(contentsOf: url!)
+    
+    XCTAssertNoThrow(try KDBXCryptoHandler(withBytes: [UInt8](data), password: "password"))
+    
+    let handler = try! KDBXCryptoHandler(withBytes: [UInt8](data), password: "password")
+    let decodedXML = handler?.payload
+    let refURL = Bundle(for: type(of: self)).url(forResource: "ValidFileXML", withExtension: "xml")
+    let refXML = String(bytes: try! Data(contentsOf: refURL!), encoding: .utf8)
+    
+    XCTAssertEqual(decodedXML, refXML)
   }
 }
