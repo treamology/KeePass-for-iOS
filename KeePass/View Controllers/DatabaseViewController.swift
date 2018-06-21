@@ -75,6 +75,9 @@ class DatabaseViewController: UITableViewController {
         let childGroup = group.childGroups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.groupName.text = childGroup.name
+        if childGroup.name == "" {
+          cell.groupName.text = "(no name)"
+        }
         return cell
       }
       entry = group.entries[indexPath.row - group.childGroups.count]
