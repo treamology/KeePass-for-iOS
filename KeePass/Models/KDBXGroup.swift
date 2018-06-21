@@ -15,6 +15,7 @@ public class KDBXGroup {
   public var iconID: UInt8 = 0
   
   public var entries = [KDBXEntry]()
+  public var childGroups = [KDBXGroup]()
   
   public init(withXML xml: AEXMLElement) {
     // Loads only basic information
@@ -25,10 +26,11 @@ public class KDBXGroup {
     }
     
     for entryXML in xml.children {
-      guard entryXML.name == "Entry" else {
-        continue
+      if entryXML.name == "Entry" {
+        entries.append(KDBXEntry(withXML: entryXML))
+      } else if entryXML.name == "Group" {
+        childGroups.append(KDBXGroup(withXML: entryXML))
       }
-      entries.append(KDBXEntry(withXML: entryXML))
     }
   }
 }
