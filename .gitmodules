@@ -1,0 +1,6 @@
+[submodule "Dependencies/AEXML"]
+	path = Dependencies/AEXML
+	url = https://github.com/tadija/AEXML.git
+[submodule "Dependencies/GzipSwift"]
+	path = Dependencies/GzipSwift
+	url = https://github.com/1024jp/GzipSwift.git
