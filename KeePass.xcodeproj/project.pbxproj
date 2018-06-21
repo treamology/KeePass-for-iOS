@@ -40,6 +40,7 @@
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
+		F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +253,7 @@
 		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
 		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
 		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 				F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */,
 				F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */,
 				F10FE09D20DB21EB0030B033 /* PushFadeAnimator.swift */,
+				F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
+				F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */,
 				F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */,
 				F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */,
 				F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */,

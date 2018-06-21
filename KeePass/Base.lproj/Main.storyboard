@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupCell" textLabel="SA7-hb-vWD" style="IBUITableViewCellStyleDefault" id="sOY-X9-Qi0" userLabel="Group Cell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupCell" textLabel="SA7-hb-vWD" style="IBUITableViewCellStyleDefault" id="sOY-X9-Qi0" userLabel="Group Cell" customClass="GroupTableViewCell" customModule="KeePass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sOY-X9-Qi0" id="Bea-YG-pqr">
@@ -171,6 +171,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupName" destination="SA7-hb-vWD" id="t8G-oz-6EU"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="DatabaseEntryCell" rowHeight="58" id="xJE-kI-gzz" userLabel="Database Entry Cell" customClass="DatabaseEntryTableViewCell" customModule="KeePass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="58"/>
@@ -194,11 +197,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Up2-We-s7g" secondAttribute="trailing" constant="8" id="4jV-ej-E0e"/>
-                                        <constraint firstItem="2TN-sF-nQ2" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leading" constant="16" id="AL1-rp-3lt"/>
+                                        <constraint firstItem="2TN-sF-nQ2" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leadingMargin" id="IQq-Ls-7Bb"/>
                                         <constraint firstItem="2TN-sF-nQ2" firstAttribute="centerY" secondItem="Kre-iO-amX" secondAttribute="centerY" constant="-10.25" id="J6o-Hs-ysm"/>
                                         <constraint firstItem="Up2-We-s7g" firstAttribute="centerY" secondItem="Kre-iO-amX" secondAttribute="centerY" constant="11.75" id="LGo-NV-Afw"/>
                                         <constraint firstAttribute="trailing" secondItem="2TN-sF-nQ2" secondAttribute="trailing" constant="8" id="cw3-tg-poW"/>
-                                        <constraint firstItem="Up2-We-s7g" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leading" constant="16" id="ssu-Qq-uxY"/>
+                                        <constraint firstItem="Up2-We-s7g" firstAttribute="leading" secondItem="Kre-iO-amX" secondAttribute="leadingMargin" id="ru7-M2-pVN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
