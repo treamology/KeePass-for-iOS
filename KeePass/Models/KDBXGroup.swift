@@ -9,31 +9,26 @@
 import Foundation
 import AEXML
 
-public class KDBXGroupDetails {
-  init(withXML xml: AEXMLElement) {
-    
-  }
-}
-
 public class KDBXGroup {
-  var uuid: String
-  var name: String
-  var website: String
-  var iconID: UInt8 = 0
+  public var uuid: String
+  public var name: String
+  public var iconID: UInt8 = 0
   
-  var details: KDBXGroupDetails?
+  public var entries = [KDBXEntry]()
   
   public init(withXML xml: AEXMLElement) {
     // Loads only basic information
     uuid = xml["UUID"].value ?? UUID().uuidString
     name = xml["Name"].value ?? ""
-    website = xml["Website"].value ?? ""
     if let iconIDString = xml["IconID"].value {
       iconID = UInt8(iconIDString) ?? iconID
     }
-  }
-  
-  func initDetails() {
     
+    for entryXML in xml.children {
+      guard entryXML.name == "Entry" else {
+        continue
+      }
+      entries.append(KDBXEntry(withXML: entryXML))
+    }
   }
 }

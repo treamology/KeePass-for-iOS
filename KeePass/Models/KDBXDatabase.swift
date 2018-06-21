@@ -13,18 +13,18 @@ public class KDBXDatabase {
   
   private var dateFormatter: DateFormatter
   
-  var generator: String
-  var name: String
-  var description: String
+  public var generator: String
+  public var name: String
+  public var description: String
   
-  var recycleBinEnabled: Bool = false
+  public var recycleBinEnabled: Bool = false
   
-  var dateOfNameChange: Date = Date()
-  var dateOfUsernameChange: Date = Date()
-  var dateOfMasterKeyChange: Date = Date()
-  var dateOfRecycleBinChange: Date = Date()
+  public var dateOfNameChange: Date = Date()
+  public var dateOfUsernameChange: Date = Date()
+  public var dateOfMasterKeyChange: Date = Date()
+  public var dateOfRecycleBinChange: Date = Date()
   
-  var groups = [KDBXGroup]()
+  public var groups = [KDBXGroup]()
   
   public init(withXML xml: AEXMLDocument) {
     dateFormatter = DateFormatter()
@@ -54,6 +54,9 @@ public class KDBXDatabase {
     }
     
     for groupXML in xml.root["Root"].children {
+      guard groupXML.name == "Group" else {
+        continue
+      }
       groups.append(KDBXGroup(withXML: groupXML))
     }
   }

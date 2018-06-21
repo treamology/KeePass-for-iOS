@@ -11,6 +11,8 @@
 		F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
 		F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXDatabase.swift */; };
 		F10FE09A20DACBC30030B033 /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09920DACBC30030B033 /* KDBXGroup.swift */; };
+		F10FE09C20DAD9590030B033 /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09B20DAD9590030B033 /* KDBXEntry.swift */; };
+		F10FE09E20DB21EB0030B033 /* PushFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09D20DB21EB0030B033 /* PushFadeAnimator.swift */; };
 		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
 		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
@@ -37,7 +39,6 @@
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
-		F1A3533E20D5E7E9000AABB3 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 /* End PBXBuildFile section */
 
@@ -205,6 +206,8 @@
 		F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntryTableViewCell.swift; sourceTree = "<group>"; };
 		F10FE09720DACB270030B033 /* KDBXDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
 		F10FE09920DACBC30030B033 /* KDBXGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
+		F10FE09B20DAD9590030B033 /* KDBXEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
+		F10FE09D20DB21EB0030B033 /* PushFadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushFadeAnimator.swift; sourceTree = "<group>"; };
 		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
@@ -247,7 +250,6 @@
 		F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKeyDerivation.h; sourceTree = "<group>"; };
 		F1A25D2420CC78B4007F0FD1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
-		F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
 		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -300,6 +302,7 @@
 			children = (
 				F10FE09720DACB270030B033 /* KDBXDatabase.swift */,
 				F10FE09920DACBC30030B033 /* KDBXGroup.swift */,
+				F10FE09B20DAD9590030B033 /* KDBXEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			children = (
 				F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */,
 				F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */,
+				F10FE09D20DB21EB0030B033 /* PushFadeAnimator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,7 +458,6 @@
 			children = (
 				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
 				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
-				F1A3533D20D5E7E9000AABB3 /* PasswordViewController.swift */,
 				F179FFEF20D814E500C48FC9 /* SplitViewController.swift */,
 				F10FE08620DAB1860030B033 /* DatabaseViewController.swift */,
 			);
@@ -794,7 +797,6 @@
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
-				F1A3533E20D5E7E9000AABB3 /* PasswordViewController.swift in Sources */,
 				F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */,
 				F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */,
 				F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */,
@@ -802,6 +804,7 @@
 				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
 				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
 				F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */,
+				F10FE09E20DB21EB0030B033 /* PushFadeAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +833,7 @@
 				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
 				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
 				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
+				F10FE09C20DAD9590030B033 /* KDBXEntry.swift in Sources */,
 				F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
