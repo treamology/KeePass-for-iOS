@@ -9,12 +9,17 @@
 import UIKit
 import KeePassSupport
 
-class DatabaseViewController: UITableViewController {
+class DatabaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  @IBOutlet var passwordCopiedView: UIView!
+  @IBOutlet var tableView: UITableView!
   
   var document: KDBXDocument?
   var database: KDBXDatabase!
   
   weak var baseGroup: KDBXGroup!
+  
+  var playingAnimation = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,11 +30,38 @@ class DatabaseViewController: UITableViewController {
     } else {
       navigationItem.title = baseGroup.name
     }
+    
+    passwordCopiedView.isHidden = true
+    passwordCopiedView.alpha = 0
+    passwordCopiedView.layer.cornerRadius = 8
+  }
+  
+  func fadeawayAnimation() {
+    passwordCopiedView.layer.removeAllAnimations()
+    UIView.animate(withDuration: 0.1, delay: 2, options: .curveLinear, animations: {
+      self.passwordCopiedView.alpha = 0
+    }, completion: { (finished) in
+      if finished {
+        self.passwordCopiedView.isHidden = true
+        self.playingAnimation = false
+      }
+    })
+  }
+  
+  func passwordCopiedPopup() {
+    playingAnimation = true
+    passwordCopiedView.isHidden = false
+    UIView.animate(withDuration: 0.1, animations: {
+      self.passwordCopiedView.alpha = 1
+    }) { (finished) in
+      self.fadeawayAnimation()
+    }
   }
   
   // MARK: - Table View
   
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    // Child groups display at the top of the list, while entries are always after.
     let groupHeight: CGFloat = 44
     let entryHeight: CGFloat = 58
     if indexPath.section == 0 {
@@ -42,11 +74,11 @@ class DatabaseViewController: UITableViewController {
     return entryHeight
   }
   
-  override func numberOfSections(in tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return baseGroup.childGroups.count + 1
   }
   
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
       return nil
     }
@@ -54,7 +86,7 @@ class DatabaseViewController: UITableViewController {
     return group.name
   }
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     var group: KDBXGroup!
     var count: Int!
     if section == 0 {
@@ -68,7 +100,7 @@ class DatabaseViewController: UITableViewController {
     return count
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let entry: KDBXEntry!
     if indexPath.section == 0 {
       entry = baseGroup.entries[indexPath.row]
@@ -93,13 +125,21 @@ class DatabaseViewController: UITableViewController {
     return cell
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath)
     if cell?.reuseIdentifier == "GroupCell" {
+      // If the user selects a group, drill into it.
       let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
       let vc = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
       vc.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
       navigationController?.pushViewController(vc, animated: true)
+    } else {
+      if playingAnimation {
+        fadeawayAnimation()
+      } else {
+        passwordCopiedPopup()
+      }
+      tableView.deselectRow(at: indexPath, animated: true)
     }
   }
 }
