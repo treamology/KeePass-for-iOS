@@ -11,7 +11,7 @@ import KeePassSupport
 
 class DatabaseViewController: UITableViewController {
   
-  var document: KDBXDocument!
+  var document: KDBXDocument?
   var database: KDBXDatabase!
   
   weak var baseGroup: KDBXGroup!
@@ -19,9 +19,12 @@ class DatabaseViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationItem.title = document.localizedName
-    
-    baseGroup = database.groups[0]
+    if baseGroup == nil {
+      navigationItem.title = document!.localizedName
+      baseGroup = database.groups[0]
+    } else {
+      navigationItem.title = baseGroup.name
+    }
   }
   
   // MARK: - Table View
@@ -90,4 +93,13 @@ class DatabaseViewController: UITableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath)
+    if cell?.reuseIdentifier == "GroupCell" {
+      let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+      let vc = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
+      vc.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
+      navigationController?.pushViewController(vc, animated: true)
+    }
+  }
 }
