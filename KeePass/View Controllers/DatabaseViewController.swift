@@ -19,7 +19,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   
   weak var baseGroup: KDBXGroup!
   
-  var playingAnimation = false
+  var copiedViewAnimating = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,24 +37,29 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   }
   
   func fadeawayAnimation() {
-    passwordCopiedView.layer.removeAllAnimations()
     UIView.animate(withDuration: 0.1, delay: 2, options: .curveLinear, animations: {
       self.passwordCopiedView.alpha = 0
     }, completion: { (finished) in
       if finished {
         self.passwordCopiedView.isHidden = true
-        self.playingAnimation = false
+        self.copiedViewAnimating = false
       }
     })
   }
   
   func passwordCopiedPopup() {
-    playingAnimation = true
     passwordCopiedView.isHidden = false
-    UIView.animate(withDuration: 0.1, animations: {
-      self.passwordCopiedView.alpha = 1
-    }) { (finished) in
-      self.fadeawayAnimation()
+    if !copiedViewAnimating {
+      copiedViewAnimating = true
+      UIView.animate(withDuration: 0.1, animations: {
+        self.passwordCopiedView.alpha = 1
+      }) { (finished) in
+        self.fadeawayAnimation()
+      }
+    } else {
+      passwordCopiedView.layer.removeAllAnimations()
+      passwordCopiedView.alpha = 1
+      fadeawayAnimation()
     }
   }
   
@@ -135,21 +140,9 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath)
-//    if cell?.reuseIdentifier == "GroupCell" {
-      // If the user selects a group, drill into it.
-//      performSegue(withIdentifier: "DrillDownSegue", sender: self)
-      // let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//      let vc = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
-//      vc.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
-//      navigationController?.pushViewController(vc, animated: true)
     if cell?.reuseIdentifier == "DatabaseEntryCell" {
-      if playingAnimation {
-        fadeawayAnimation()
-      } else {
-        passwordCopiedPopup()
-      }
-      
-    } 
+      passwordCopiedPopup()
+    }
     tableView.deselectRow(at: indexPath, animated: true)
   }
 }
