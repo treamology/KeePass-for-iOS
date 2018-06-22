@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="126"/>
+            <point key="canvasLocation" x="708" y="128"/>
         </scene>
         <!--Database View Controller-->
         <scene sceneID="oUR-3b-oSw">
@@ -180,6 +180,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="groupName" destination="Ikf-jG-Ww9" id="YuD-EK-Aul"/>
+                                            <segue destination="c0k-Gl-FDm" kind="show" identifier="DrillDownSegue" id="raU-JV-OIw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="DatabaseEntryCell" rowHeight="58" id="lQv-zK-R2j" userLabel="Database Entry Cell" customClass="DatabaseEntryTableViewCell" customModule="KeePass" customModuleProvider="target">
@@ -225,9 +226,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-Zp-0Ls">
                                 <rect key="frame" x="77.5" y="611" width="220" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password Copied!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAc-WH-kto">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Copied!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAc-WH-kto">
                                         <rect key="frame" x="36" y="6" width="148" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -235,8 +235,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="VAc-WH-kto" firstAttribute="centerY" secondItem="g1e-Zp-0Ls" secondAttribute="centerY" id="6Ty-R8-B3v"/>
                                     <constraint firstAttribute="height" constant="32" id="KuZ-ew-mKN"/>
                                     <constraint firstAttribute="width" constant="220" id="Z6R-0X-lkO"/>
+                                    <constraint firstItem="VAc-WH-kto" firstAttribute="centerX" secondItem="g1e-Zp-0Ls" secondAttribute="centerX" id="neB-d6-fxZ"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="eUF-a3-waa"/>
                             </view>
@@ -250,6 +252,7 @@
                             <constraint firstAttribute="bottom" secondItem="g1e-Zp-0Ls" secondAttribute="bottom" constant="24" id="jVO-qz-z5n"/>
                             <constraint firstItem="IWq-bP-xjW" firstAttribute="trailing" secondItem="KUs-1R-QeN" secondAttribute="trailing" id="vNN-6g-8pm"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="h89-si-yZv"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -259,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMZ-6y-YHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1490" y="128"/>
+            <point key="canvasLocation" x="1494" y="127"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

@@ -58,6 +58,14 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "DrillDownSegue" {
+      let indexPath = tableView.indexPathForSelectedRow!
+      let dest = segue.destination as! DatabaseViewController
+      dest.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
+    }
+  }
+  
   // MARK: - Table View
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -127,19 +135,21 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath)
-    if cell?.reuseIdentifier == "GroupCell" {
+//    if cell?.reuseIdentifier == "GroupCell" {
       // If the user selects a group, drill into it.
-      let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-      let vc = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
-      vc.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
-      navigationController?.pushViewController(vc, animated: true)
-    } else {
+//      performSegue(withIdentifier: "DrillDownSegue", sender: self)
+      // let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//      let vc = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
+//      vc.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
+//      navigationController?.pushViewController(vc, animated: true)
+    if cell?.reuseIdentifier == "DatabaseEntryCell" {
       if playingAnimation {
         fadeawayAnimation()
       } else {
         passwordCopiedPopup()
       }
-      tableView.deselectRow(at: indexPath, animated: true)
-    }
+      
+    } 
+    tableView.deselectRow(at: indexPath, animated: true)
   }
 }
