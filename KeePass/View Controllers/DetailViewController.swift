@@ -180,7 +180,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   // MARK: - Keyboard Notifications
   @objc func keyboardAppeared(notification: Notification) {
     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-      updateTableViewContentInset(animated: true, offset: 0)
+      let distToTop = tableView!.contentInset.top
+      let offset = min(keyboardSize.height, distToTop)
+      updateTableViewContentInset(animated: true, offset: distToTop - offset)
     }
   }
   
