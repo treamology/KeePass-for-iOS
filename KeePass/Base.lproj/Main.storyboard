@@ -143,7 +143,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Database" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="tableView" destination="edv-Gp-ak6" id="DFj-DH-foa"/>
+                        <outlet property="tableView" destination="edv-Gp-ak6" id="0Zz-Oq-GMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -227,7 +227,7 @@
                                 <rect key="frame" x="77.5" y="611" width="220" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Copied!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAc-WH-kto">
-                                        <rect key="frame" x="36" y="6" width="148" height="21"/>
+                                        <rect key="frame" x="36" y="5.5" width="148" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -349,6 +349,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

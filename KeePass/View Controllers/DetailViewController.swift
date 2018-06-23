@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   var navigationParent: UINavigationController!
   
-  @IBOutlet var tableView: UITableView?
+  @IBOutlet var tableView: UITableView!
   var passwordCell: PasswordTableViewCell?
   
   var resolvedURL: URL!
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   func configureView() {
     // Update the user interface for the detail item.
     if let detail = detailItem {
-      view.isHidden = false
+      tableView.isHidden = false
       
       guard let resolvedURL = FileManagement.resolveBookmark(bookmark: detail, persistenceIndex: nil) else {
         print("Couldn't resolve the bookmark.")
@@ -60,7 +60,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
       self.navigationItem.leftBarButtonItem?.isEnabled = true
       self.navigationItem.leftBarButtonItem?.tintColor = nil
     } else {
-      view.isHidden = true
+      tableView.isHidden = true
       
       self.navigationItem.title = ""
       self.navigationItem.leftBarButtonItem?.isEnabled = false
@@ -83,7 +83,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   var detailItem: Data? {
     didSet {
       // Update the view.
-      configureView()
+      if isViewLoaded {
+        configureView()
+      }
     }
   }
   
