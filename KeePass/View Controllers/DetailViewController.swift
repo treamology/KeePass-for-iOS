@@ -9,7 +9,7 @@
 import UIKit
 import KeePassSupport
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var navigationParent: UINavigationController!
   
@@ -33,7 +33,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappeared), name: UIResponder.keyboardWillHideNotification, object: nil)
     
     navigationParent = self.parent as? UINavigationController
-    navigationParent.delegate = self
   }
   
   override func viewWillLayoutSubviews() {
@@ -190,14 +189,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   @objc func keyboardDisappeared(notification: Notification) {
     updateTableViewContentInset(animated: true)
-  }
-  
-  // MARK: - Navigation Controller
-  func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    if toVC is DatabaseViewController {
-      return PushFadeAnimator()
-    }
-    return nil
   }
 }
 
