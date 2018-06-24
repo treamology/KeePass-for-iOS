@@ -69,7 +69,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   func unlockDatabase() {
     // Swap out view controllers
-    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let storyboard = UIStoryboard(name: DatabaseViewController.STORYBOARD_FILE, bundle: Bundle.main)
     let databaseVC = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
     databaseVC.document = document
     databaseVC.database = database

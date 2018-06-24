@@ -11,6 +11,8 @@
 		F1044C7220DFF78C003D65EC /* CredentialProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1044C7120DFF78C003D65EC /* CredentialProviderViewController.swift */; };
 		F1044C7520DFF78C003D65EC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C7320DFF78C003D65EC /* MainInterface.storyboard */; };
 		F1044C7A20DFF78C003D65EC /* KeePass AutoFill Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F1044C8C20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
+		F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
 		F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
 		F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
 		F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXDatabase.swift */; };
@@ -234,6 +236,7 @@
 		F1044C7420DFF78C003D65EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F1044C7620DFF78C003D65EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1044C7720DFF78C003D65EC /* KeePass_AutoFill_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass_AutoFill_Extension.entitlements; sourceTree = "<group>"; };
+		F1044C8B20DFFE16003D65EC /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
 		F10FE08620DAB1860030B033 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
 		F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntryTableViewCell.swift; sourceTree = "<group>"; };
 		F10FE09720DACB270030B033 /* KDBXDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
@@ -417,6 +420,7 @@
 				F16AABC620D2B304009807E5 /* FileManagement.swift */,
 				F18FC50820D47D200070301A /* Persistence.swift */,
 				F16D5BA620CC6956008B6F12 /* Main.storyboard */,
+				F1044C8B20DFFE16003D65EC /* Shared.storyboard */,
 				F16D5BA920CC6957008B6F12 /* Assets.xcassets */,
 				F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */,
 				F18BB45320D4074400F92235 /* Default.xml */,
@@ -838,6 +842,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1044C7520DFF78C003D65EC /* MainInterface.storyboard in Resources */,
+				F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */,
+				F1044C8C20DFFE16003D65EC /* Shared.storyboard in Resources */,
 				F16D5BAA20CC6957008B6F12 /* Assets.xcassets in Resources */,
 				F16D5BA820CC6956008B6F12 /* Main.storyboard in Resources */,
 				F18BB45420D4074400F92235 /* Default.xml in Resources */,

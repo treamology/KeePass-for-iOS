@@ -11,6 +11,8 @@ import KeePassSupport
 
 class DatabaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
+  static let STORYBOARD_FILE = "Shared"
+  
   @IBOutlet var passwordCopiedView: UIView!
   @IBOutlet var tableView: UITableView!
   
