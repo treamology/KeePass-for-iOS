@@ -177,6 +177,10 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   // MARK: - Document Picker
   func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     let url = urls[0]
+    openDocument(atURL: url)
+  }
+  
+  func openDocument(atURL url: URL) {
     let canAccess = url.startAccessingSecurityScopedResource()
     if canAccess {
       do {

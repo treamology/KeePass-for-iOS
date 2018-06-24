@@ -20,11 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
     
     if let lastOpen = Persistence.lastOpenFile {
-      let storyboard = UIStoryboard(name: DetailViewController.STORYBOARD_FILE, bundle: Bundle.main)
-      let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-      vc.detailItem = lastOpen
-      let list = [vc]
-      navigationController.setViewControllers(list, animated: false)
+      if launchOptions?[UIApplication.LaunchOptionsKey.url] == nil {
+        let storyboard = UIStoryboard(name: DetailViewController.STORYBOARD_FILE, bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.detailItem = lastOpen
+        let list = [vc]
+        navigationController.setViewControllers(list, animated: false)
+      }
     }
     
     splitViewController.delegate = self
@@ -38,6 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // Check if we're logged into iCloud or not
     FileManagement.checkCloudStatus()
     
+    return true
+  }
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    let splitViewController = window!.rootViewController as! UISplitViewController
+    let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+    navigationController.popToRootViewController(animated: false)
+    
+    let masterNavigator = splitViewController.viewControllers[0] as! UINavigationController
+    let masterController = masterNavigator.viewControllers[0] as! MasterViewController
+    masterController.openDocument(atURL: url)
     return true
   }
   
