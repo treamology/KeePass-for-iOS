@@ -13,6 +13,8 @@
 		F1044C7A20DFF78C003D65EC /* KeePass AutoFill Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F1044C8C20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
 		F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
+		F1044C8E20DFFF57003D65EC /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
+		F1044C8F20DFFF5B003D65EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
 		F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
 		F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
 		F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXDatabase.swift */; };
@@ -44,6 +46,13 @@
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
 		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
+		F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
+		F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
+		F1A389C020DFFFBF00E6DE46 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
+		F1A389C120DFFFC200E6DE46 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */; };
+		F1A389C220DFFFDF00E6DE46 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
+		F1A389C320DFFFEB00E6DE46 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
+		F1A389C420DFFFF400E6DE46 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
 		F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */; };
 		F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */; };
@@ -298,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */,
 				F1044C6F20DFF78C003D65EC /* AuthenticationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -897,7 +907,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A389C420DFFFF400E6DE46 /* Persistence.swift in Sources */,
+				F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */,
+				F1044C8F20DFFF5B003D65EC /* DetailViewController.swift in Sources */,
+				F1A389C220DFFFDF00E6DE46 /* KDBXDocument.swift in Sources */,
 				F1044C7220DFF78C003D65EC /* CredentialProviderViewController.swift in Sources */,
+				F1A389C320DFFFEB00E6DE46 /* FileManagement.swift in Sources */,
+				F1A389C120DFFFC200E6DE46 /* GroupTableViewCell.swift in Sources */,
+				F1044C8E20DFFF57003D65EC /* DatabaseViewController.swift in Sources */,
+				F1A389C020DFFFBF00E6DE46 /* DatabaseEntryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
