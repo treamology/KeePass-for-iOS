@@ -16,7 +16,8 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   var detailViewController: DetailViewController? = nil
   
   var filePickerController: UIDocumentPickerViewController!
-  var selectedIndex = 0
+  
+  var isOpeningURL = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,6 +46,13 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+    
+    // If we try to perform a segue before the view appears, it doesn't work, so we need a flag
+    // to do it.
+    if isOpeningURL {
+      performSegue(withIdentifier: "showDetail", sender: self)
+      isOpeningURL = false
+    }
     
     super.viewWillAppear(animated)
   }
@@ -92,8 +100,8 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       
       FileManagement.createNewDatabase(name: name, completed: {(success: Bool) in
         if success {
-          self.selectedIndex = Persistence.bookmarkedFiles.count - 1
           self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+          self.tableView.selectRow(at: IndexPath(row: Persistence.bookmarkedFiles.count - 1, section: 0), animated: true, scrollPosition: .none)
           self.performSegue(withIdentifier: "showDetail", sender: self)
           self.view.isUserInteractionEnabled = true
         }
@@ -113,6 +121,7 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showDetail" {
       let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+      let selectedIndex = tableView.indexPathForSelectedRow!.row
       controller.detailItem = Persistence.bookmarkedFiles[selectedIndex]
       controller.navigationItem.leftItemsSupplementBackButton = true
       Persistence.lastOpenFile = Persistence.bookmarkedFiles[selectedIndex]
@@ -165,11 +174,6 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
     }
   }
   
-  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-    selectedIndex = indexPath.row
-    return indexPath
-  }
-  
 //  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    tableView.deselectRow(at: indexPath, animated: true)
 //  }
@@ -190,8 +194,8 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
         return
       }
       
-      selectedIndex = Persistence.bookmarkedFiles.count - 1
       tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+      tableView.selectRow(at: IndexPath(row: Persistence.bookmarkedFiles.count - 1, section: 0), animated: true, scrollPosition: .none)
       performSegue(withIdentifier: "showDetail", sender: self)
     }
     url.stopAccessingSecurityScopedResource()

@@ -145,7 +145,12 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     if cell?.reuseIdentifier == "DatabaseEntryCell" {
       passwordCopiedPopup()
       
-      let group = baseGroup.childGroups[indexPath.section - 1]
+      let group: KDBXGroup!
+      if indexPath.section == 0 {
+        group = baseGroup
+      } else {
+        group = baseGroup.childGroups[indexPath.section - 1]
+      }
       let entry = group.entries[indexPath.row - group.childGroups.count]
       let pasteboard = UIPasteboard.general
       pasteboard.string = entry.password

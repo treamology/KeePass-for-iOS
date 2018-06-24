@@ -46,10 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
   func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     let splitViewController = window!.rootViewController as! UISplitViewController
     let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-    navigationController.popToRootViewController(animated: false)
+    
     
     let masterNavigator = splitViewController.viewControllers[0] as! UINavigationController
     let masterController = masterNavigator.viewControllers[0] as! MasterViewController
+    masterController.isOpeningURL = true
+    navigationController.popToRootViewController(animated: false)
     masterController.openDocument(atURL: url)
     return true
   }
