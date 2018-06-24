@@ -18,10 +18,22 @@ class Persistence {
   enum PersistenceKey: String {
     case lastUpdate, bookmarkedFiles, storageInitialized
   }
+  public enum LocalPersistenceKey: String {
+    case lastOpenFile
+  }
   
   static var bookmarkedFiles: [Data] {
     get {
       return UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as! [Data]
+    }
+  }
+  
+  static var lastOpenFile: Data? {
+    get {
+      return UserDefaults.standard.data(forKey: LocalPersistenceKey.lastOpenFile.rawValue)
+    }
+    set {
+      setLocalOnlyValue(object: newValue, forKey: LocalPersistenceKey.lastOpenFile.rawValue)
     }
   }
   
@@ -69,6 +81,10 @@ class Persistence {
     UserDefaults.standard.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
     NSUbiquitousKeyValueStore.default.set(object, forKey: key)
     NSUbiquitousKeyValueStore.default.set(NSDate.timeIntervalSinceReferenceDate, forKey: PersistenceKey.lastUpdate.rawValue)
+  }
+  
+  public static func setLocalOnlyValue(object: Any?, forKey key: String) {
+    UserDefaults.standard.set(object, forKey: key)
   }
   
   @objc private static func cloudDataChanged(notification: NSNotification) {
@@ -137,7 +153,7 @@ class Persistence {
         }
       }
     default:
-      // This really shouldn't happen...
+      // This really shouldn't happen, we're not storing that much.
       return
     }
   }

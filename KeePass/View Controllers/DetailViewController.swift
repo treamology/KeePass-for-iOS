@@ -11,6 +11,8 @@ import KeePassSupport
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
+  static let STORYBOARD_FILE = "Shared"
+  
   var navigationParent: UINavigationController!
   
   @IBOutlet var tableView: UITableView!

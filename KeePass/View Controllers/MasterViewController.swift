@@ -114,8 +114,8 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
     if segue.identifier == "showDetail" {
       let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
       controller.detailItem = Persistence.bookmarkedFiles[selectedIndex]
-      controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
       controller.navigationItem.leftItemsSupplementBackButton = true
+      Persistence.lastOpenFile = Persistence.bookmarkedFiles[selectedIndex]
     }
   }
   
