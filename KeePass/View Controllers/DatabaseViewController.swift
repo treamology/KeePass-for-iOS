@@ -142,6 +142,11 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     let cell = tableView.cellForRow(at: indexPath)
     if cell?.reuseIdentifier == "DatabaseEntryCell" {
       passwordCopiedPopup()
+      
+      let group = baseGroup.childGroups[indexPath.section - 1]
+      let entry = group.entries[indexPath.row - group.childGroups.count]
+      let pasteboard = UIPasteboard.general
+      pasteboard.string = entry.password
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
