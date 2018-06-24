@@ -46,7 +46,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   func configureView() {
     // Update the user interface for the detail item.
     if let detail = detailItem {
-      tableView.isHidden = false
+      if isViewLoaded {
+        tableView.isHidden = false
+      }
       
       guard let resolvedURL = FileManagement.resolveBookmark(bookmark: detail, persistenceIndex: nil) else {
         print("Couldn't resolve the bookmark.")
@@ -84,9 +86,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   var detailItem: Data? {
     didSet {
       // Update the view.
-      if isViewLoaded {
-        configureView()
-      }
+      configureView()
     }
   }
   
