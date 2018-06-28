@@ -42,6 +42,10 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
     filePickerController = UIDocumentPickerViewController(documentTypes:["org.keepassx.kdbx"],
                                                           in: .open)
     filePickerController.delegate = self
+    
+    #if DEBUG
+    addDebugUI()
+    #endif
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +105,7 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       FileManagement.createNewDatabase(name: name, completed: {(success: Bool) in
         if success {
           self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
-          self.tableView.selectRow(at: IndexPath(row: Persistence.bookmarkedFiles.count - 1, section: 0), animated: true, scrollPosition: .none)
+          self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
           self.performSegue(withIdentifier: "showDetail", sender: self)
           self.view.isUserInteractionEnabled = true
         }
@@ -174,10 +178,6 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
     }
   }
   
-//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    tableView.deselectRow(at: indexPath, animated: true)
-//  }
-  
   // MARK: - Document Picker
   func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     let url = urls[0]
@@ -195,10 +195,25 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       }
       
       tableView.reloadSections(IndexSet(integer: 0), with: .fade)
-      tableView.selectRow(at: IndexPath(row: Persistence.bookmarkedFiles.count - 1, section: 0), animated: true, scrollPosition: .none)
+      tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
       performSegue(withIdentifier: "showDetail", sender: self)
     }
     url.stopAccessingSecurityScopedResource()
+  }
+  
+  // MARK: - Debugging UI
+  func addDebugUI() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Debug...", style: .plain, target: self, action: #selector(debugAlertSheet))
+  }
+  
+  @objc func debugAlertSheet() {
+    let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    sheet.addAction(UIAlertAction(title: "Clear bookmarked files", style: .default, handler: { (action) in
+      Persistence.removeAllBookmarks()
+      self.tableView.reloadData()
+    }))
+    sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    present(sheet, animated: true, completion: nil)
   }
 }
 

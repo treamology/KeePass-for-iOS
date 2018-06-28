@@ -154,7 +154,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell = tableView.dequeueReusableCell(withIdentifier: "UnlockCell", for: indexPath)
       }
     } else {
-      // This will never happen.
+      // This will never happen (unless I screw something up).
       cell = UITableViewCell()
     }
     return cell

@@ -58,7 +58,8 @@ class Persistence {
   
   static func addFileBookmark(bookmark: NSData) {
     var currentBookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue)
-    currentBookmarks?.append(bookmark)
+    //currentBookmarks?.append(bookmark)
+    currentBookmarks?.insert(bookmark, at: 0)
     setValueLocally(object: currentBookmarks, forKey: PersistenceKey.bookmarkedFiles.rawValue)
   }
   
@@ -66,6 +67,10 @@ class Persistence {
     var currentBookmarks = UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue)
     currentBookmarks?.remove(at: index)
     setValueLocally(object: currentBookmarks, forKey: PersistenceKey.bookmarkedFiles.rawValue)
+  }
+  
+  static func removeAllBookmarks() {
+    setValueLocally(object: [], forKey: PersistenceKey.bookmarkedFiles.rawValue)
   }
   
   static func replaceFileBookmark(with bookmark: Data, index: Int) {
