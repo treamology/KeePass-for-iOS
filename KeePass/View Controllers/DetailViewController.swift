@@ -11,7 +11,7 @@ import KeePassSupport
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  static let STORYBOARD_FILE = "Shared"
+  static let STORYBOARD_FILE = "Main"
   
   var navigationParent: UINavigationController!
   
@@ -71,18 +71,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
   }
   
-  func unlockDatabase() {
-    // Swap out view controllers
-    let storyboard = UIStoryboard(name: DatabaseViewController.STORYBOARD_FILE, bundle: Bundle.main)
-    let databaseVC = storyboard.instantiateViewController(withIdentifier: "DatabaseViewController") as! DatabaseViewController
-    databaseVC.document = document
-    databaseVC.database = database
-    
-    var viewControllers = self.navigationParent.viewControllers
-    viewControllers[viewControllers.count - 1] = databaseVC
-    self.navigationParent.setViewControllers(viewControllers, animated: false)
-  }
-  
   var detailItem: Data? {
     didSet {
       // Update the view.
@@ -91,6 +79,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   }
   
   // MARK: - User Actions
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "UnlockSegue" {
+      // This means we're unlocking the database, so give the new view controller the information
+      // it needs.
+      let destination = segue.destination as! DatabaseViewController
+      destination.document = document
+      destination.database = database
+    }
+  }
   
   @IBAction func unlockButtonPressed() {
     document = KDBXDocument(fileURL: resolvedURL)
@@ -103,7 +101,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     document.open(completionHandler: { (success) in
       if success {
         self.database = KDBXDatabase(withXML: document.parsedData!)
-        self.unlockDatabase()
+        self.performSegue(withIdentifier: "UnlockSegue", sender: self)
       } else {
         let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -178,6 +176,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         table.contentInset = edgeInsets
       }
     }
+  }
+  
+  func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+//    let storyboard = UIStoryboard(name: EntryDetailsViewController.STORYBOARD_FILE, bundle: Bundle.main)
+//    let detailsVC = storyboard.instantiateViewController(withIdentifier: "EntryDetailsViewController")
+//    present(detailsVC, animated: true, completion: nil)
   }
   
   // MARK: - Keyboard Notifications

@@ -137,6 +137,7 @@
         <!--Database View Controller-->
         <scene sceneID="V5Z-QH-rF5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpU-xe-0cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DatabaseViewController" id="OqD-m3-SaQ" customClass="DatabaseViewController" customModule="KeePass" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vxt-hr-oub">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -244,7 +245,6 @@
                         <outlet property="tableView" destination="mnP-pX-KQ9" id="pV2-gG-ubg"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wpU-xe-0cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1494" y="127"/>
         </scene>
