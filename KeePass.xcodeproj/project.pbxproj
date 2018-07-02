@@ -49,6 +49,7 @@
 		F18F9EF720E819BF001B813B /* TextboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */; };
 		F18F9EFB20E84AA6001B813B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BA620CC6956008B6F12 /* Main.storyboard */; };
 		F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */; };
+		F18F9F0420E998A1001B813B /* EditableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0320E998A1001B813B /* EditableEntry.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
 		F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
@@ -289,6 +290,7 @@
 		F18F9EF420E81715001B813B /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextboxTableViewCell.swift; sourceTree = "<group>"; };
 		F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceOnNavigationStackSegue.swift; sourceTree = "<group>"; };
+		F18F9F0320E998A1001B813B /* EditableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableEntry.swift; sourceTree = "<group>"; };
 		F18FC50820D47D200070301A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				F10FE09720DACB270030B033 /* KDBXDatabase.swift */,
 				F10FE09920DACBC30030B033 /* KDBXGroup.swift */,
 				F10FE09B20DAD9590030B033 /* KDBXEntry.swift */,
+				F18F9F0320E998A1001B813B /* EditableEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -981,6 +984,7 @@
 			files = (
 				F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */,
 				F10FE09A20DACBC30030B033 /* KDBXGroup.swift in Sources */,
+				F18F9F0420E998A1001B813B /* EditableEntry.swift in Sources */,
 				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
 				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
 				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,

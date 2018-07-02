@@ -6,6 +6,7 @@
 //  Copyright © 2018 Donny Lawrence. All rights reserved.
 //
 
+import KeePassSupport
 import UIKit
 
 class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
@@ -83,37 +84,27 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   }
   
   func askForDatabaseName() {
-    let alert = UIAlertController(title: "New Database",
-                                  message: "Give your database a name:",
-                                  preferredStyle: .alert)
-    alert.addTextField(configurationHandler: nil)
-    alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction) in
-    let name = alert.textFields![0].text!
-    if name == "" {
-        let failedAlert = UIAlertController(title: "The database name cannot be blank.",
-                                            message: nil,
-                                            preferredStyle: .alert)
-        failedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(failedAlert, animated: true, completion: nil)
-        return
-      }
-      
-      // While the database is being created, disable user interaction
-      // so the user won't select something else
-      self.view.isUserInteractionEnabled = false
-      
-      FileManagement.createNewDatabase(name: name, completed: {(success: Bool) in
-        if success {
-          self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
-          self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
-          self.performSegue(withIdentifier: "showDetail", sender: self)
-          self.view.isUserInteractionEnabled = true
-        }
-      })
-      return
-    }))
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-    present(alert, animated: true, completion: nil)
+    performSegue(withIdentifier: "NewDatabase", sender: self)
+//    let alert = UIAlertController(title: "New Database",
+//                                  message: "Give your database a name:",
+//                                  preferredStyle: .alert)
+//    alert.addTextField(configurationHandler: nil)
+//    alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction) in
+//    let name = alert.textFields![0].text!
+//    if name == "" {
+//        let failedAlert = UIAlertController(title: "The database name cannot be blank.",
+//                                            message: nil,
+//                                            preferredStyle: .alert)
+//        failedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        self.present(failedAlert, animated: true, completion: nil)
+//        return
+//      }
+//
+//
+//      return
+//    }))
+//    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//    present(alert, animated: true, completion: nil)
   }
   
   func importDatabaseFromBrowser() {
@@ -129,7 +120,35 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       controller.detailItem = Persistence.bookmarkedFiles[selectedIndex]
       controller.navigationItem.leftItemsSupplementBackButton = true
       Persistence.lastOpenFile = Persistence.bookmarkedFiles[selectedIndex]
+    } else if segue.identifier == "NewDatabase" {
+      let controller = (segue.destination as! UINavigationController).topViewController as! EntryDetailsViewController
+      controller.entryType = .Database
+      controller.entry = KDBXDatabase()
     }
+  }
+  
+  @IBAction func doneCreating(segue: UIStoryboardSegue) {
+    guard let controller = segue.source as? EntryDetailsViewController else {
+      print("This segue can only be used with an EntryDetailsViewController")
+      return
+    }
+    
+    // While the database is being created, disable user interaction
+    // so the user won't select something else
+    self.view.isUserInteractionEnabled = false
+    
+    FileManagement.createNewDatabase(name: controller.entry.currentEntryValues[0]!, completed: {(success: Bool) in
+      if success {
+        self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
+        self.performSegue(withIdentifier: "showDetail", sender: self)
+        self.view.isUserInteractionEnabled = true
+      }
+    })
+  }
+  
+  @IBAction func cancelCreating(segue: UIStoryboardSegue) {
+    
   }
   
   // MARK: - Table View

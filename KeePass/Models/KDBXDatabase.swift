@@ -9,13 +9,13 @@
 import Foundation
 import AEXML
 
-public class KDBXDatabase {
+public class KDBXDatabase: EditableEntry {
   
   private var dateFormatter: DateFormatter
   
-  public var generator: String
-  public var name: String
-  public var description: String
+  public var generator: String = "KeePass for iOS"
+  public var name: String = "Database"
+  public var description: String = ""
   
   public var recycleBinEnabled: Bool = false
   
@@ -26,9 +26,13 @@ public class KDBXDatabase {
   
   public var groups = [KDBXGroup]()
   
-  public init(withXML xml: AEXMLDocument) {
+  public init() {
     dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
+  }
+  
+  public convenience init(withXML xml: AEXMLDocument) {
+    self.init()
     
     let meta = xml.root["Meta"]
     
@@ -58,6 +62,20 @@ public class KDBXDatabase {
         continue
       }
       groups.append(KDBXGroup(withXML: groupXML))
+    }
+  }
+  
+  // MARK: - Editable Entry Options
+  public var entryNames = [
+    "Name",
+    "Description"
+  ]
+  
+  public var currentEntryValues: [String?] {
+    get {
+      return [
+        name, description
+      ]
     }
   }
 }
