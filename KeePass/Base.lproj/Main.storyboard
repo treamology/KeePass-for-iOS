@@ -375,7 +375,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="Sbj-Cf-or6" id="Lfq-9S-07A"/>
                                             <outlet property="siteLabel" destination="qqT-R1-V2Y" id="6jL-46-cpJ"/>
-                                            <segue destination="8cf-Ow-ydt" kind="presentation" trigger="accessoryAction" id="ERk-n4-FRe"/>
+                                            <segue destination="8cf-Ow-ydt" kind="presentation" identifier="EditDatabase" trigger="accessoryAction" id="ERk-n4-FRe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -445,7 +445,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vvb-fc-9nv"/>
+        <segue reference="ERk-n4-FRe"/>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

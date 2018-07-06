@@ -71,6 +71,12 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
       let dest = segue.destination as! DatabaseViewController
       dest.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
     }
+    #if !EXTENSION
+    if segue.identifier == "EditDatabase" {
+      let controller = (segue.destination as! UINavigationController).topViewController as! EntryDetailsViewController
+      controller.entryType = .Password
+    }
+    #endif
   }
   
   // MARK: - Table View
@@ -137,6 +143,9 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     let cell = tableView.dequeueReusableCell(withIdentifier: "DatabaseEntryCell", for: indexPath) as! DatabaseEntryTableViewCell
     cell.nameLabel!.text = entry.name
     cell.siteLabel!.text = entry.username
+    #if EXTENSION
+    cell.accessoryType = .none
+    #endif
     return cell
   }
   
