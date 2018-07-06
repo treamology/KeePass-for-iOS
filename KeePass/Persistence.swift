@@ -24,7 +24,7 @@ class Persistence {
   
   static var bookmarkedFiles: [Data] {
     get {
-      return UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as! [Data]
+      return UserDefaults.standard.array(forKey: PersistenceKey.bookmarkedFiles.rawValue) as? [Data] ?? []
     }
   }
   

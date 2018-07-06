@@ -85,26 +85,6 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   
   func askForDatabaseName() {
     performSegue(withIdentifier: "NewDatabase", sender: self)
-//    let alert = UIAlertController(title: "New Database",
-//                                  message: "Give your database a name:",
-//                                  preferredStyle: .alert)
-//    alert.addTextField(configurationHandler: nil)
-//    alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction) in
-//    let name = alert.textFields![0].text!
-//    if name == "" {
-//        let failedAlert = UIAlertController(title: "The database name cannot be blank.",
-//                                            message: nil,
-//                                            preferredStyle: .alert)
-//        failedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        self.present(failedAlert, animated: true, completion: nil)
-//        return
-//      }
-//
-//
-//      return
-//    }))
-//    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//    present(alert, animated: true, completion: nil)
   }
   
   func importDatabaseFromBrowser() {
@@ -166,6 +146,9 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    if !splitViewController!.isCollapsed {
+      cell.accessoryType = .none
+    }
     
     let fileBookmark = Persistence.bookmarkedFiles[indexPath.row]
     let fileURL = FileManagement.resolveBookmark(bookmark: fileBookmark, persistenceIndex: indexPath.row)
