@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public class KDBXEntry {
+public class KDBXEntryOld {
   private var dateFormatter: DateFormatter
   
   public var uuid: String

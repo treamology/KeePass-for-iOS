@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AEXML
 
 class FileManagement {
   static var filesManager = FileManager.default
@@ -54,6 +55,13 @@ class FileManagement {
 //                                          contents: Data(bytes: [0, 0, 0, 0]),
 //                                          attributes: nil)
     let document = KDBXDocument(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
+    
+    let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
+    let defaultData = try! Data(contentsOf: defaultURL!)
+    let parsedData = try! AEXMLDocument(xml: defaultData)
+    
+    
+    
     document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
       if success {
         try! Persistence.addFileBookmark(bookmark: document.fileURL.bookmarkData() as NSData)

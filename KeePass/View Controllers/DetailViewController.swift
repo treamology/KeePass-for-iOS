@@ -100,7 +100,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     document.open(completionHandler: { (success) in
       if success {
-        self.database = KDBXDatabase(withXML: document.parsedData!)
+        self.database = document.parsedData!
         self.performSegue(withIdentifier: "UnlockSegue", sender: self)
       } else {
         let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)

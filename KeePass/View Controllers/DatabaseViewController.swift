@@ -19,7 +19,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   var document: KDBXDocument?
   var database: KDBXDatabase!
   
-  weak var baseGroup: KDBXGroup!
+  var baseGroup: KDBXGroup!
   
   var copiedViewAnimating = false
   
@@ -30,7 +30,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
       navigationItem.title = document!.localizedName
       baseGroup = database.groups[0]
     } else {
-      navigationItem.title = baseGroup.name
+      navigationItem.title = baseGroup.groupName
     }
     
     passwordCopiedView.isHidden = true
@@ -104,7 +104,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
       return nil
     }
     let group = baseGroup.childGroups[section - 1]
-    return group.name
+    return group.groupName
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,8 +130,8 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
       if indexPath.row < group.childGroups.count {
         let childGroup = group.childGroups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
-        cell.groupName.text = childGroup.name
-        if childGroup.name == "" {
+        cell.groupName.text = childGroup.groupName
+        if childGroup.groupName == "" {
           cell.groupName.text = "(no name)"
         }
         return cell

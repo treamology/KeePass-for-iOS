@@ -15,11 +15,14 @@
 		F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
 		F1044C8E20DFFF57003D65EC /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
 		F1044C8F20DFFF5B003D65EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
+		F109067320F053290008D678 /* MarginlessTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109067220F053290008D678 /* MarginlessTextView.swift */; };
 		F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
 		F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
-		F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXDatabase.swift */; };
-		F10FE09A20DACBC30030B033 /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09920DACBC30030B033 /* KDBXGroup.swift */; };
-		F10FE09C20DAD9590030B033 /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09B20DAD9590030B033 /* KDBXEntry.swift */; };
+		F10FE09820DACB270030B033 /* KDBXXMLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */; };
+		F10FE09C20DAD9590030B033 /* KDBXEntry-old.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09B20DAD9590030B033 /* KDBXEntry-old.swift */; };
+		F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */; };
+		F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */; };
+		F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849620F29916001CE6CF /* KDBXEntry.swift */; };
 		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
 		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
@@ -51,6 +54,7 @@
 		F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */; };
 		F18F9F0420E998A1001B813B /* EditableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0320E998A1001B813B /* EditableEntry.swift */; };
 		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
+		F197C1C920F3BB2D00531A89 /* KDBXXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */; };
 		F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
 		F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
 		F1A389C020DFFFBF00E6DE46 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
@@ -59,6 +63,11 @@
 		F1A389C320DFFFEB00E6DE46 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F1A389C420DFFFF400E6DE46 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
 		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
+		F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */; };
+		F1C5A33A20F280B3009EC7D0 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */; };
+		F1C5A33B20F280B8009EC7D0 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */; };
+		F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */; };
+		F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */; };
 		F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */; };
 		F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */; };
 		F1F7BA0E20DC444B00F22B81 /* ValidFile.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */; };
@@ -251,11 +260,13 @@
 		F1044C7620DFF78C003D65EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1044C7720DFF78C003D65EC /* KeePass_AutoFill_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass_AutoFill_Extension.entitlements; sourceTree = "<group>"; };
 		F1044C8B20DFFE16003D65EC /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
+		F109067220F053290008D678 /* MarginlessTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginlessTextView.swift; sourceTree = "<group>"; };
 		F10FE08620DAB1860030B033 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
 		F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntryTableViewCell.swift; sourceTree = "<group>"; };
-		F10FE09720DACB270030B033 /* KDBXDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
-		F10FE09920DACBC30030B033 /* KDBXGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
-		F10FE09B20DAD9590030B033 /* KDBXEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
+		F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLDatabase.swift; sourceTree = "<group>"; };
+		F10FE09B20DAD9590030B033 /* KDBXEntry-old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KDBXEntry-old.swift"; sourceTree = "<group>"; };
+		F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLEntry.swift; sourceTree = "<group>"; };
+		F134849620F29916001CE6CF /* KDBXEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
 		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
 		F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
@@ -292,6 +303,7 @@
 		F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceOnNavigationStackSegue.swift; sourceTree = "<group>"; };
 		F18F9F0320E998A1001B813B /* EditableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableEntry.swift; sourceTree = "<group>"; };
 		F18FC50820D47D200070301A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KDBXXMLElement.swift; path = KeePass/Models/KDBXXMLElement.swift; sourceTree = SOURCE_ROOT; };
 		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
 		F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRandom.h; sourceTree = "<group>"; };
@@ -303,6 +315,11 @@
 		F1A25D2420CC78B4007F0FD1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
 		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
+		F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLList.swift; sourceTree = "<group>"; };
+		F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Extensions.swift"; sourceTree = "<group>"; };
+		F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
+		F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
+		F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLGroup.swift; sourceTree = "<group>"; };
 		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadDynamicHeader.kdbx; sourceTree = "<group>"; };
 		F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadPayload.kdbx; sourceTree = "<group>"; };
@@ -377,10 +394,14 @@
 		F10FE09620DAC7B70030B033 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F10FE09720DACB270030B033 /* KDBXDatabase.swift */,
-				F10FE09920DACBC30030B033 /* KDBXGroup.swift */,
-				F10FE09B20DAD9590030B033 /* KDBXEntry.swift */,
+				F1C5A33C20F282BC009EC7D0 /* Protocols */,
+				F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */,
+				F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */,
+				F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */,
+				F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */,
+				F10FE09B20DAD9590030B033 /* KDBXEntry-old.swift */,
 				F18F9F0320E998A1001B813B /* EditableEntry.swift */,
+				F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -431,6 +452,7 @@
 		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
+				F1C5A33820F280A1009EC7D0 /* Extensions */,
 				F10FE09620DAC7B70030B033 /* Models */,
 				F179FFCD20D6FBB700C48FC9 /* Views */,
 				F1A3533020D5E7A9000AABB3 /* View Controllers */,
@@ -509,6 +531,7 @@
 				F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */,
 				F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */,
 				F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */,
+				F109067220F053290008D678 /* MarginlessTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -572,6 +595,24 @@
 				F1AF721820CD95B400F79799 /* Tests iOS.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F1C5A33820F280A1009EC7D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1C5A33C20F282BC009EC7D0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */,
+				F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */,
+				F134849620F29916001CE6CF /* KDBXEntry.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -948,6 +989,8 @@
 				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
 				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
 				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
+				F109067320F053290008D678 /* MarginlessTextView.swift in Sources */,
+				F1C5A33B20F280B8009EC7D0 /* AEXMLElement+Extensions.swift in Sources */,
 				F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */,
 				F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */,
 				F18F9EF520E81715001B813B /* EntryDetailsViewController.swift in Sources */,
@@ -983,13 +1026,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */,
-				F10FE09A20DACBC30030B033 /* KDBXGroup.swift in Sources */,
+				F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */,
+				F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */,
+				F1C5A33A20F280B3009EC7D0 /* AEXMLElement+Extensions.swift in Sources */,
 				F18F9F0420E998A1001B813B /* EditableEntry.swift in Sources */,
+				F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */,
 				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
 				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
+				F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */,
+				F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */,
 				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
-				F10FE09C20DAD9590030B033 /* KDBXEntry.swift in Sources */,
-				F10FE09820DACB270030B033 /* KDBXDatabase.swift in Sources */,
+				F10FE09C20DAD9590030B033 /* KDBXEntry-old.swift in Sources */,
+				F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */,
+				F10FE09820DACB270030B033 /* KDBXXMLDatabase.swift in Sources */,
+				F197C1C920F3BB2D00531A89 /* KDBXXMLElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

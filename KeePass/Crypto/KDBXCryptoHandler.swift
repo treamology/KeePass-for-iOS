@@ -82,7 +82,7 @@ public class KDBXCryptoHandler {
   }
   
   public var header: KDBX3Header
-  public var payload: String
+  public var payload: Data
   public let rawBytes: [UInt8]
   
   let filePassword: [UInt8]
@@ -271,10 +271,10 @@ public class KDBXCryptoHandler {
       }
     }
 
-    guard let payloadString = String(bytes: decompressedPayload, encoding: .utf8) else {
-      throw ParseError.badPayloadString
-    }
-    self.payload = payloadString
+//    guard let payloadString = String(bytes: decompressedPayload, encoding: .utf8) else {
+//      throw ParseError.badPayloadString
+//    }
+    self.payload = Data(decompressedPayload)
   }
   
   func generateKDBX3HeaderBytes() -> [UInt8] {
@@ -315,14 +315,12 @@ public class KDBXCryptoHandler {
   }
   
   func encryptPayload() throws -> [UInt8] {
-    let payloadUTF = payload.utf8
-    
     // Start by generating a fresh header for the container.
     var fileBytes = generateKDBX3HeaderBytes()
     
     // Recompress the payload.
     do {
-      let compressedPayload = try [UInt8](Data(payloadUTF).gzipped())
+      let compressedPayload = try [UInt8](payload.gzipped())
     } catch {
       throw EncryptError.couldntCompress
     }
