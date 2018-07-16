@@ -11,6 +11,7 @@ import AEXML
 
 public class KDBXXMLList<ElementType: KDBXXMLElement> {
   private var root: AEXMLElement
+  
   public var elements: [ElementType] {
     get {
       return root.children

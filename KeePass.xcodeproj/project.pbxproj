@@ -43,6 +43,9 @@
 		F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */; };
 		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
 		F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
+		F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E3B20F3E90A0068630F /* KDBXString.swift */; };
+		F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4920F3E97C0068630F /* KDBXXMLString.swift */; };
+		F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */; };
 		F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
 		F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFEF20D814E500C48FC9 /* SplitViewController.swift */; };
 		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -294,6 +297,9 @@
 		F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
 		F16D5BF620CC69AB008B6F12 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 		F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
+		F1717E3B20F3E90A0068630F /* KDBXString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
+		F1717E4920F3E97C0068630F /* KDBXXMLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLString.swift; sourceTree = "<group>"; };
+		F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLDict.swift; sourceTree = "<group>"; };
 		F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
 		F179FFEF20D814E500C48FC9 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		F18BB45320D4074400F92235 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
@@ -399,9 +405,11 @@
 				F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */,
 				F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */,
 				F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */,
+				F1717E4920F3E97C0068630F /* KDBXXMLString.swift */,
 				F10FE09B20DAD9590030B033 /* KDBXEntry-old.swift */,
 				F18F9F0320E998A1001B813B /* EditableEntry.swift */,
 				F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */,
+				F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -611,6 +619,7 @@
 				F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */,
 				F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */,
 				F134849620F29916001CE6CF /* KDBXEntry.swift */,
+				F1717E3B20F3E90A0068630F /* KDBXString.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1027,6 +1036,7 @@
 			files = (
 				F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */,
 				F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */,
+				F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */,
 				F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */,
 				F1C5A33A20F280B3009EC7D0 /* AEXMLElement+Extensions.swift in Sources */,
 				F18F9F0420E998A1001B813B /* EditableEntry.swift in Sources */,
@@ -1036,7 +1046,9 @@
 				F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */,
 				F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */,
 				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
+				F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */,
 				F10FE09C20DAD9590030B033 /* KDBXEntry-old.swift in Sources */,
+				F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */,
 				F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */,
 				F10FE09820DACB270030B033 /* KDBXXMLDatabase.swift in Sources */,
 				F197C1C920F3BB2D00531A89 /* KDBXXMLElement.swift in Sources */,

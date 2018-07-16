@@ -11,6 +11,7 @@ import AEXML
 
 public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
   
+  public static var dateFormatter = DateFormatter()
   public static var elementName = "Root"
   
   public var xmlElement: AEXMLElement
@@ -57,7 +58,7 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
     xmlElement = element
     xmlDocument = element as! AEXMLDocument
   
-    dateFormatter = DateFormatter()
+    dateFormatter = KDBXXMLDatabase.dateFormatter
     dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
     
     groupList = KDBXXMLList(withRootElement: xmlDocument.root["Root"])
