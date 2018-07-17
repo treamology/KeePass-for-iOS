@@ -108,8 +108,8 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
   }
   
   @IBAction func doneCreating(segue: UIStoryboardSegue) {
-    guard let controller = segue.source as? EntryDetailsViewController else {
-      print("This segue can only be used with an EntryDetailsViewController")
+    guard let controller = segue.source as? DatabaseEditorViewController else {
+      print("This segue can only be used with an DatabaseEditorViewController")
       return
     }
     
@@ -117,7 +117,12 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
     // so the user won't select something else
     self.view.isUserInteractionEnabled = false
     
-    FileManagement.createNewDatabase(name: controller.entry.currentEntryValues[0]!, completed: {(success: Bool) in
+    var dbName: String! = controller.nameTextbox.text
+    if dbName == nil || dbName == "" {
+      dbName = "Database"
+    }
+    
+    FileManagement.createNewDatabase(name: dbName, completed: {(success: Bool) in
       if success {
         self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
         self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)

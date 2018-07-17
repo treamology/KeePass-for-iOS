@@ -72,10 +72,10 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
       dest.baseGroup = baseGroup.childGroups[indexPath.section - 1].childGroups[indexPath.row]
     }
     #if !EXTENSION
-    if segue.identifier == "EditDatabase" {
-      let controller = (segue.destination as! UINavigationController).topViewController as! EntryDetailsViewController
-      controller.entryType = .Password
-    }
+//    if segue.identifier == "EditDatabase" {
+//      let controller = (segue.destination as! UINavigationController).topViewController as! EntryDetailsViewController
+//      controller.entryType = .Password
+//    }
     #endif
   }
   

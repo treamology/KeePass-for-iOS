@@ -18,8 +18,8 @@ class KDBXDocument: UIDocument {
   var password: String?
   
   override func contents(forType typeName: String) throws -> Any {
-    let utf8XML = parsedData?.xmlElement.xml.utf8
-    return Data(utf8XML!)
+    let utf8XML = parsedData?.xmlElement.xml.utf8 ?? "".utf8
+    return Data(utf8XML)
   }
   
   override func load(fromContents contents: Any, ofType typeName: String?) throws {
@@ -32,6 +32,6 @@ class KDBXDocument: UIDocument {
     guard cryptoHandler != nil else {
       return
     }
-    parsedData = try KDBXXMLDatabase(withXML: (cryptoHandler?.payload)!)
+    parsedData = KDBXXMLDatabase(withXML: (cryptoHandler?.payload)!)
   }
 }

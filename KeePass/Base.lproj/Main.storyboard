@@ -93,16 +93,16 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Database Editor View Controller-->
         <scene sceneID="LKK-86-3Wj">
             <objects>
-                <tableViewController id="k9b-El-pXB" sceneMemberID="viewController">
+                <tableViewController id="k9b-El-pXB" customClass="DatabaseEditorViewController" customModule="KeePass" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="f6Q-ek-70r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Database Name" id="1fr-V3-xFM">
+                            <tableViewSection headerTitle="Name" id="1fr-V3-xFM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o1y-Zw-Rhu" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -130,7 +130,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Description" id="pZs-1G-jr3">
+                            <tableViewSection headerTitle="Notes" id="pZs-1G-jr3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="7lQ-YS-ANQ" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="150"/>
@@ -175,9 +175,40 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextbox" destination="uw4-mZ-B4Z" id="XaH-Pr-iA7"/>
+                        <outlet property="notesTextView" destination="q4G-Wj-oCq" id="geX-VK-1pK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hs-MS-CGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mVp-AX-27I" userLabel="Exit" sceneMemberID="exit"/>
+                <tableViewSection headerTitle="Notes" id="Zf9-Fg-IsJ">
+                    <cells>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="GL3-4c-2Me" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="155.5" width="375" height="150"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GL3-4c-2Me" id="ITy-bq-j17">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Izj-vo-PMF" customClass="MarginlessTextView" customModule="KeePass" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="11" width="343" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Izj-vo-PMF" firstAttribute="bottom" secondItem="ITy-bq-j17" secondAttribute="bottomMargin" id="MkJ-jj-rbB"/>
+                                    <constraint firstItem="Izj-vo-PMF" firstAttribute="trailing" secondItem="ITy-bq-j17" secondAttribute="trailingMargin" id="Nx6-v4-Nt2"/>
+                                    <constraint firstItem="Izj-vo-PMF" firstAttribute="top" secondItem="ITy-bq-j17" secondAttribute="topMargin" id="bfw-Qm-kNZ"/>
+                                    <constraint firstItem="Izj-vo-PMF" firstAttribute="leading" secondItem="ITy-bq-j17" secondAttribute="leadingMargin" id="etV-oU-2EA"/>
+                                </constraints>
+                            </tableViewCellContentView>
+                        </tableViewCell>
+                    </cells>
+                </tableViewSection>
             </objects>
             <point key="canvasLocation" x="2238" y="-630"/>
         </scene>
