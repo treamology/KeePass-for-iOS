@@ -67,6 +67,6 @@ class KDBXParseTests: XCTestCase {
     let refURL = Bundle(for: type(of: self)).url(forResource: "ValidFileXML", withExtension: "xml")
     let refXML = String(bytes: try! Data(contentsOf: refURL!), encoding: .utf8)
     
-    XCTAssertEqual(decodedXML, refXML)
+    XCTAssertEqual(decodedXML, Data(refXML!.utf8))
   }
 }

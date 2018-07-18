@@ -515,10 +515,10 @@
 		F16D5BF520CC69AB008B6F12 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 				F16D5BF620CC69AB008B6F12 /* AES.swift */,
 				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
 				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
-				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";

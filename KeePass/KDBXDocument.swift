@@ -37,11 +37,8 @@ class KDBXDocument: UIDocument {
   
   override func load(fromContents contents: Any, ofType typeName: String?) throws {
     let rawData = contents as! Data
-    do {
-      cryptoHandler = try KDBXCryptoHandler(withBytes: [UInt8](rawData), password: password)
-    } catch {
-      print(error)
-    }
+    cryptoHandler = try KDBXCryptoHandler(withBytes: [UInt8](rawData), password: password)
+    
     guard cryptoHandler != nil else {
       return
     }

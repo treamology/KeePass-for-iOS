@@ -234,6 +234,7 @@ public class KDBXCryptoHandler {
 
     let actualStartBytes = [UInt8](decryptedPayload[..<32])
     if header.streamStartBytes != actualStartBytes {
+      // This probably means that the keyfile/password is invalid.
       throw ParseError.badStreamStartBytes(actualStartBytes: actualStartBytes)
     }
     
