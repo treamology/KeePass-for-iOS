@@ -100,10 +100,6 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       controller.detailItem = Persistence.bookmarkedFiles[selectedIndex]
       controller.navigationItem.leftItemsSupplementBackButton = true
       Persistence.lastOpenFile = Persistence.bookmarkedFiles[selectedIndex]
-    } else if segue.identifier == "NewDatabase" {
-//      let controller = (segue.destination as! UINavigationController).topViewController as! EntryDetailsViewController
-//      controller.entryType = .Database
-//      controller.entry = KDBXDatabase()
     }
   }
   
