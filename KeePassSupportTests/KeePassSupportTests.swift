@@ -56,6 +56,16 @@ class KDBXParseTests: XCTestCase {
     }
   }
   
+  func testWrongPassword() {
+    let url = Bundle(for: type(of: self)).url(forResource: "ValidFile", withExtension: "kdbx")
+    let data = try! Data(contentsOf: url!)
+    
+    XCTAssertThrowsError(try KDBXCryptoHandler(withBytes: [UInt8](data), password: "wrongpassword"), "") { (error) in
+      if case KDBXCryptoHandler.ParseError.badStreamStartBytes = error {}
+      else { XCTFail("Threw: \(error)") }
+    }
+  }
+  
   func testOpenValidFile() {
     let url = Bundle(for: type(of: self)).url(forResource: "ValidFile", withExtension: "kdbx")
     let data = try! Data(contentsOf: url!)

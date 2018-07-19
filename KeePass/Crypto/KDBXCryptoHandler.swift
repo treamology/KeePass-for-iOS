@@ -15,7 +15,7 @@ public class KDBXCryptoHandler {
   
   public struct KDBX3Header {
     init() {
-      secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32() // FIXME: Figure out what bytes mean
+      secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32() // FIXME: Figure out what these bytes mean
       majorVersion = 3
       minorVersion = 1
       
@@ -35,7 +35,7 @@ public class KDBXCryptoHandler {
     var transformRounds: UInt64?
     var encryptionIV: [UInt8]?
     var protectedStreamKey: [UInt8]?
-    var streamStartBytes: [UInt8]?
+    var streamStartBytes: [UInt8]!
     var innerRandomStreamID: UInt32?
   }
   public struct KDBX3HeaderEntry {
@@ -82,11 +82,12 @@ public class KDBXCryptoHandler {
   }
   
   public var header: KDBX3Header
-  public var payload: Data
+  public var payload: Data!
   public let rawBytes: [UInt8]
   
   let filePassword: [UInt8]
   let keyfileData: [UInt8]?
+  var masterKey: [UInt8]!
   
   public convenience init?(withBytes bytes: [UInt8], password: String?) throws {
     guard bytes.count >= 12 else {
@@ -182,49 +183,15 @@ public class KDBXCryptoHandler {
     // TODO: Support composites besides passwords
     let compositeKey = concatBytes.sha256()
     
-    // Create the transformed and master key. We take the transformSeed to make
-    // an AES-256 context, then encrypt the composite key the specified amount
-    // in transformRounds. Finally, take the sha256 hash.
-    print("Creating the master key...")
-    var masterKey: [UInt8]
-    // The specification calls for 16 null bytes.
-    let iv = [UInt8](Data(repeating: 0x00, count: 16))
-
-    guard let transformSeed = header.transformSeed else {
-      throw ParseError.badKDBXFile
-    }
-    guard let transformRounds = header.transformRounds else {
-      throw ParseError.badKDBXFile
-    }
-    guard let masterSeed = header.masterSeed else {
-      throw ParseError.badKDBXFile
-    }
-    
-    guard let AESEncryptContext = AES(operation: .Encrypt,
-                                      padding: false,
-                                      key: transformSeed,
-                                      iv: iv) else {
-      throw ParseError.couldntCreateCryptoContext
-    }
-
-    var transformedKey = compositeKey
-    for _ in 1...transformRounds {
-      transformedKey = AESEncryptContext.performOperation(transformedKey)
-    }
-    transformedKey = transformedKey.sha256()
-    
-    masterKey = masterSeed
-    masterKey.append(contentsOf: transformedKey)
-    masterKey = masterKey.sha256()
+    masterKey = try generateMasterKey(compositeKey: compositeKey)
     
     // Now that we have the master key, we can split up the payload
     print("Getting the payload...")
-    let masterKeyArray = masterKey
     let encryptionIVArray = header.encryptionIV
     
     guard let AESDecryptContext = AES(operation: .Decrypt,
                                       padding: true,
-                                      key: masterKeyArray,
+                                      key: masterKey,
                                       iv: encryptionIVArray) else {
       throw ParseError.couldntCreateCryptoContext
     }
@@ -278,6 +245,44 @@ public class KDBXCryptoHandler {
     self.payload = Data(decompressedPayload)
   }
   
+  func generateMasterKey(compositeKey: [UInt8]) throws -> [UInt8] {
+    // Create the transformed and master key. We take the transformSeed to make
+    // an AES-256 context, then encrypt the composite key the specified amount
+    // in transformRounds. Finally, take the sha256 hash.
+    print("Creating the master key...")
+    var masterKey: [UInt8]
+    // The specification calls for 16 null bytes.
+    let iv = [UInt8](Data(repeating: 0x00, count: 16))
+    
+    guard let transformSeed = header.transformSeed else {
+      throw ParseError.badKDBXFile
+    }
+    guard let transformRounds = header.transformRounds else {
+      throw ParseError.badKDBXFile
+    }
+    guard let masterSeed = header.masterSeed else {
+      throw ParseError.badKDBXFile
+    }
+    
+    guard let AESEncryptContext = AES(operation: .Encrypt,
+                                      padding: false,
+                                      key: transformSeed,
+                                      iv: iv) else {
+                                        throw ParseError.couldntCreateCryptoContext
+    }
+    
+    var transformedKey = compositeKey
+    for _ in 1...transformRounds {
+      transformedKey = AESEncryptContext.performOperation(transformedKey)
+    }
+    transformedKey = transformedKey.sha256()
+    
+    masterKey = masterSeed
+    masterKey.append(contentsOf: transformedKey)
+    masterKey = masterKey.sha256()
+    return masterKey
+  }
+  
   func generateKDBX3HeaderBytes() -> [UInt8] {
     var headerBytes = [UInt8]()
     headerBytes.append(contentsOf: KDBXCryptoHandler.KDBX3_MAGIC)
@@ -315,16 +320,36 @@ public class KDBXCryptoHandler {
     return headerBytes
   }
   
-  func encryptPayload() throws -> [UInt8] {
+  public func encryptPayload() throws -> [UInt8] {
     // Start by generating a fresh header for the container.
     var fileBytes = generateKDBX3HeaderBytes()
     
     // Recompress the payload.
+    let compressedPayload: [UInt8]
     do {
-      let compressedPayload = try [UInt8](payload.gzipped())
+      compressedPayload = try [UInt8](payload.gzipped())
     } catch {
       throw EncryptError.couldntCompress
     }
+    
+    let payloadHash = compressedPayload.sha256()
+    
+    // Encrypt the payload.
+    let encryptionIVArray = header.encryptionIV
+    guard let AESEncryptContext = AES(operation: .Encrypt,
+                                      padding: true,
+                                      key: masterKey,
+                                      iv: encryptionIVArray) else {
+      throw ParseError.couldntCreateCryptoContext
+    }
+    let encryptedPayload = AESEncryptContext.performOperation(compressedPayload)
+    
+    fileBytes.append(contentsOf: header.streamStartBytes)
+    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID
+    fileBytes.append(contentsOf: payloadHash) // payload hash
+    fileBytes.append(contentsOf: encryptedPayload.count.toBytes()) // payload length
+    fileBytes.append(contentsOf: encryptedPayload) // the payload
+    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
     
     return fileBytes
   }

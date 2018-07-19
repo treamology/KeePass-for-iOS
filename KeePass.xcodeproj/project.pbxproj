@@ -22,6 +22,8 @@
 		F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */; };
 		F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */; };
 		F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849620F29916001CE6CF /* KDBXEntry.swift */; };
+		F153DB74210115AB00D84334 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
+		F153DB75210115AE00D84334 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
 		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
 		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
@@ -41,7 +43,6 @@
 		F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */; };
 		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
-		F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
 		F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E3B20F3E90A0068630F /* KDBXString.swift */; };
 		F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4920F3E97C0068630F /* KDBXXMLString.swift */; };
 		F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */; };
@@ -49,7 +50,6 @@
 		F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFEF20D814E500C48FC9 /* SplitViewController.swift */; };
 		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
-		F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
 		F18F9EF720E819BF001B813B /* TextboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */; };
 		F18F9EFB20E84AA6001B813B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BA620CC6956008B6F12 /* Main.storyboard */; };
 		F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */; };
@@ -408,6 +408,8 @@
 		F12A1FA621000468009EFFDA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
+				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -525,8 +527,6 @@
 				F12A1FA621000468009EFFDA /* Extensions */,
 				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 				F16D5BF620CC69AB008B6F12 /* AES.swift */,
-				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
-				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -1044,7 +1044,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18BB45820D4394400F92235 /* FixedWidthInteger+Bytes.swift in Sources */,
+				F153DB74210115AB00D84334 /* ByteArray+Crypto.swift in Sources */,
 				F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */,
 				F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */,
 				F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */,
@@ -1052,9 +1052,9 @@
 				F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */,
 				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
 				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
+				F153DB75210115AE00D84334 /* FixedWidthInteger+Bytes.swift in Sources */,
 				F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */,
 				F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */,
-				F16D5BF920CC69AB008B6F12 /* ByteArray+Crypto.swift in Sources */,
 				F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */,
 				F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */,
 				F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */,
