@@ -60,8 +60,6 @@ class KDBXParseTests: XCTestCase {
     let url = Bundle(for: type(of: self)).url(forResource: "ValidFile", withExtension: "kdbx")
     let data = try! Data(contentsOf: url!)
     
-    XCTAssertNoThrow(try KDBXCryptoHandler(withBytes: [UInt8](data), password: "password"))
-    
     let handler = try! KDBXCryptoHandler(withBytes: [UInt8](data), password: "password")
     let decodedXML = String(bytes: handler!.payload, encoding: .utf8)
     let refURL = Bundle(for: type(of: self)).url(forResource: "ValidFileXML", withExtension: "xml")
