@@ -63,10 +63,10 @@ class KDBXParseTests: XCTestCase {
     XCTAssertNoThrow(try KDBXCryptoHandler(withBytes: [UInt8](data), password: "password"))
     
     let handler = try! KDBXCryptoHandler(withBytes: [UInt8](data), password: "password")
-    let decodedXML = handler?.payload
+    let decodedXML = String(bytes: handler!.payload, encoding: .utf8)
     let refURL = Bundle(for: type(of: self)).url(forResource: "ValidFileXML", withExtension: "xml")
     let refXML = String(bytes: try! Data(contentsOf: refURL!), encoding: .utf8)
     
-    XCTAssertEqual(decodedXML, Data(refXML!.utf8))
+    XCTAssertEqual(decodedXML, refXML!)
   }
 }

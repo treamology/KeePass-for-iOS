@@ -405,6 +405,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F12A1FA621000468009EFFDA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F16AABE720D32BE5009807E5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +522,7 @@
 		F16D5BF520CC69AB008B6F12 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F12A1FA621000468009EFFDA /* Extensions */,
 				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
 				F16D5BF620CC69AB008B6F12 /* AES.swift */,
 				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
