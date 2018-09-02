@@ -12,7 +12,8 @@ import KeePassSupport
 import AEXML
 
 class KDBXDocument: UIDocument {
-  var cryptoHandler: KDBXCryptoHandler?
+  
+  var file: KDBXFile?
   var parsedData: KDBXXMLDatabase?
   
   var password: String?
@@ -24,7 +25,7 @@ class KDBXDocument: UIDocument {
       // and valid.
       let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
       let defaultData = try! Data(contentsOf: defaultURL!)
-      parsedData = KDBXXMLDatabase(withXML: defaultData)
+      parsedData = KDBXXMLDatabase(withXML: [UInt8](defaultData))
     }
     
     super.save(to: url, for: saveOperation, completionHandler: completionHandler)
@@ -32,17 +33,18 @@ class KDBXDocument: UIDocument {
   
   override func contents(forType typeName: String) throws -> Any {
     let utf8XML = parsedData?.xmlElement.xml.utf8
-    let fileData = try cryptoHandler!.encryptPayload()
+    let fileData = try file!.encryptPayload()
     return Data(fileData)
   }
   
   override func load(fromContents contents: Any, ofType typeName: String?) throws {
     let rawData = contents as! Data
-    cryptoHandler = try KDBXCryptoHandler(withBytes: [UInt8](rawData), password: password)
+    let utf8password = password!.utf8
+    file = try KDBXFileMagician.kdbxFile(withBytes: [UInt8](rawData), password: [UInt8](utf8password), keyfile: nil)
     
-    guard cryptoHandler != nil else {
+    guard file != nil else {
       return
     }
-    parsedData = KDBXXMLDatabase(withXML: (cryptoHandler?.payload)!)
+    parsedData = KDBXXMLDatabase(withXML: (file?.payloadBytes)!)
   }
 }

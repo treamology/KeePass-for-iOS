@@ -40,11 +40,11 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
     return database
   }
   
-  public convenience init(withXML xml: Data) {
+  public convenience init(withXML xml: [UInt8]) {
     self.init()
     
     do {
-      try xmlDocument.loadXML(xml)
+      try xmlDocument.loadXML(Data(xml))
     } catch {
       print(error)
     }

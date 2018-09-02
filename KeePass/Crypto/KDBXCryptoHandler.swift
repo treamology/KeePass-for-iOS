@@ -9,63 +9,95 @@
 import Foundation
 import Gzip
 
-public class KDBXCryptoHandler {
-  static let KDBX3_MAGIC: [UInt8] = [0x03,0xD9,0xA2,0x9A]
-  static let KDBX3_HEADER_SIZE = 12
+// Don't use this class directly
+public class KDBXHeader {
+  public var secondaryID: UInt32!
+  public var majorVersion: UInt16!
+  public var minorVersion: UInt16!
+}
+public class KDBX3Header: KDBXHeader {
+  enum CompressionFlags: UInt32 {
+    case None, GZIP
+  }
   
-  public struct KDBX3Header {
-    init() {
-      secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32() // FIXME: Figure out what these bytes mean
-      majorVersion = 3
-      minorVersion = 1
-      
-      cipherID = [UInt8](repeating: 0x00, count: 32) // FIXME: This probably shouldn't be this
-      compressionFlags = CompressionFlags.GZIP
-      
-      innerRandomStreamID = 0
-    }
-    var secondaryID: UInt32!
-    var majorVersion: UInt16!
-    var minorVersion: UInt16!
+  var cipherID: [UInt8]
+  var compressionFlags: CompressionFlags?
+  var masterSeed: [UInt8]?
+  var transformSeed: [UInt8]?
+  var transformRounds: UInt64?
+  var encryptionIV: [UInt8]?
+  var protectedStreamKey: [UInt8]?
+  var streamStartBytes: [UInt8]!
+  var innerRandomStreamID: UInt32?
+  
+  override init() {
+    cipherID = [UInt8](repeating: 0x00, count: 32) // FIXME: This probably shouldn't be this
+    compressionFlags = CompressionFlags.GZIP
+    innerRandomStreamID = 0
     
-    var cipherID: [UInt8]
-    var compressionFlags: CompressionFlags?
-    var masterSeed: [UInt8]?
-    var transformSeed: [UInt8]?
-    var transformRounds: UInt64?
-    var encryptionIV: [UInt8]?
-    var protectedStreamKey: [UInt8]?
-    var streamStartBytes: [UInt8]!
-    var innerRandomStreamID: UInt32?
+    super.init()
+    
+    secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32()! // FIXME: Figure out what these bytes mean
+    majorVersion = 3
+    minorVersion = 1
   }
-  public struct KDBX3HeaderEntry {
-    var headerID: UInt8
-    var headerPayload: [UInt8]
-    var headerSize: UInt16 {
-      get { return UInt16(headerPayload.count) }
-    }
-    
-    init(id: UInt8, payload: [UInt8]! = [UInt8]()) {
-      headerID = id
-      headerPayload = payload
-    }
-    
-    func bytes() -> [UInt8] {
-      var bytes = [UInt8]()
-      bytes.append(headerID)
-      bytes.append(contentsOf: headerPayload)
-      bytes.append(contentsOf: headerSize.toBytes())
-      return bytes
-    }
+}
+public struct KDBX3HeaderEntry {
+  var headerID: UInt8
+  var headerPayload: [UInt8]
+  var headerSize: UInt16 {
+    get { return UInt16(headerPayload.count) }
   }
+  
+  init(id: UInt8, payload: [UInt8]! = [UInt8]()) {
+    headerID = id
+    headerPayload = payload
+  }
+  
+  func bytes() -> [UInt8] {
+    var bytes = [UInt8]()
+    bytes.append(headerID)
+    bytes.append(contentsOf: headerPayload)
+    bytes.append(contentsOf: headerSize.toBytes())
+    return bytes
+  }
+}
+
+public protocol KDBXFile: AnyObject {
+  static var MAGIC: [UInt8] { get }
+  static var HEADER_SIZE: UInt8 { get }
+  
+  var header: KDBXHeader { get }
+  var payloadBytes: [UInt8] { get set }
+  
+  var filePasswordBytes: [UInt8]? { get set }
+  var keyfileBytes: [UInt8]? { get set }
+  
+  init(withHeader header: KDBXHeader) throws
+  init(withFileBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws
+  
+  func generateHeaderBytes() -> [UInt8]
+  func encryptPayload() throws -> [UInt8]
+}
+
+public class KDBXFileMagician {
+  public static func kdbxFile(withBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws -> KDBXFile {
+    let magic = [UInt8](bytes[0...3])
+    if magic == KDBX3File.MAGIC {
+      return try KDBX3File(withFileBytes: bytes, password: password, keyfile: keyfile)
+    } // TODO: Logic for KDBX4 file
+    throw KDBX3File.ParseError.badKDBXFile
+  }
+}
+
+public class KDBX3File: KDBXFile {
+  public static let MAGIC: [UInt8] = [0x03,0xD9,0xA2,0x9A]
+  public static let HEADER_SIZE: UInt8 = 12
   
   public enum DynHeaderID: UInt8 {
     case end, comment, cipherID, compressionFlags, masterSeed, transformSeed,
     transformRounds, encryptionIV, protectedStreamKey, streamStartBytes,
     innerRandomStreamID
-  }
-  enum CompressionFlags: UInt32 {
-    case None, GZIP
   }
   public enum ParseError: Error {
     case badHeaderID
@@ -76,42 +108,46 @@ public class KDBXCryptoHandler {
     case couldntDecompressPayload
     case badPayloadString
     case badKDBXFile
+    case versionMismatch
   }
   public enum EncryptError: Error {
     case couldntCompress
   }
   
-  public var header: KDBX3Header
-  public var payload: Data!
-  public let rawBytes: [UInt8]
+  // This pattern is being used because one can't easily specialize protocols in Swift.
+  public var header: KDBXHeader
+  public var header3: KDBX3Header
+  public var payloadBytes: [UInt8] = []
   
-  let filePassword: [UInt8]
-  let keyfileData: [UInt8]?
+  public var filePasswordBytes: [UInt8]?
+  public var keyfileBytes: [UInt8]?
   var masterKey: [UInt8]!
   
-  public convenience init?(withBytes bytes: [UInt8], password: String?) throws {
+  required public init(withHeader header: KDBXHeader) throws {
+    guard header is KDBX3Header else {
+      throw ParseError.badKDBXFile
+    }
+    self.header = header
+    self.header3 = header as! KDBX3Header
+  }
+  
+  required public init(withFileBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws {
     guard bytes.count >= 12 else {
       throw ParseError.badKDBXFile
     }
     
-    // Get the basic information we know is in the header.
+    // Make sure we're actually getting a KDBX file.
     let magic = [UInt8](bytes[0...3])
-    if magic == KDBXCryptoHandler.KDBX3_MAGIC {
-      try self.init(withKDBX3Bytes: bytes, password: password, keyfileData: nil)
-      return
+    guard magic == KDBX3File.MAGIC else {
+      throw ParseError.versionMismatch
     }
-    throw ParseError.badKDBXFile
-  }
-  
-  private init?(withKDBX3Bytes bytes: [UInt8], password: String?, keyfileData: [UInt8]?) throws {
-    self.header = KDBX3Header()
-    self.rawBytes = bytes
-    if let unwrappedPassword = password {
-      self.filePassword = [UInt8](unwrappedPassword.utf8)
-    } else {
-      self.filePassword = [UInt8]()
-    }
-    self.keyfileData = keyfileData
+    
+    let header = KDBX3Header()
+    self.header = header
+    self.header3 = header
+    
+    filePasswordBytes = password
+    keyfileBytes = keyfile
     
     header.secondaryID = bytes[4...7].toUInt32()!
     
@@ -122,7 +158,7 @@ public class KDBXCryptoHandler {
     // and some can be missing.
     print("Parsing dynamic header...")
     var reachedHeaderEnd = false
-    var cb = KDBXCryptoHandler.KDBX3_HEADER_SIZE // current byte
+    var cb = Int(KDBX3File.HEADER_SIZE) // current byte
     while (!reachedHeaderEnd) {
       let headerID = DynHeaderID(rawValue: bytes[cb]); cb += 1
       guard let unwrappedID = headerID else {
@@ -152,7 +188,7 @@ public class KDBXCryptoHandler {
           throw ParseError.badCompressionFlags
         }
         let flags =
-          CompressionFlags(rawValue:rawFlag)
+          KDBX3Header.CompressionFlags(rawValue:rawFlag)
         if flags == nil {
           throw ParseError.badCompressionFlags
         }
@@ -178,7 +214,7 @@ public class KDBXCryptoHandler {
     // concatenating the key composites (password, keyfiles, etc)
     // We use the sha256 hash of the password to get its bytes.
     print("Creating composite key...")
-    let concatBytes = filePassword.sha256()
+    let concatBytes = filePasswordBytes!.sha256() // FIXME: Don't force unwrap this
     
     // TODO: Support composites besides passwords
     let compositeKey = concatBytes.sha256()
@@ -242,10 +278,83 @@ public class KDBXCryptoHandler {
 //    guard let payloadString = String(bytes: decompressedPayload, encoding: .utf8) else {
 //      throw ParseError.badPayloadString
 //    }
-    self.payload = Data(decompressedPayload)
+    self.payloadBytes = decompressedPayload
+    self.header = header
+    self.header3 = header
   }
   
-  func generateMasterKey(compositeKey: [UInt8]) throws -> [UInt8] {
+  public func generateHeaderBytes() -> [UInt8] {
+    var headerBytes = [UInt8]()
+    headerBytes.append(contentsOf: KDBX3File.MAGIC)
+    headerBytes.append(contentsOf: header.secondaryID.toBytes())
+    headerBytes.append(contentsOf: header.minorVersion.toBytes())
+    headerBytes.append(contentsOf: header.majorVersion.toBytes())
+    
+    let cipherID = KDBX3HeaderEntry(id: 2, payload: header3.cipherID)
+    headerBytes.append(contentsOf: cipherID.bytes())
+
+    let compressionFlags = KDBX3HeaderEntry(id: 3, payload: header3.compressionFlags!.rawValue.toBytes())
+    headerBytes.append(contentsOf: compressionFlags.bytes())
+    
+    let masterSeed = KDBX3HeaderEntry(id: 4, payload: header3.masterSeed)
+    headerBytes.append(contentsOf: masterSeed.bytes())
+    
+    let transformSeed = KDBX3HeaderEntry(id: 5, payload: header3.transformSeed)
+    headerBytes.append(contentsOf: transformSeed.bytes())
+    
+    let transformRounds = KDBX3HeaderEntry(id: 6, payload: header3.transformRounds!.toBytes())
+    headerBytes.append(contentsOf: transformRounds.bytes())
+    
+    let encryptionIV = KDBX3HeaderEntry(id: 7, payload: header3.encryptionIV)
+    headerBytes.append(contentsOf: encryptionIV.bytes())
+    
+    let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: header3.protectedStreamKey)
+    headerBytes.append(contentsOf: protectedStreamKey.bytes())
+    
+    let streamStartBytes = KDBX3HeaderEntry(id: 9, payload: header3.streamStartBytes)
+    headerBytes.append(contentsOf: streamStartBytes.bytes())
+    
+    let innerRandomStreamID = KDBX3HeaderEntry(id: 10, payload: header3.innerRandomStreamID!.toBytes())
+    headerBytes.append(contentsOf: innerRandomStreamID.bytes())
+    
+    return headerBytes
+  }
+  
+  public func encryptPayload() throws -> [UInt8] {
+    // Start by generating a fresh header for the container.
+    var fileBytes = generateHeaderBytes()
+    
+    // Recompress the payload.
+    let compressedPayload: [UInt8]
+    do {
+      compressedPayload = try [UInt8](Data(payloadBytes).gzipped())
+    } catch {
+      throw EncryptError.couldntCompress
+    }
+    
+    let payloadHash = compressedPayload.sha256()
+    
+    // Encrypt the payload.
+    let encryptionIVArray = header3.encryptionIV
+    guard let AESEncryptContext = AES(operation: .Encrypt,
+                                      padding: true,
+                                      key: masterKey,
+                                      iv: encryptionIVArray) else {
+      throw ParseError.couldntCreateCryptoContext
+    }
+    let encryptedPayload = AESEncryptContext.performOperation(compressedPayload)
+    
+    fileBytes.append(contentsOf: header3.streamStartBytes)
+    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID
+    fileBytes.append(contentsOf: payloadHash) // payload hash
+    fileBytes.append(contentsOf: encryptedPayload.count.toBytes()) // payload length
+    fileBytes.append(contentsOf: encryptedPayload) // the payload
+    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
+    
+    return fileBytes
+  }
+  
+  public func generateMasterKey(compositeKey: [UInt8]) throws -> [UInt8] {
     // Create the transformed and master key. We take the transformSeed to make
     // an AES-256 context, then encrypt the composite key the specified amount
     // in transformRounds. Finally, take the sha256 hash.
@@ -254,13 +363,13 @@ public class KDBXCryptoHandler {
     // The specification calls for 16 null bytes.
     let iv = [UInt8](Data(repeating: 0x00, count: 16))
     
-    guard let transformSeed = header.transformSeed else {
+    guard let transformSeed = header3.transformSeed else {
       throw ParseError.badKDBXFile
     }
-    guard let transformRounds = header.transformRounds else {
+    guard let transformRounds = header3.transformRounds else {
       throw ParseError.badKDBXFile
     }
-    guard let masterSeed = header.masterSeed else {
+    guard let masterSeed = header3.masterSeed else {
       throw ParseError.badKDBXFile
     }
     
@@ -281,76 +390,5 @@ public class KDBXCryptoHandler {
     masterKey.append(contentsOf: transformedKey)
     masterKey = masterKey.sha256()
     return masterKey
-  }
-  
-  func generateKDBX3HeaderBytes() -> [UInt8] {
-    var headerBytes = [UInt8]()
-    headerBytes.append(contentsOf: KDBXCryptoHandler.KDBX3_MAGIC)
-    headerBytes.append(contentsOf: header.secondaryID.toBytes())
-    headerBytes.append(contentsOf: header.minorVersion.toBytes())
-    headerBytes.append(contentsOf: header.majorVersion.toBytes())
-    
-    let cipherID = KDBX3HeaderEntry(id: 2, payload: header.cipherID)
-    headerBytes.append(contentsOf: cipherID.bytes())
-
-    let compressionFlags = KDBX3HeaderEntry(id: 3, payload: header.compressionFlags!.rawValue.toBytes())
-    headerBytes.append(contentsOf: compressionFlags.bytes())
-    
-    let masterSeed = KDBX3HeaderEntry(id: 4, payload: header.masterSeed)
-    headerBytes.append(contentsOf: masterSeed.bytes())
-    
-    let transformSeed = KDBX3HeaderEntry(id: 5, payload: header.transformSeed)
-    headerBytes.append(contentsOf: transformSeed.bytes())
-    
-    let transformRounds = KDBX3HeaderEntry(id: 6, payload: header.transformRounds!.toBytes())
-    headerBytes.append(contentsOf: transformRounds.bytes())
-    
-    let encryptionIV = KDBX3HeaderEntry(id: 7, payload: header.encryptionIV)
-    headerBytes.append(contentsOf: encryptionIV.bytes())
-    
-    let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: header.protectedStreamKey)
-    headerBytes.append(contentsOf: protectedStreamKey.bytes())
-    
-    let streamStartBytes = KDBX3HeaderEntry(id: 9, payload: header.streamStartBytes)
-    headerBytes.append(contentsOf: streamStartBytes.bytes())
-    
-    let innerRandomStreamID = KDBX3HeaderEntry(id: 10, payload: header.innerRandomStreamID!.toBytes())
-    headerBytes.append(contentsOf: innerRandomStreamID.bytes())
-    
-    return headerBytes
-  }
-  
-  public func encryptPayload() throws -> [UInt8] {
-    // Start by generating a fresh header for the container.
-    var fileBytes = generateKDBX3HeaderBytes()
-    
-    // Recompress the payload.
-    let compressedPayload: [UInt8]
-    do {
-      compressedPayload = try [UInt8](payload.gzipped())
-    } catch {
-      throw EncryptError.couldntCompress
-    }
-    
-    let payloadHash = compressedPayload.sha256()
-    
-    // Encrypt the payload.
-    let encryptionIVArray = header.encryptionIV
-    guard let AESEncryptContext = AES(operation: .Encrypt,
-                                      padding: true,
-                                      key: masterKey,
-                                      iv: encryptionIVArray) else {
-      throw ParseError.couldntCreateCryptoContext
-    }
-    let encryptedPayload = AESEncryptContext.performOperation(compressedPayload)
-    
-    fileBytes.append(contentsOf: header.streamStartBytes)
-    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID
-    fileBytes.append(contentsOf: payloadHash) // payload hash
-    fileBytes.append(contentsOf: encryptedPayload.count.toBytes()) // payload length
-    fileBytes.append(contentsOf: encryptedPayload) // the payload
-    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
-    
-    return fileBytes
   }
 }
