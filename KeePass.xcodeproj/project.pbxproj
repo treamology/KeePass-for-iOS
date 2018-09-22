@@ -61,13 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F1780861215702C400271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1780844215702C400271E67 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F178084B215702C400271E67;
-			remoteInfo = "KeyPass Nonborked";
-		};
 		F178088C2157030000271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F1780844215702C400271E67 /* Project object */;
@@ -187,7 +180,6 @@
 
 /* Begin PBXFileReference section */
 		F178084C215702C400271E67 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1780860215702C400271E67 /* KeePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1780882215702FF00271E67 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17808842157030000271E67 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
 		F17808852157030000271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -252,13 +244,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F178085D215702C400271E67 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F178087F215702FF00271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				F178084C215702C400271E67 /* KeePass.app */,
-				F1780860215702C400271E67 /* KeePassTests.xctest */,
 				F1780882215702FF00271E67 /* KeePassSupport.framework */,
 				F178088A2157030000271E67 /* KeePassSupportTests.xctest */,
 				F17809C32157067B00271E67 /* Salsa20.framework */,
@@ -537,24 +521,6 @@
 			productReference = F178084C215702C400271E67 /* KeePass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F178085F215702C400271E67 /* KeePassTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F1780877215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePassTests" */;
-			buildPhases = (
-				F178085C215702C400271E67 /* Sources */,
-				F178085D215702C400271E67 /* Frameworks */,
-				F178085E215702C400271E67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F1780862215702C400271E67 /* PBXTargetDependency */,
-			);
-			name = KeePassTests;
-			productName = "KeyPass NonborkedTests";
-			productReference = F1780860215702C400271E67 /* KeePassTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		F1780881215702FF00271E67 /* KeePassSupport */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F17808992157030000271E67 /* Build configuration list for PBXNativeTarget "KeePassSupport" */;
@@ -650,10 +616,6 @@
 							};
 						};
 					};
-					F178085F215702C400271E67 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = F178084B215702C400271E67;
-					};
 					F1780881215702FF00271E67 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -695,7 +657,6 @@
 			projectRoot = "";
 			targets = (
 				F178084B215702C400271E67 /* KeePass */,
-				F178085F215702C400271E67 /* KeePassTests */,
 				F1780881215702FF00271E67 /* KeePassSupport */,
 				F17808892157030000271E67 /* KeePassSupportTests */,
 				F17809C22157067B00271E67 /* Salsa20 */,
@@ -745,13 +706,6 @@
 				F1780A21215707AB00271E67 /* Shared.storyboard in Resources */,
 				F1780A22215707AB00271E67 /* Main.storyboard in Resources */,
 				F1780A2E215707AB00271E67 /* Default.xml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F178085E215702C400271E67 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,13 +763,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F178085C215702C400271E67 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F178087E215702FF00271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -866,11 +813,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F1780862215702C400271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F178084B215702C400271E67 /* KeePass */;
-			targetProxy = F1780861215702C400271E67 /* PBXContainerItemProxy */;
-		};
 		F178088D2157030000271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F1780881215702FF00271E67 /* KeePassSupport */;
@@ -1083,48 +1025,6 @@
 			};
 			name = Release;
 		};
-		F1780878215702C400271E67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "KeyPass NonborkedTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeyPass-NonborkedTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
-			};
-			name = Debug;
-		};
-		F1780879215702C400271E67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "KeyPass NonborkedTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeyPass-NonborkedTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
-			};
-			name = Release;
-		};
 		F178089A2157030000271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1333,15 +1233,6 @@
 			buildConfigurations = (
 				F1780875215702C400271E67 /* Debug */,
 				F1780876215702C400271E67 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F1780877215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePassTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F1780878215702C400271E67 /* Debug */,
-				F1780879215702C400271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
