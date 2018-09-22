@@ -7,246 +7,179 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F1044C6F20DFF78C003D65EC /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1044C6E20DFF78C003D65EC /* AuthenticationServices.framework */; };
-		F1044C7220DFF78C003D65EC /* CredentialProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1044C7120DFF78C003D65EC /* CredentialProviderViewController.swift */; };
-		F1044C7520DFF78C003D65EC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C7320DFF78C003D65EC /* MainInterface.storyboard */; };
-		F1044C7A20DFF78C003D65EC /* KeePass AutoFill Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F1044C8C20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
-		F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1044C8B20DFFE16003D65EC /* Shared.storyboard */; };
-		F1044C8E20DFFF57003D65EC /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
-		F1044C8F20DFFF5B003D65EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
-		F109067320F053290008D678 /* MarginlessTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109067220F053290008D678 /* MarginlessTextView.swift */; };
-		F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE08620DAB1860030B033 /* DatabaseViewController.swift */; };
-		F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
-		F10FE09820DACB270030B033 /* KDBXXMLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */; };
-		F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */; };
-		F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */; };
-		F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134849620F29916001CE6CF /* KDBXEntry.swift */; };
-		F153DB74210115AB00D84334 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */; };
-		F153DB75210115AE00D84334 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */; };
-		F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
-		F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
-		F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; };
-		F16AABFF20D32C43009807E5 /* AEXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16AABF120D32BE5009807E5 /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA020CC6956008B6F12 /* AppDelegate.swift */; };
-		F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA220CC6956008B6F12 /* MasterViewController.swift */; };
-		F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BA420CC6956008B6F12 /* DetailViewController.swift */; };
-		F16D5BA820CC6956008B6F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BA620CC6956008B6F12 /* Main.storyboard */; };
-		F16D5BAA20CC6957008B6F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BA920CC6957008B6F12 /* Assets.xcassets */; };
-		F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */; };
-		F16D5BB820CC6958008B6F12 /* KeePassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BB720CC6958008B6F12 /* KeePassTests.swift */; };
-		F16D5BC320CC6958008B6F12 /* KeePassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BC220CC6958008B6F12 /* KeePassUITests.swift */; };
-		F16D5BDE20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
-		F16D5BE520CC6971008B6F12 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */; };
-		F16D5BE720CC6971008B6F12 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F16D5BD720CC6970008B6F12 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
-		F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */; };
-		F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16D5BF620CC69AB008B6F12 /* AES.swift */; };
-		F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E3B20F3E90A0068630F /* KDBXString.swift */; };
-		F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4920F3E97C0068630F /* KDBXXMLString.swift */; };
-		F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */; };
-		F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
-		F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFEF20D814E500C48FC9 /* SplitViewController.swift */; };
-		F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F18BB45420D4074400F92235 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18BB45320D4074400F92235 /* Default.xml */; };
-		F18F9EF720E819BF001B813B /* TextboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */; };
-		F18F9EFB20E84AA6001B813B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16D5BA620CC6956008B6F12 /* Main.storyboard */; };
-		F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */; };
-		F18FC50920D47D200070301A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
-		F197C1C920F3BB2D00531A89 /* KDBXXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */; };
-		F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */; };
-		F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */; };
-		F1A389C020DFFFBF00E6DE46 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */; };
-		F1A389C120DFFFC200E6DE46 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */; };
-		F1A389C220DFFFDF00E6DE46 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */; };
-		F1A389C320DFFFEB00E6DE46 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AABC620D2B304009807E5 /* FileManagement.swift */; };
-		F1A389C420DFFFF400E6DE46 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18FC50820D47D200070301A /* Persistence.swift */; };
-		F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1AF721020CD95B400F79799 /* Gzip.framework */; };
-		F1B9D33220FD609500D3465C /* DatabaseEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9D33120FD609500D3465C /* DatabaseEditorViewController.swift */; };
-		F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */; };
-		F1C5A33A20F280B3009EC7D0 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */; };
-		F1C5A33B20F280B8009EC7D0 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */; };
-		F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */; };
-		F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */; };
-		F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */; };
-		F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */; };
-		F1F7BA0E20DC444B00F22B81 /* ValidFile.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */; };
-		F1F7BA1020DC452700F22B81 /* ValidFileXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */; };
-		F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */; };
+		F1780865215702C400271E67 /* KeyPass_NonborkedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */; };
+		F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
+		F17808922157030000271E67 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808912157030000271E67 /* KeePassSupportTests.swift */; };
+		F17808942157030000271E67 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F17808842157030000271E67 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F17808972157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
+		F17808982157030000271E67 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F17808AE2157034D00271E67 /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A12157034C00271E67 /* KDBXString.swift */; };
+		F17808AF2157034D00271E67 /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A22157034D00271E67 /* KDBXEntry.swift */; };
+		F17808B02157034D00271E67 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A32157034D00271E67 /* KDBXDatabase.swift */; };
+		F17808B12157034D00271E67 /* KDBXXMLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */; };
+		F17808B22157034D00271E67 /* KDBXXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A62157034D00271E67 /* KDBXXMLElement.swift */; };
+		F17808B32157034D00271E67 /* KDBXXMLEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A72157034D00271E67 /* KDBXXMLEntry.swift */; };
+		F17808B42157034D00271E67 /* KDBXXMLGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A82157034D00271E67 /* KDBXXMLGroup.swift */; };
+		F17808B52157034D00271E67 /* KDBXXMLDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AA2157034D00271E67 /* KDBXXMLDict.swift */; };
+		F17808B62157034D00271E67 /* KDBXXMLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AB2157034D00271E67 /* KDBXXMLList.swift */; };
+		F17808B72157034D00271E67 /* KDBXXMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AC2157034D00271E67 /* KDBXXMLString.swift */; };
+		F17808B82157034D00271E67 /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AD2157034D00271E67 /* KDBXGroup.swift */; };
+		F17808BF2157036500271E67 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BA2157036500271E67 /* AES.swift */; };
+		F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */; };
+		F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */; };
+		F17808C22157036500271E67 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BE2157036500271E67 /* ByteArray+Crypto.swift */; };
+		F178098B2157048000271E67 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178097F2157044300271E67 /* Gzip.framework */; };
+		F178098D215704CA00271E67 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F178097F2157044300271E67 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F17809A82157056E00271E67 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178099B2157052F00271E67 /* AEXML.framework */; };
+		F17809AC2157057E00271E67 /* AEXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F178099B2157052F00271E67 /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F17809B2215705BB00271E67 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */; };
+		F17809D1215706C600271E67 /* salsa20.h in Headers */ = {isa = PBXBuildFile; fileRef = F17809CF215706C600271E67 /* salsa20.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F17809D2215706C600271E67 /* salsa20.c in Sources */ = {isa = PBXBuildFile; fileRef = F17809D0215706C600271E67 /* salsa20.c */; };
+		F17809D3215706F600271E67 /* Salsa20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F17809C32157067B00271E67 /* Salsa20.framework */; };
+		F17809D72157072C00271E67 /* Salsa20.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F17809C32157067B00271E67 /* Salsa20.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1780A1E215707AB00271E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1780A06215707AB00271E67 /* Assets.xcassets */; };
+		F1780A1F215707AB00271E67 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A08215707AB00271E67 /* KDBXDocument.swift */; };
+		F1780A20215707AB00271E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780A09215707AB00271E67 /* LaunchScreen.storyboard */; };
+		F1780A21215707AB00271E67 /* Shared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780A0A215707AB00271E67 /* Shared.storyboard */; };
+		F1780A22215707AB00271E67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780A0B215707AB00271E67 /* Main.storyboard */; };
+		F1780A23215707AB00271E67 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A0D215707AB00271E67 /* SplitViewController.swift */; };
+		F1780A24215707AB00271E67 /* DatabaseEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A0E215707AB00271E67 /* DatabaseEditorViewController.swift */; };
+		F1780A25215707AB00271E67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A0F215707AB00271E67 /* DetailViewController.swift */; };
+		F1780A26215707AB00271E67 /* ReplaceOnNavigationStackSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A11215707AB00271E67 /* ReplaceOnNavigationStackSegue.swift */; };
+		F1780A27215707AB00271E67 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A12215707AB00271E67 /* DatabaseViewController.swift */; };
+		F1780A28215707AB00271E67 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A13215707AB00271E67 /* MasterViewController.swift */; };
+		F1780A29215707AB00271E67 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A15215707AB00271E67 /* PasswordTableViewCell.swift */; };
+		F1780A2A215707AB00271E67 /* DatabaseEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A16215707AB00271E67 /* DatabaseEntryTableViewCell.swift */; };
+		F1780A2B215707AB00271E67 /* TextboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A17215707AB00271E67 /* TextboxTableViewCell.swift */; };
+		F1780A2C215707AB00271E67 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A18215707AB00271E67 /* GroupTableViewCell.swift */; };
+		F1780A2D215707AB00271E67 /* MarginlessTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A19215707AB00271E67 /* MarginlessTextView.swift */; };
+		F1780A2E215707AB00271E67 /* Default.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1780A1A215707AB00271E67 /* Default.xml */; };
+		F1780A2F215707AB00271E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1B215707AB00271E67 /* AppDelegate.swift */; };
+		F1780A30215707AB00271E67 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1C215707AB00271E67 /* Persistence.swift */; };
+		F1780A31215707AB00271E67 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1D215707AB00271E67 /* FileManagement.swift */; };
+		F1780A4B21570ACA00271E67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1780A4921570ACA00271E67 /* Info.plist */; };
+		F1780A4C21570ACA00271E67 /* KeePassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A4A21570ACA00271E67 /* KeePassUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F1044C7820DFF78C003D65EC /* PBXContainerItemProxy */ = {
+		F1780861215702C400271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F1044C6C20DFF78C003D65EC;
-			remoteInfo = "KeePass AutoFill Extension";
+			remoteGlobalIDString = F178084B215702C400271E67;
+			remoteInfo = "KeyPass Nonborked";
 		};
-		F16AABF020D32BE5009807E5 /* PBXContainerItemProxy */ = {
+		F178088C2157030000271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92791BDD47210011F36F;
-			remoteInfo = "AEXML iOS";
-		};
-		F16AABF220D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92DF1BDD5D330011F36F;
-			remoteInfo = "AEXML watchOS";
-		};
-		F16AABF420D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92991BDD4CEF0011F36F;
-			remoteInfo = "AEXML iOS Tests";
-		};
-		F16AABF620D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92BE1BDD5B300011F36F;
-			remoteInfo = "AEXML tvOS";
-		};
-		F16AABF820D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92CC1BDD5BB20011F36F;
-			remoteInfo = "AEXML tvOS Tests";
-		};
-		F16AABFA20D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A928A1BDD49390011F36F;
-			remoteInfo = "AEXML OSX";
-		};
-		F16AABFC20D32BE5009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92AB1BDD54F50011F36F;
-			remoteInfo = "AEXML OSX Tests";
-		};
-		F16AAC0020D32C43009807E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
-			remoteInfo = "AEXML iOS";
-		};
-		F16D5BB420CC6957008B6F12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F16D5B9C20CC6956008B6F12;
-			remoteInfo = KeePass;
-		};
-		F16D5BBF20CC6958008B6F12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F16D5B9C20CC6956008B6F12;
-			remoteInfo = KeePass;
-		};
-		F16D5BDF20CC6971008B6F12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F16D5BD420CC6970008B6F12;
+			remoteGlobalIDString = F1780881215702FF00271E67;
 			remoteInfo = KeePassSupport;
 		};
-		F16D5BE120CC6971008B6F12 /* PBXContainerItemProxy */ = {
+		F178088E2157030000271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F16D5B9C20CC6956008B6F12;
-			remoteInfo = KeePass;
+			remoteGlobalIDString = F178084B215702C400271E67;
+			remoteInfo = "KeyPass Nonborked";
 		};
-		F16D5BE820CC6971008B6F12 /* PBXContainerItemProxy */ = {
+		F17808952157030000271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F16D5B9520CC6956008B6F12 /* Project object */;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F16D5BD420CC6970008B6F12;
+			remoteGlobalIDString = F1780881215702FF00271E67;
 			remoteInfo = KeePassSupport;
 		};
-		F18BB44B20D402EB00F92235 /* PBXContainerItemProxy */ = {
+		F178097E2157044300271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
-			remoteInfo = "Gzip iOS";
-		};
-		F1AF720D20CD95B400F79799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2AE050881D4A2C070040E4C9;
-			remoteInfo = "Gzip macOS";
-		};
-		F1AF720F20CD95B400F79799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2AE050991D4A2DC30040E4C9;
 			remoteInfo = "Gzip iOS";
 		};
-		F1AF721120CD95B400F79799 /* PBXContainerItemProxy */ = {
+		F17809862157044300271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A321EE71D4A6138002B0245;
-			remoteInfo = "Gzip watchOS";
-		};
-		F1AF721320CD95B400F79799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A321F071D4A635F002B0245;
-			remoteInfo = "Gzip tvOS";
-		};
-		F1AF721520CD95B400F79799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A58A7571B00F414005FBBC2;
-			remoteInfo = "Tests macOS";
-		};
-		F1AF721720CD95B400F79799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2A58A77D1B00FBEF005FBBC2;
 			remoteInfo = "Tests iOS";
 		};
+		F17809882157047500271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
+		};
+		F178098E215704CA00271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
+		};
+		F178099A2157052F00271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92791BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F178099E2157052F00271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92991BDD4CEF0011F36F;
+			remoteInfo = "AEXML iOS Tests";
+		};
+		F17809A92157057400271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F17809AD2157057E00271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F17809D42157070800271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F17809C22157067B00271E67;
+			remoteInfo = Salsa20;
+		};
+		F17809D82157072C00271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F17809C22157067B00271E67;
+			remoteInfo = Salsa20;
+		};
+		F1780A4421570A8700271E67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F178084B215702C400271E67;
+			remoteInfo = KeePass;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F1044C8A20DFF78C003D65EC /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				F1044C7A20DFF78C003D65EC /* KeePass AutoFill Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F16D5BEF20CC6971008B6F12 /* Embed Frameworks */ = {
+		F178089C2157030000271E67 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F16AABFF20D32C43009807E5 /* AEXML.framework in Embed Frameworks */,
-				F16D5BEB20CC6971008B6F12 /* KeePassSupport.framework in Embed Frameworks */,
-				F18BB44A20D402EB00F92235 /* Gzip.framework in Embed Frameworks */,
+				F178098D215704CA00271E67 /* Gzip.framework in Embed Frameworks */,
+				F17809AC2157057E00271E67 /* AEXML.framework in Embed Frameworks */,
+				F17808982157030000271E67 /* KeePassSupport.framework in Embed Frameworks */,
+				F17809D72157072C00271E67 /* Salsa20.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,553 +187,504 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KeePass AutoFill Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1044C6E20DFF78C003D65EC /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
-		F1044C7120DFF78C003D65EC /* CredentialProviderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProviderViewController.swift; sourceTree = "<group>"; };
-		F1044C7420DFF78C003D65EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		F1044C7620DFF78C003D65EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1044C7720DFF78C003D65EC /* KeePass_AutoFill_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass_AutoFill_Extension.entitlements; sourceTree = "<group>"; };
-		F1044C8B20DFFE16003D65EC /* Shared.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
-		F109067220F053290008D678 /* MarginlessTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginlessTextView.swift; sourceTree = "<group>"; };
-		F10FE08620DAB1860030B033 /* DatabaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
-		F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEntryTableViewCell.swift; sourceTree = "<group>"; };
-		F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLDatabase.swift; sourceTree = "<group>"; };
-		F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLEntry.swift; sourceTree = "<group>"; };
-		F134849620F29916001CE6CF /* KDBXEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
-		F16AABA320D08C25009807E5 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
-		F16AABC620D2B304009807E5 /* FileManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
-		F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
-		F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AEXML.xcodeproj; path = Dependencies/AEXML/AEXML.xcodeproj; sourceTree = "<group>"; };
-		F16D5B9D20CC6956008B6F12 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16D5BA020CC6956008B6F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F16D5BA220CC6956008B6F12 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		F16D5BA420CC6956008B6F12 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		F16D5BA720CC6956008B6F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F16D5BA920CC6957008B6F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F16D5BAC20CC6957008B6F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F16D5BAE20CC6957008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BB320CC6957008B6F12 /* KeePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16D5BB720CC6958008B6F12 /* KeePassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassTests.swift; sourceTree = "<group>"; };
-		F16D5BB920CC6958008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16D5BC220CC6958008B6F12 /* KeePassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassUITests.swift; sourceTree = "<group>"; };
-		F16D5BC420CC6958008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16D5BD720CC6970008B6F12 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
-		F16D5BD820CC6970008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassSupportTests.swift; sourceTree = "<group>"; };
-		F16D5BE620CC6971008B6F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
-		F16D5BF620CC69AB008B6F12 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
-		F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
-		F1717E3B20F3E90A0068630F /* KDBXString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
-		F1717E4920F3E97C0068630F /* KDBXXMLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLString.swift; sourceTree = "<group>"; };
-		F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLDict.swift; sourceTree = "<group>"; };
-		F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
-		F179FFEF20D814E500C48FC9 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		F18BB45320D4074400F92235 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
-		F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
-		F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextboxTableViewCell.swift; sourceTree = "<group>"; };
-		F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceOnNavigationStackSegue.swift; sourceTree = "<group>"; };
-		F18FC50820D47D200070301A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KDBXXMLElement.swift; path = KeePass/Models/XML/KDBXXMLElement.swift; sourceTree = SOURCE_ROOT; };
-		F1A25D1A20CC7868007F0FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSymmetricKeywrap.h; sourceTree = "<group>"; };
-		F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonRandom.h; sourceTree = "<group>"; };
-		F1A25D1F20CC78B4007F0FD1 /* CommonCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptor.h; sourceTree = "<group>"; };
-		F1A25D2020CC78B4007F0FD1 /* CommonHMAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHMAC.h; sourceTree = "<group>"; };
-		F1A25D2120CC78B4007F0FD1 /* CommonDigest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
-		F1A25D2220CC78B4007F0FD1 /* CommonCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
-		F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKeyDerivation.h; sourceTree = "<group>"; };
-		F1A25D2420CC78B4007F0FD1 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCryptoError.h; sourceTree = "<group>"; };
-		F1AF720320CD95B400F79799 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
-		F1B9D33120FD609500D3465C /* DatabaseEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEditorViewController.swift; sourceTree = "<group>"; };
-		F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLList.swift; sourceTree = "<group>"; };
-		F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Extensions.swift"; sourceTree = "<group>"; };
-		F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
-		F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
-		F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXXMLGroup.swift; sourceTree = "<group>"; };
-		F1E89E8D20CC6FF400AE8A2C /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadDynamicHeader.kdbx; sourceTree = "<group>"; };
-		F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadPayload.kdbx; sourceTree = "<group>"; };
-		F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ValidFile.kdbx; sourceTree = "<group>"; };
-		F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidFileXML.xml; sourceTree = "<group>"; };
-		F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		F178084C215702C400271E67 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1780860215702C400271E67 /* KeePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPass_NonborkedTests.swift; sourceTree = "<group>"; };
+		F1780866215702C400271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1780882215702FF00271E67 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17808842157030000271E67 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
+		F17808852157030000271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F178088A2157030000271E67 /* KeePassSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17808912157030000271E67 /* KeePassSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassSupportTests.swift; sourceTree = "<group>"; };
+		F17808932157030000271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F17808A12157034C00271E67 /* KDBXString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
+		F17808A22157034D00271E67 /* KDBXEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
+		F17808A32157034D00271E67 /* KDBXDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
+		F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLDatabase.swift; sourceTree = "<group>"; };
+		F17808A62157034D00271E67 /* KDBXXMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLElement.swift; sourceTree = "<group>"; };
+		F17808A72157034D00271E67 /* KDBXXMLEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLEntry.swift; sourceTree = "<group>"; };
+		F17808A82157034D00271E67 /* KDBXXMLGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLGroup.swift; sourceTree = "<group>"; };
+		F17808AA2157034D00271E67 /* KDBXXMLDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLDict.swift; sourceTree = "<group>"; };
+		F17808AB2157034D00271E67 /* KDBXXMLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLList.swift; sourceTree = "<group>"; };
+		F17808AC2157034D00271E67 /* KDBXXMLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLString.swift; sourceTree = "<group>"; };
+		F17808AD2157034D00271E67 /* KDBXGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
+		F17808BA2157036500271E67 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
+		F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
+		F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
+		F17808BE2157036500271E67 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
+		F17809462157043E00271E67 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
+		F17809902157052F00271E67 /* AEXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AEXML.xcodeproj; path = AEXML/AEXML.xcodeproj; sourceTree = "<group>"; };
+		F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Extensions.swift"; sourceTree = "<group>"; };
+		F17809C32157067B00271E67 /* Salsa20.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Salsa20.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17809C62157067C00271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F17809CF215706C600271E67 /* salsa20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = salsa20.h; path = ../../KeePass/Salsa20/salsa20.h; sourceTree = "<group>"; };
+		F17809D0215706C600271E67 /* salsa20.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = salsa20.c; sourceTree = "<group>"; };
+		F1780A06215707AB00271E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1780A08215707AB00271E67 /* KDBXDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
+		F1780A09215707AB00271E67 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1780A0A215707AB00271E67 /* Shared.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Shared.storyboard; sourceTree = "<group>"; };
+		F1780A0B215707AB00271E67 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F1780A0D215707AB00271E67 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		F1780A0E215707AB00271E67 /* DatabaseEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseEditorViewController.swift; sourceTree = "<group>"; };
+		F1780A0F215707AB00271E67 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F1780A11215707AB00271E67 /* ReplaceOnNavigationStackSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceOnNavigationStackSegue.swift; sourceTree = "<group>"; };
+		F1780A12215707AB00271E67 /* DatabaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
+		F1780A13215707AB00271E67 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F1780A15215707AB00271E67 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
+		F1780A16215707AB00271E67 /* DatabaseEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseEntryTableViewCell.swift; sourceTree = "<group>"; };
+		F1780A17215707AB00271E67 /* TextboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextboxTableViewCell.swift; sourceTree = "<group>"; };
+		F1780A18215707AB00271E67 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		F1780A19215707AB00271E67 /* MarginlessTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginlessTextView.swift; sourceTree = "<group>"; };
+		F1780A1A215707AB00271E67 /* Default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Default.xml; sourceTree = "<group>"; };
+		F1780A1B215707AB00271E67 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1780A1C215707AB00271E67 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F1780A1D215707AB00271E67 /* FileManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagement.swift; sourceTree = "<group>"; };
+		F1780A32215707ED00271E67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1780A3F21570A8700271E67 /* KeePassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1780A4921570ACA00271E67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1780A4A21570ACA00271E67 /* KeePassUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeePassUITests.swift; sourceTree = "<group>"; };
+		F1780A4D21570B1100271E67 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F1044C6A20DFF78C003D65EC /* Frameworks */ = {
+		F1780849215702C400271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A389B220DFFF8F00E6DE46 /* KeePassSupport.framework in Frameworks */,
-				F1044C6F20DFF78C003D65EC /* AuthenticationServices.framework in Frameworks */,
+				F17808972157030000271E67 /* KeePassSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5B9A20CC6956008B6F12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F16AABFE20D32C43009807E5 /* AEXML.framework in Frameworks */,
-				F16D5BEA20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F16D5BB020CC6957008B6F12 /* Frameworks */ = {
+		F178085D215702C400271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BBB20CC6958008B6F12 /* Frameworks */ = {
+		F178087F215702FF00271E67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F17809D3215706F600271E67 /* Salsa20.framework in Frameworks */,
+				F17809A82157056E00271E67 /* AEXML.framework in Frameworks */,
+				F178098B2157048000271E67 /* Gzip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F17808872157030000271E67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F17809C02157067B00271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BD220CC6970008B6F12 /* Frameworks */ = {
+		F1780A3C21570A8700271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1AF721D20CD960000F79799 /* Gzip.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F16D5BDA20CC6970008B6F12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F16D5BDE20CC6971008B6F12 /* KeePassSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F1044C7020DFF78C003D65EC /* KeePass AutoFill Extension */ = {
+		F1780843215702C400271E67 = {
 			isa = PBXGroup;
 			children = (
-				F1044C7120DFF78C003D65EC /* CredentialProviderViewController.swift */,
-				F1044C7320DFF78C003D65EC /* MainInterface.storyboard */,
-				F1044C7620DFF78C003D65EC /* Info.plist */,
-				F1044C7720DFF78C003D65EC /* KeePass_AutoFill_Extension.entitlements */,
+				F178084E215702C400271E67 /* KeePass */,
+				F1780863215702C400271E67 /* KeyPass NonborkedTests */,
+				F17808832157030000271E67 /* KeePassSupport */,
+				F17808902157030000271E67 /* KeePassSupportTests */,
+				F17809C42157067C00271E67 /* Salsa20 */,
+				F1780A4021570A8700271E67 /* KeePassUITests */,
+				F178084D215702C400271E67 /* Products */,
+				F178098A2157048000271E67 /* Frameworks */,
 			);
-			path = "KeePass AutoFill Extension";
 			sourceTree = "<group>";
 		};
-		F10FE09620DAC7B70030B033 /* Models */ = {
+		F178084D215702C400271E67 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1B9D33F20FD61F200D3465C /* XML */,
-				F1C5A33D20F282CC009EC7D0 /* KDBXDatabase.swift */,
-				F1C5A33F20F2878F009EC7D0 /* KDBXGroup.swift */,
-				F134849620F29916001CE6CF /* KDBXEntry.swift */,
-				F1717E3B20F3E90A0068630F /* KDBXString.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F12A1FA621000468009EFFDA /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F16D5BF720CC69AB008B6F12 /* ByteArray+Crypto.swift */,
-				F18BB45720D4394400F92235 /* FixedWidthInteger+Bytes.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F16AABE720D32BE5009807E5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F16AABF120D32BE5009807E5 /* AEXML.framework */,
-				F16AABF320D32BE5009807E5 /* AEXML.framework */,
-				F16AABF520D32BE5009807E5 /* AEXML iOS Tests.xctest */,
-				F16AABF720D32BE5009807E5 /* AEXML.framework */,
-				F16AABF920D32BE5009807E5 /* AEXML tvOS Tests.xctest */,
-				F16AABFB20D32BE5009807E5 /* AEXML.framework */,
-				F16AABFD20D32BE5009807E5 /* AEXML OSX Tests.xctest */,
+				F178084C215702C400271E67 /* KeePass.app */,
+				F1780860215702C400271E67 /* KeePassTests.xctest */,
+				F1780882215702FF00271E67 /* KeePassSupport.framework */,
+				F178088A2157030000271E67 /* KeePassSupportTests.xctest */,
+				F17809C32157067B00271E67 /* Salsa20.framework */,
+				F1780A3F21570A8700271E67 /* KeePassUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F16D5B9420CC6956008B6F12 = {
+		F178084E215702C400271E67 /* KeePass */ = {
 			isa = PBXGroup;
 			children = (
-				F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */,
-				F1AF720320CD95B400F79799 /* Gzip.xcodeproj */,
-				F16D5B9F20CC6956008B6F12 /* KeePass */,
-				F16D5BB620CC6957008B6F12 /* KeePassTests */,
-				F16D5BC120CC6958008B6F12 /* KeePassUITests */,
-				F16D5BD620CC6970008B6F12 /* KeePassSupport */,
-				F16D5BE320CC6971008B6F12 /* KeePassSupportTests */,
-				F1044C7020DFF78C003D65EC /* KeePass AutoFill Extension */,
-				F16D5B9E20CC6956008B6F12 /* Products */,
-				F1A25D1920CC7868007F0FD1 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		F16D5B9E20CC6956008B6F12 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F16D5B9D20CC6956008B6F12 /* KeePass.app */,
-				F16D5BB320CC6957008B6F12 /* KeePassTests.xctest */,
-				F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */,
-				F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */,
-				F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */,
-				F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F16D5B9F20CC6956008B6F12 /* KeePass */ = {
-			isa = PBXGroup;
-			children = (
-				F1C5A33820F280A1009EC7D0 /* Extensions */,
-				F10FE09620DAC7B70030B033 /* Models */,
-				F179FFCD20D6FBB700C48FC9 /* Views */,
-				F1A3533020D5E7A9000AABB3 /* View Controllers */,
-				F16D5BF520CC69AB008B6F12 /* Crypto */,
-				F16AABCC20D2FF97009807E5 /* KDBXDocument.swift */,
-				F16D5BA020CC6956008B6F12 /* AppDelegate.swift */,
-				F16AABC620D2B304009807E5 /* FileManagement.swift */,
-				F18FC50820D47D200070301A /* Persistence.swift */,
-				F16D5BA620CC6956008B6F12 /* Main.storyboard */,
-				F1044C8B20DFFE16003D65EC /* Shared.storyboard */,
-				F16D5BA920CC6957008B6F12 /* Assets.xcassets */,
-				F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */,
-				F18BB45320D4074400F92235 /* Default.xml */,
-				F16AABA320D08C25009807E5 /* KeePass.entitlements */,
-				F16D5BAE20CC6957008B6F12 /* Info.plist */,
-				F1E89E8D20CC6FF400AE8A2C /* Playground.playground */,
+				F1780A0C215707AB00271E67 /* View Controllers */,
+				F1780A14215707AB00271E67 /* Views */,
+				F1780A1B215707AB00271E67 /* AppDelegate.swift */,
+				F1780A1D215707AB00271E67 /* FileManagement.swift */,
+				F1780A08215707AB00271E67 /* KDBXDocument.swift */,
+				F1780A1C215707AB00271E67 /* Persistence.swift */,
+				F1780A09215707AB00271E67 /* LaunchScreen.storyboard */,
+				F1780A0B215707AB00271E67 /* Main.storyboard */,
+				F1780A0A215707AB00271E67 /* Shared.storyboard */,
+				F1780A06215707AB00271E67 /* Assets.xcassets */,
+				F1780A1A215707AB00271E67 /* Default.xml */,
+				F1780A32215707ED00271E67 /* Info.plist */,
+				F1780A4D21570B1100271E67 /* KeePass.entitlements */,
 			);
 			path = KeePass;
 			sourceTree = "<group>";
 		};
-		F16D5BB620CC6957008B6F12 /* KeePassTests */ = {
+		F1780863215702C400271E67 /* KeyPass NonborkedTests */ = {
 			isa = PBXGroup;
 			children = (
-				F16D5BB720CC6958008B6F12 /* KeePassTests.swift */,
-				F16D5BB920CC6958008B6F12 /* Info.plist */,
+				F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */,
+				F1780866215702C400271E67 /* Info.plist */,
 			);
-			path = KeePassTests;
+			path = "KeyPass NonborkedTests";
 			sourceTree = "<group>";
 		};
-		F16D5BC120CC6958008B6F12 /* KeePassUITests */ = {
+		F17808832157030000271E67 /* KeePassSupport */ = {
 			isa = PBXGroup;
 			children = (
-				F16D5BC220CC6958008B6F12 /* KeePassUITests.swift */,
-				F16D5BC420CC6958008B6F12 /* Info.plist */,
-			);
-			path = KeePassUITests;
-			sourceTree = "<group>";
-		};
-		F16D5BD620CC6970008B6F12 /* KeePassSupport */ = {
-			isa = PBXGroup;
-			children = (
-				F16D5BD720CC6970008B6F12 /* KeePassSupport.h */,
-				F16D5BD820CC6970008B6F12 /* Info.plist */,
+				F17809902157052F00271E67 /* AEXML.xcodeproj */,
+				F17809462157043E00271E67 /* Gzip.xcodeproj */,
+				F17808A02157034C00271E67 /* Models */,
+				F17808B92157036500271E67 /* Crypto */,
+				F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */,
+				F17808842157030000271E67 /* KeePassSupport.h */,
+				F17808852157030000271E67 /* Info.plist */,
 			);
 			path = KeePassSupport;
 			sourceTree = "<group>";
 		};
-		F16D5BE320CC6971008B6F12 /* KeePassSupportTests */ = {
+		F17808902157030000271E67 /* KeePassSupportTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1F7BA0F20DC452700F22B81 /* ValidFileXML.xml */,
-				F1F7BA0D20DC444B00F22B81 /* ValidFile.kdbx */,
-				F1F7BA0B20DC42A300F22B81 /* BadPayload.kdbx */,
-				F1F7B9FD20DC39A100F22B81 /* BadDynamicHeader.kdbx */,
-				F16D5BE420CC6971008B6F12 /* KeePassSupportTests.swift */,
-				F16D5BE620CC6971008B6F12 /* Info.plist */,
+				F17808912157030000271E67 /* KeePassSupportTests.swift */,
+				F17808932157030000271E67 /* Info.plist */,
 			);
 			path = KeePassSupportTests;
 			sourceTree = "<group>";
 		};
-		F16D5BF520CC69AB008B6F12 /* Crypto */ = {
+		F17808A02157034C00271E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F12A1FA621000468009EFFDA /* Extensions */,
-				F16D5BF320CC69A2008B6F12 /* KDBXCryptoHandler.swift */,
-				F16D5BF620CC69AB008B6F12 /* AES.swift */,
+				F17808A12157034C00271E67 /* KDBXString.swift */,
+				F17808A22157034D00271E67 /* KDBXEntry.swift */,
+				F17808A32157034D00271E67 /* KDBXDatabase.swift */,
+				F17808A42157034D00271E67 /* XML */,
+				F17808AD2157034D00271E67 /* KDBXGroup.swift */,
 			);
-			path = Crypto;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		F179FFCD20D6FBB700C48FC9 /* Views */ = {
+		F17808A42157034D00271E67 /* XML */ = {
 			isa = PBXGroup;
 			children = (
-				F179FFCF20D6FBF400C48FC9 /* PasswordTableViewCell.swift */,
-				F10FE09420DAB63F0030B033 /* DatabaseEntryTableViewCell.swift */,
-				F1F9F72820DBFB5200F52CB7 /* GroupTableViewCell.swift */,
-				F18F9EF620E819BF001B813B /* TextboxTableViewCell.swift */,
-				F109067220F053290008D678 /* MarginlessTextView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		F18F9F0020E8511D001B813B /* Segues */ = {
-			isa = PBXGroup;
-			children = (
-				F18F9F0120E85130001B813B /* ReplaceOnNavigationStackSegue.swift */,
-			);
-			path = Segues;
-			sourceTree = "<group>";
-		};
-		F1A25D1920CC7868007F0FD1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F1A25D1C20CC78B4007F0FD1 /* CommonCrypto */,
-				F1A25D1A20CC7868007F0FD1 /* Foundation.framework */,
-				F1044C6E20DFF78C003D65EC /* AuthenticationServices.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F1A25D1C20CC78B4007F0FD1 /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				F1A25D1D20CC78B4007F0FD1 /* CommonSymmetricKeywrap.h */,
-				F1A25D1E20CC78B4007F0FD1 /* CommonRandom.h */,
-				F1A25D1F20CC78B4007F0FD1 /* CommonCryptor.h */,
-				F1A25D2020CC78B4007F0FD1 /* CommonHMAC.h */,
-				F1A25D2120CC78B4007F0FD1 /* CommonDigest.h */,
-				F1A25D2220CC78B4007F0FD1 /* CommonCrypto.h */,
-				F1A25D2320CC78B4007F0FD1 /* CommonKeyDerivation.h */,
-				F1A25D2420CC78B4007F0FD1 /* module.modulemap */,
-				F1A25D2520CC78B4007F0FD1 /* CommonCryptoError.h */,
-			);
-			name = CommonCrypto;
-			path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/CommonCrypto;
-			sourceTree = DEVELOPER_DIR;
-		};
-		F1A3533020D5E7A9000AABB3 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F18F9F0020E8511D001B813B /* Segues */,
-				F16D5BA220CC6956008B6F12 /* MasterViewController.swift */,
-				F16D5BA420CC6956008B6F12 /* DetailViewController.swift */,
-				F179FFEF20D814E500C48FC9 /* SplitViewController.swift */,
-				F10FE08620DAB1860030B033 /* DatabaseViewController.swift */,
-				F1B9D33120FD609500D3465C /* DatabaseEditorViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F1AF720420CD95B400F79799 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F1AF720E20CD95B400F79799 /* Gzip.framework */,
-				F1AF721020CD95B400F79799 /* Gzip.framework */,
-				F1AF721220CD95B400F79799 /* Gzip.framework */,
-				F1AF721420CD95B400F79799 /* Gzip.framework */,
-				F1AF721620CD95B400F79799 /* Tests macOS.xctest */,
-				F1AF721820CD95B400F79799 /* Tests iOS.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F1B9D33F20FD61F200D3465C /* XML */ = {
-			isa = PBXGroup;
-			children = (
-				F1B9D34020FD61FA00D3465C /* Convenience */,
-				F10FE09720DACB270030B033 /* KDBXXMLDatabase.swift */,
-				F1C5A34120F288AE009EC7D0 /* KDBXXMLGroup.swift */,
-				F134849420F298FE001CE6CF /* KDBXXMLEntry.swift */,
-				F197C1C820F3BB2D00531A89 /* KDBXXMLElement.swift */,
-				F1717E4920F3E97C0068630F /* KDBXXMLString.swift */,
+				F17808A92157034D00271E67 /* Convenience */,
+				F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */,
+				F17808A62157034D00271E67 /* KDBXXMLElement.swift */,
+				F17808A72157034D00271E67 /* KDBXXMLEntry.swift */,
+				F17808A82157034D00271E67 /* KDBXXMLGroup.swift */,
+				F17808AC2157034D00271E67 /* KDBXXMLString.swift */,
 			);
 			path = XML;
 			sourceTree = "<group>";
 		};
-		F1B9D34020FD61FA00D3465C /* Convenience */ = {
+		F17808A92157034D00271E67 /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
-				F1C5A33620F27A66009EC7D0 /* KDBXXMLList.swift */,
-				F1717E4B20F3F3040068630F /* KDBXXMLDict.swift */,
+				F17808AA2157034D00271E67 /* KDBXXMLDict.swift */,
+				F17808AB2157034D00271E67 /* KDBXXMLList.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
 		};
-		F1C5A33820F280A1009EC7D0 /* Extensions */ = {
+		F17808B92157036500271E67 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				F1C5A33920F280B3009EC7D0 /* AEXMLElement+Extensions.swift */,
+				F17808BA2157036500271E67 /* AES.swift */,
+				F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */,
+				F17808BC2157036500271E67 /* Extensions */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		F17808BC2157036500271E67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */,
+				F17808BE2157036500271E67 /* ByteArray+Crypto.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F17809732157044300271E67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F178097F2157044300271E67 /* Gzip.framework */,
+				F17809872157044300271E67 /* Tests iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F178098A2157048000271E67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F17809912157052F00271E67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F178099B2157052F00271E67 /* AEXML.framework */,
+				F178099F2157052F00271E67 /* AEXML iOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F17809C42157067C00271E67 /* Salsa20 */ = {
+			isa = PBXGroup;
+			children = (
+				F17809CF215706C600271E67 /* salsa20.h */,
+				F17809D0215706C600271E67 /* salsa20.c */,
+				F17809C62157067C00271E67 /* Info.plist */,
+			);
+			path = Salsa20;
+			sourceTree = "<group>";
+		};
+		F1780A0C215707AB00271E67 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1780A0D215707AB00271E67 /* SplitViewController.swift */,
+				F1780A0E215707AB00271E67 /* DatabaseEditorViewController.swift */,
+				F1780A0F215707AB00271E67 /* DetailViewController.swift */,
+				F1780A10215707AB00271E67 /* Segues */,
+				F1780A12215707AB00271E67 /* DatabaseViewController.swift */,
+				F1780A13215707AB00271E67 /* MasterViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F1780A10215707AB00271E67 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				F1780A11215707AB00271E67 /* ReplaceOnNavigationStackSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		F1780A14215707AB00271E67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1780A15215707AB00271E67 /* PasswordTableViewCell.swift */,
+				F1780A16215707AB00271E67 /* DatabaseEntryTableViewCell.swift */,
+				F1780A17215707AB00271E67 /* TextboxTableViewCell.swift */,
+				F1780A18215707AB00271E67 /* GroupTableViewCell.swift */,
+				F1780A19215707AB00271E67 /* MarginlessTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1780A4021570A8700271E67 /* KeePassUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F1780A4921570ACA00271E67 /* Info.plist */,
+				F1780A4A21570ACA00271E67 /* KeePassUITests.swift */,
+			);
+			path = KeePassUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F16D5BD020CC6970008B6F12 /* Headers */ = {
+		F178087D215702FF00271E67 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D5BE720CC6971008B6F12 /* KeePassSupport.h in Headers */,
+				F17808942157030000271E67 /* KeePassSupport.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F17809BE2157067B00271E67 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F17809D1215706C600271E67 /* salsa20.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F1044C6C20DFF78C003D65EC /* KeePass AutoFill Extension */ = {
+		F178084B215702C400271E67 /* KeePass */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1044C8920DFF78C003D65EC /* Build configuration list for PBXNativeTarget "KeePass AutoFill Extension" */;
+			buildConfigurationList = F1780874215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePass" */;
 			buildPhases = (
-				F1044C6920DFF78C003D65EC /* Sources */,
-				F1044C6A20DFF78C003D65EC /* Frameworks */,
-				F1044C6B20DFF78C003D65EC /* Resources */,
+				F1780848215702C400271E67 /* Sources */,
+				F1780849215702C400271E67 /* Frameworks */,
+				F178084A215702C400271E67 /* Resources */,
+				F178089C2157030000271E67 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "KeePass AutoFill Extension";
-			productName = "KeePass AutoFill Extension";
-			productReference = F1044C6D20DFF78C003D65EC /* KeePass AutoFill Extension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		F16D5B9C20CC6956008B6F12 /* KeePass */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F16D5BC720CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePass" */;
-			buildPhases = (
-				F16D5B9920CC6956008B6F12 /* Sources */,
-				F16D5B9A20CC6956008B6F12 /* Frameworks */,
-				F16D5B9B20CC6956008B6F12 /* Resources */,
-				F16D5BEF20CC6971008B6F12 /* Embed Frameworks */,
-				F1044C8A20DFF78C003D65EC /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F16D5BE920CC6971008B6F12 /* PBXTargetDependency */,
-				F16AAC0120D32C43009807E5 /* PBXTargetDependency */,
-				F18BB44C20D402EB00F92235 /* PBXTargetDependency */,
-				F1044C7920DFF78C003D65EC /* PBXTargetDependency */,
+				F17808962157030000271E67 /* PBXTargetDependency */,
+				F178098F215704CA00271E67 /* PBXTargetDependency */,
+				F17809AE2157057E00271E67 /* PBXTargetDependency */,
+				F17809D92157072C00271E67 /* PBXTargetDependency */,
 			);
 			name = KeePass;
-			productName = KeePass;
-			productReference = F16D5B9D20CC6956008B6F12 /* KeePass.app */;
+			productName = "KeyPass Nonborked";
+			productReference = F178084C215702C400271E67 /* KeePass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F16D5BB220CC6957008B6F12 /* KeePassTests */ = {
+		F178085F215702C400271E67 /* KeePassTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F16D5BCA20CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePassTests" */;
+			buildConfigurationList = F1780877215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePassTests" */;
 			buildPhases = (
-				F16D5BAF20CC6957008B6F12 /* Sources */,
-				F16D5BB020CC6957008B6F12 /* Frameworks */,
-				F16D5BB120CC6957008B6F12 /* Resources */,
+				F178085C215702C400271E67 /* Sources */,
+				F178085D215702C400271E67 /* Frameworks */,
+				F178085E215702C400271E67 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F16D5BB520CC6957008B6F12 /* PBXTargetDependency */,
+				F1780862215702C400271E67 /* PBXTargetDependency */,
 			);
 			name = KeePassTests;
-			productName = KeePassTests;
-			productReference = F16D5BB320CC6957008B6F12 /* KeePassTests.xctest */;
+			productName = "KeyPass NonborkedTests";
+			productReference = F1780860215702C400271E67 /* KeePassTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F16D5BBD20CC6958008B6F12 /* KeePassUITests */ = {
+		F1780881215702FF00271E67 /* KeePassSupport */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F16D5BCD20CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePassUITests" */;
+			buildConfigurationList = F17808992157030000271E67 /* Build configuration list for PBXNativeTarget "KeePassSupport" */;
 			buildPhases = (
-				F16D5BBA20CC6958008B6F12 /* Sources */,
-				F16D5BBB20CC6958008B6F12 /* Frameworks */,
-				F16D5BBC20CC6958008B6F12 /* Resources */,
+				F178087D215702FF00271E67 /* Headers */,
+				F178087E215702FF00271E67 /* Sources */,
+				F178087F215702FF00271E67 /* Frameworks */,
+				F1780880215702FF00271E67 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F16D5BC020CC6958008B6F12 /* PBXTargetDependency */,
-			);
-			name = KeePassUITests;
-			productName = KeePassUITests;
-			productReference = F16D5BBE20CC6958008B6F12 /* KeePassUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		F16D5BD420CC6970008B6F12 /* KeePassSupport */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F16D5BEC20CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupport" */;
-			buildPhases = (
-				F16D5BD020CC6970008B6F12 /* Headers */,
-				F16D5BD120CC6970008B6F12 /* Sources */,
-				F16D5BD220CC6970008B6F12 /* Frameworks */,
-				F16D5BD320CC6970008B6F12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				F17809D52157070800271E67 /* PBXTargetDependency */,
+				F17809AA2157057400271E67 /* PBXTargetDependency */,
+				F17809892157047500271E67 /* PBXTargetDependency */,
 			);
 			name = KeePassSupport;
 			productName = KeePassSupport;
-			productReference = F16D5BD520CC6970008B6F12 /* KeePassSupport.framework */;
+			productReference = F1780882215702FF00271E67 /* KeePassSupport.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F16D5BDC20CC6970008B6F12 /* KeePassSupportTests */ = {
+		F17808892157030000271E67 /* KeePassSupportTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F16D5BF020CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */;
+			buildConfigurationList = F178089D2157030000271E67 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */;
 			buildPhases = (
-				F16D5BD920CC6970008B6F12 /* Sources */,
-				F16D5BDA20CC6970008B6F12 /* Frameworks */,
-				F16D5BDB20CC6970008B6F12 /* Resources */,
+				F17808862157030000271E67 /* Sources */,
+				F17808872157030000271E67 /* Frameworks */,
+				F17808882157030000271E67 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F16D5BE020CC6971008B6F12 /* PBXTargetDependency */,
-				F16D5BE220CC6971008B6F12 /* PBXTargetDependency */,
+				F178088D2157030000271E67 /* PBXTargetDependency */,
+				F178088F2157030000271E67 /* PBXTargetDependency */,
 			);
 			name = KeePassSupportTests;
 			productName = KeePassSupportTests;
-			productReference = F16D5BDD20CC6970008B6F12 /* KeePassSupportTests.xctest */;
+			productReference = F178088A2157030000271E67 /* KeePassSupportTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F17809C22157067B00271E67 /* Salsa20 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F17809CC2157067C00271E67 /* Build configuration list for PBXNativeTarget "Salsa20" */;
+			buildPhases = (
+				F17809BE2157067B00271E67 /* Headers */,
+				F17809BF2157067B00271E67 /* Sources */,
+				F17809C02157067B00271E67 /* Frameworks */,
+				F17809C12157067B00271E67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Salsa20;
+			productName = Salsa20;
+			productReference = F17809C32157067B00271E67 /* Salsa20.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F1780A3E21570A8700271E67 /* KeePassUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1780A4621570A8700271E67 /* Build configuration list for PBXNativeTarget "KeePassUITests" */;
+			buildPhases = (
+				F1780A3B21570A8700271E67 /* Sources */,
+				F1780A3C21570A8700271E67 /* Frameworks */,
+				F1780A3D21570A8700271E67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1780A4521570A8700271E67 /* PBXTargetDependency */,
+			);
+			name = KeePassUITests;
+			productName = KeePassUITests;
+			productReference = F1780A3F21570A8700271E67 /* KeePassUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F16D5B9520CC6956008B6F12 /* Project object */ = {
+		F1780844215702C400271E67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Donny Lawrence";
 				TargetAttributes = {
-					F1044C6C20DFF78C003D65EC = {
+					F178084B215702C400271E67 = {
 						CreatedOnToolsVersion = 10.0;
-					};
-					F16D5B9C20CC6956008B6F12 = {
-						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
 					};
-					F16D5BB220CC6957008B6F12 = {
+					F178085F215702C400271E67 = {
 						CreatedOnToolsVersion = 10.0;
-						TestTargetID = F16D5B9C20CC6956008B6F12;
+						TestTargetID = F178084B215702C400271E67;
 					};
-					F16D5BBD20CC6958008B6F12 = {
+					F1780881215702FF00271E67 = {
 						CreatedOnToolsVersion = 10.0;
-						TestTargetID = F16D5B9C20CC6956008B6F12;
 					};
-					F16D5BD420CC6970008B6F12 = {
+					F17808892157030000271E67 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F178084B215702C400271E67;
+					};
+					F17809C22157067B00271E67 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					F1780A3E21570A8700271E67 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
-					};
-					F16D5BDC20CC6970008B6F12 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = F16D5B9C20CC6956008B6F12;
+						TestTargetID = F178084B215702C400271E67;
 					};
 				};
 			};
-			buildConfigurationList = F16D5B9820CC6956008B6F12 /* Build configuration list for PBXProject "KeePass" */;
+			buildConfigurationList = F1780847215702C400271E67 /* Build configuration list for PBXProject "KeePass" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -808,387 +692,253 @@
 				en,
 				Base,
 			);
-			mainGroup = F16D5B9420CC6956008B6F12;
-			productRefGroup = F16D5B9E20CC6956008B6F12 /* Products */;
+			mainGroup = F1780843215702C400271E67;
+			productRefGroup = F178084D215702C400271E67 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F16AABE720D32BE5009807E5 /* Products */;
-					ProjectRef = F16AABE620D32BE5009807E5 /* AEXML.xcodeproj */;
+					ProductGroup = F17809912157052F00271E67 /* Products */;
+					ProjectRef = F17809902157052F00271E67 /* AEXML.xcodeproj */;
 				},
 				{
-					ProductGroup = F1AF720420CD95B400F79799 /* Products */;
-					ProjectRef = F1AF720320CD95B400F79799 /* Gzip.xcodeproj */;
+					ProductGroup = F17809732157044300271E67 /* Products */;
+					ProjectRef = F17809462157043E00271E67 /* Gzip.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				F16D5B9C20CC6956008B6F12 /* KeePass */,
-				F16D5BB220CC6957008B6F12 /* KeePassTests */,
-				F16D5BBD20CC6958008B6F12 /* KeePassUITests */,
-				F16D5BD420CC6970008B6F12 /* KeePassSupport */,
-				F16D5BDC20CC6970008B6F12 /* KeePassSupportTests */,
-				F1044C6C20DFF78C003D65EC /* KeePass AutoFill Extension */,
+				F178084B215702C400271E67 /* KeePass */,
+				F178085F215702C400271E67 /* KeePassTests */,
+				F1780881215702FF00271E67 /* KeePassSupport */,
+				F17808892157030000271E67 /* KeePassSupportTests */,
+				F17809C22157067B00271E67 /* Salsa20 */,
+				F1780A3E21570A8700271E67 /* KeePassUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F16AABF120D32BE5009807E5 /* AEXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AEXML.framework;
-			remoteRef = F16AABF020D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABF320D32BE5009807E5 /* AEXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AEXML.framework;
-			remoteRef = F16AABF220D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABF520D32BE5009807E5 /* AEXML iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AEXML iOS Tests.xctest";
-			remoteRef = F16AABF420D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABF720D32BE5009807E5 /* AEXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AEXML.framework;
-			remoteRef = F16AABF620D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABF920D32BE5009807E5 /* AEXML tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AEXML tvOS Tests.xctest";
-			remoteRef = F16AABF820D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABFB20D32BE5009807E5 /* AEXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AEXML.framework;
-			remoteRef = F16AABFA20D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F16AABFD20D32BE5009807E5 /* AEXML OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AEXML OSX Tests.xctest";
-			remoteRef = F16AABFC20D32BE5009807E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F1AF720E20CD95B400F79799 /* Gzip.framework */ = {
+		F178097F2157044300271E67 /* Gzip.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Gzip.framework;
-			remoteRef = F1AF720D20CD95B400F79799 /* PBXContainerItemProxy */;
+			remoteRef = F178097E2157044300271E67 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1AF721020CD95B400F79799 /* Gzip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Gzip.framework;
-			remoteRef = F1AF720F20CD95B400F79799 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F1AF721220CD95B400F79799 /* Gzip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Gzip.framework;
-			remoteRef = F1AF721120CD95B400F79799 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F1AF721420CD95B400F79799 /* Gzip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Gzip.framework;
-			remoteRef = F1AF721320CD95B400F79799 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F1AF721620CD95B400F79799 /* Tests macOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Tests macOS.xctest";
-			remoteRef = F1AF721520CD95B400F79799 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F1AF721820CD95B400F79799 /* Tests iOS.xctest */ = {
+		F17809872157044300271E67 /* Tests iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Tests iOS.xctest";
-			remoteRef = F1AF721720CD95B400F79799 /* PBXContainerItemProxy */;
+			remoteRef = F17809862157044300271E67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F178099B2157052F00271E67 /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F178099A2157052F00271E67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F178099F2157052F00271E67 /* AEXML iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML iOS Tests.xctest";
+			remoteRef = F178099E2157052F00271E67 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F1044C6B20DFF78C003D65EC /* Resources */ = {
+		F178084A215702C400271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1044C7520DFF78C003D65EC /* MainInterface.storyboard in Resources */,
-				F1044C8D20DFFE16003D65EC /* Shared.storyboard in Resources */,
-				F18F9EFB20E84AA6001B813B /* Main.storyboard in Resources */,
+				F1780A1E215707AB00271E67 /* Assets.xcassets in Resources */,
+				F1780A20215707AB00271E67 /* LaunchScreen.storyboard in Resources */,
+				F1780A21215707AB00271E67 /* Shared.storyboard in Resources */,
+				F1780A22215707AB00271E67 /* Main.storyboard in Resources */,
+				F1780A2E215707AB00271E67 /* Default.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5B9B20CC6956008B6F12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F16D5BAD20CC6957008B6F12 /* LaunchScreen.storyboard in Resources */,
-				F1044C8C20DFFE16003D65EC /* Shared.storyboard in Resources */,
-				F16D5BAA20CC6957008B6F12 /* Assets.xcassets in Resources */,
-				F16D5BA820CC6956008B6F12 /* Main.storyboard in Resources */,
-				F18BB45420D4074400F92235 /* Default.xml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F16D5BB120CC6957008B6F12 /* Resources */ = {
+		F178085E215702C400271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BBC20CC6958008B6F12 /* Resources */ = {
+		F1780880215702FF00271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BD320CC6970008B6F12 /* Resources */ = {
+		F17808882157030000271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BDB20CC6970008B6F12 /* Resources */ = {
+		F17809C12157067B00271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F7BA1020DC452700F22B81 /* ValidFileXML.xml in Resources */,
-				F1F7BA0E20DC444B00F22B81 /* ValidFile.kdbx in Resources */,
-				F1F7BA0A20DC39A100F22B81 /* BadDynamicHeader.kdbx in Resources */,
-				F1F7BA0C20DC42A300F22B81 /* BadPayload.kdbx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1780A3D21570A8700271E67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1780A4B21570ACA00271E67 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F1044C6920DFF78C003D65EC /* Sources */ = {
+		F1780848215702C400271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A389C420DFFFF400E6DE46 /* Persistence.swift in Sources */,
-				F1A389BF20DFFFBC00E6DE46 /* PasswordTableViewCell.swift in Sources */,
-				F1044C8F20DFFF5B003D65EC /* DetailViewController.swift in Sources */,
-				F1A389C220DFFFDF00E6DE46 /* KDBXDocument.swift in Sources */,
-				F1044C7220DFF78C003D65EC /* CredentialProviderViewController.swift in Sources */,
-				F1A389C320DFFFEB00E6DE46 /* FileManagement.swift in Sources */,
-				F1A389C120DFFFC200E6DE46 /* GroupTableViewCell.swift in Sources */,
-				F1044C8E20DFFF57003D65EC /* DatabaseViewController.swift in Sources */,
-				F1A389C020DFFFBF00E6DE46 /* DatabaseEntryTableViewCell.swift in Sources */,
+				F1780A2D215707AB00271E67 /* MarginlessTextView.swift in Sources */,
+				F1780A2A215707AB00271E67 /* DatabaseEntryTableViewCell.swift in Sources */,
+				F1780A1F215707AB00271E67 /* KDBXDocument.swift in Sources */,
+				F1780A30215707AB00271E67 /* Persistence.swift in Sources */,
+				F1780A23215707AB00271E67 /* SplitViewController.swift in Sources */,
+				F1780A26215707AB00271E67 /* ReplaceOnNavigationStackSegue.swift in Sources */,
+				F1780A2C215707AB00271E67 /* GroupTableViewCell.swift in Sources */,
+				F1780A2B215707AB00271E67 /* TextboxTableViewCell.swift in Sources */,
+				F1780A27215707AB00271E67 /* DatabaseViewController.swift in Sources */,
+				F1780A2F215707AB00271E67 /* AppDelegate.swift in Sources */,
+				F1780A29215707AB00271E67 /* PasswordTableViewCell.swift in Sources */,
+				F1780A24215707AB00271E67 /* DatabaseEditorViewController.swift in Sources */,
+				F1780A28215707AB00271E67 /* MasterViewController.swift in Sources */,
+				F1780A31215707AB00271E67 /* FileManagement.swift in Sources */,
+				F1780A25215707AB00271E67 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5B9920CC6956008B6F12 /* Sources */ = {
+		F178085C215702C400271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16AABC820D2B470009807E5 /* FileManagement.swift in Sources */,
-				F16D5BA520CC6956008B6F12 /* DetailViewController.swift in Sources */,
-				F16AABCD20D2FF97009807E5 /* KDBXDocument.swift in Sources */,
-				F109067320F053290008D678 /* MarginlessTextView.swift in Sources */,
-				F1C5A33B20F280B8009EC7D0 /* AEXMLElement+Extensions.swift in Sources */,
-				F1F9F72920DBFB5200F52CB7 /* GroupTableViewCell.swift in Sources */,
-				F18F9F0220E85130001B813B /* ReplaceOnNavigationStackSegue.swift in Sources */,
-				F10FE09520DAB63F0030B033 /* DatabaseEntryTableViewCell.swift in Sources */,
-				F179FFD020D6FBF400C48FC9 /* PasswordTableViewCell.swift in Sources */,
-				F179FFF020D814E500C48FC9 /* SplitViewController.swift in Sources */,
-				F1B9D33220FD609500D3465C /* DatabaseEditorViewController.swift in Sources */,
-				F18FC50920D47D200070301A /* Persistence.swift in Sources */,
-				F16D5BA320CC6956008B6F12 /* MasterViewController.swift in Sources */,
-				F16D5BA120CC6956008B6F12 /* AppDelegate.swift in Sources */,
-				F10FE08720DAB1860030B033 /* DatabaseViewController.swift in Sources */,
-				F18F9EF720E819BF001B813B /* TextboxTableViewCell.swift in Sources */,
+				F1780865215702C400271E67 /* KeyPass_NonborkedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BAF20CC6957008B6F12 /* Sources */ = {
+		F178087E215702FF00271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D5BB820CC6958008B6F12 /* KeePassTests.swift in Sources */,
+				F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */,
+				F17808AE2157034D00271E67 /* KDBXString.swift in Sources */,
+				F17808BF2157036500271E67 /* AES.swift in Sources */,
+				F17808B02157034D00271E67 /* KDBXDatabase.swift in Sources */,
+				F17809B2215705BB00271E67 /* AEXMLElement+Extensions.swift in Sources */,
+				F17808B52157034D00271E67 /* KDBXXMLDict.swift in Sources */,
+				F17808B62157034D00271E67 /* KDBXXMLList.swift in Sources */,
+				F17808AF2157034D00271E67 /* KDBXEntry.swift in Sources */,
+				F17808B32157034D00271E67 /* KDBXXMLEntry.swift in Sources */,
+				F17808B42157034D00271E67 /* KDBXXMLGroup.swift in Sources */,
+				F17808B82157034D00271E67 /* KDBXGroup.swift in Sources */,
+				F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */,
+				F17808B72157034D00271E67 /* KDBXXMLString.swift in Sources */,
+				F17808B12157034D00271E67 /* KDBXXMLDatabase.swift in Sources */,
+				F17808B22157034D00271E67 /* KDBXXMLElement.swift in Sources */,
+				F17808C22157036500271E67 /* ByteArray+Crypto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BBA20CC6958008B6F12 /* Sources */ = {
+		F17808862157030000271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D5BC320CC6958008B6F12 /* KeePassUITests.swift in Sources */,
+				F17808922157030000271E67 /* KeePassSupportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BD120CC6970008B6F12 /* Sources */ = {
+		F17809BF2157067B00271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F153DB74210115AB00D84334 /* ByteArray+Crypto.swift in Sources */,
-				F134849520F298FE001CE6CF /* KDBXXMLEntry.swift in Sources */,
-				F1717E4A20F3E97C0068630F /* KDBXXMLString.swift in Sources */,
-				F1C5A34220F288AE009EC7D0 /* KDBXXMLGroup.swift in Sources */,
-				F1C5A33A20F280B3009EC7D0 /* AEXMLElement+Extensions.swift in Sources */,
-				F134849820F299C6001CE6CF /* KDBXEntry.swift in Sources */,
-				F16D5BF420CC69A2008B6F12 /* KDBXCryptoHandler.swift in Sources */,
-				F16D5BF820CC69AB008B6F12 /* AES.swift in Sources */,
-				F153DB75210115AE00D84334 /* FixedWidthInteger+Bytes.swift in Sources */,
-				F1C5A33E20F282CC009EC7D0 /* KDBXDatabase.swift in Sources */,
-				F134849320F28A6C001CE6CF /* KDBXGroup.swift in Sources */,
-				F1717E3C20F3E90A0068630F /* KDBXString.swift in Sources */,
-				F1717E4C20F3F3040068630F /* KDBXXMLDict.swift in Sources */,
-				F1C5A33720F27A66009EC7D0 /* KDBXXMLList.swift in Sources */,
-				F10FE09820DACB270030B033 /* KDBXXMLDatabase.swift in Sources */,
-				F197C1C920F3BB2D00531A89 /* KDBXXMLElement.swift in Sources */,
+				F17809D2215706C600271E67 /* salsa20.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F16D5BD920CC6970008B6F12 /* Sources */ = {
+		F1780A3B21570A8700271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D5BE520CC6971008B6F12 /* KeePassSupportTests.swift in Sources */,
+				F1780A4C21570ACA00271E67 /* KeePassUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F1044C7920DFF78C003D65EC /* PBXTargetDependency */ = {
+		F1780862215702C400271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F1044C6C20DFF78C003D65EC /* KeePass AutoFill Extension */;
-			targetProxy = F1044C7820DFF78C003D65EC /* PBXContainerItemProxy */;
+			target = F178084B215702C400271E67 /* KeePass */;
+			targetProxy = F1780861215702C400271E67 /* PBXContainerItemProxy */;
 		};
-		F16AAC0120D32C43009807E5 /* PBXTargetDependency */ = {
+		F178088D2157030000271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "AEXML iOS";
-			targetProxy = F16AAC0020D32C43009807E5 /* PBXContainerItemProxy */;
+			target = F1780881215702FF00271E67 /* KeePassSupport */;
+			targetProxy = F178088C2157030000271E67 /* PBXContainerItemProxy */;
 		};
-		F16D5BB520CC6957008B6F12 /* PBXTargetDependency */ = {
+		F178088F2157030000271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
-			targetProxy = F16D5BB420CC6957008B6F12 /* PBXContainerItemProxy */;
+			target = F178084B215702C400271E67 /* KeePass */;
+			targetProxy = F178088E2157030000271E67 /* PBXContainerItemProxy */;
 		};
-		F16D5BC020CC6958008B6F12 /* PBXTargetDependency */ = {
+		F17808962157030000271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
-			targetProxy = F16D5BBF20CC6958008B6F12 /* PBXContainerItemProxy */;
+			target = F1780881215702FF00271E67 /* KeePassSupport */;
+			targetProxy = F17808952157030000271E67 /* PBXContainerItemProxy */;
 		};
-		F16D5BE020CC6971008B6F12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F16D5BD420CC6970008B6F12 /* KeePassSupport */;
-			targetProxy = F16D5BDF20CC6971008B6F12 /* PBXContainerItemProxy */;
-		};
-		F16D5BE220CC6971008B6F12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F16D5B9C20CC6956008B6F12 /* KeePass */;
-			targetProxy = F16D5BE120CC6971008B6F12 /* PBXContainerItemProxy */;
-		};
-		F16D5BE920CC6971008B6F12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F16D5BD420CC6970008B6F12 /* KeePassSupport */;
-			targetProxy = F16D5BE820CC6971008B6F12 /* PBXContainerItemProxy */;
-		};
-		F18BB44C20D402EB00F92235 /* PBXTargetDependency */ = {
+		F17809892157047500271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Gzip iOS";
-			targetProxy = F18BB44B20D402EB00F92235 /* PBXContainerItemProxy */;
+			targetProxy = F17809882157047500271E67 /* PBXContainerItemProxy */;
+		};
+		F178098F215704CA00271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Gzip iOS";
+			targetProxy = F178098E215704CA00271E67 /* PBXContainerItemProxy */;
+		};
+		F17809AA2157057400271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AEXML iOS";
+			targetProxy = F17809A92157057400271E67 /* PBXContainerItemProxy */;
+		};
+		F17809AE2157057E00271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AEXML iOS";
+			targetProxy = F17809AD2157057E00271E67 /* PBXContainerItemProxy */;
+		};
+		F17809D52157070800271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F17809C22157067B00271E67 /* Salsa20 */;
+			targetProxy = F17809D42157070800271E67 /* PBXContainerItemProxy */;
+		};
+		F17809D92157072C00271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F17809C22157067B00271E67 /* Salsa20 */;
+			targetProxy = F17809D82157072C00271E67 /* PBXContainerItemProxy */;
+		};
+		F1780A4521570A8700271E67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F178084B215702C400271E67 /* KeePass */;
+			targetProxy = F1780A4421570A8700271E67 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		F1044C7320DFF78C003D65EC /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1044C7420DFF78C003D65EC /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		F16D5BA620CC6956008B6F12 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F16D5BA720CC6956008B6F12 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F16D5BAB20CC6957008B6F12 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F16D5BAC20CC6957008B6F12 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		F1044C7B20DFF78C003D65EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "KeePass AutoFill Extension/KeePass_AutoFill_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "KeePass AutoFill Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeePass.KeePass-AutoFill-Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "EXTENSION DEBUG";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F1044C7C20DFF78C003D65EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "KeePass AutoFill Extension/KeePass_AutoFill_Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "KeePass AutoFill Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeePass.KeePass-AutoFill-Extension";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENSION;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		F16D5BC520CC6958008B6F12 /* Debug */ = {
+		F1780872215702C400271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1241,6 +991,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1248,7 +999,7 @@
 			};
 			name = Debug;
 		};
-		F16D5BC620CC6958008B6F12 /* Release */ = {
+		F1780873215702C400271E67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1295,6 +1046,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1302,168 +1054,94 @@
 			};
 			name = Release;
 		};
-		F16D5BC820CC6958008B6F12 /* Debug */ = {
+		F1780875215702C400271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePass;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F16D5BC920CC6958008B6F12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePass;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		F16D5BCB20CC6958008B6F12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
-			};
-			name = Debug;
-		};
-		F16D5BCC20CC6958008B6F12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePassTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
-			};
-			name = Release;
-		};
-		F16D5BCE20CC6958008B6F12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePassUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = KeePass;
-			};
-			name = Debug;
-		};
-		F16D5BCF20CC6958008B6F12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = KeePassUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = KeePass;
-			};
-			name = Release;
-		};
-		F16D5BED20CC6971008B6F12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WG8875WVRH;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KeePassSupport/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(SRCROOT)/KeePass/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		F16D5BEE20CC6971008B6F12 /* Release */ = {
+		F1780876215702C400271E67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = "$(SRCROOT)/KeePass/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1780878215702C400271E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = "KeyPass NonborkedTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeyPass-NonborkedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
+			};
+			name = Debug;
+		};
+		F1780879215702C400271E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = "KeyPass NonborkedTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.treamous.KeyPass-NonborkedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
+			};
+			name = Release;
+		};
+		F178089A2157030000271E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1474,7 +1152,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeePassSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1483,7 +1160,34 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F178089B2157030000271E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KeePassSupport/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1491,7 +1195,7 @@
 			};
 			name = Release;
 		};
-		F16D5BF120CC6971008B6F12 /* Debug */ = {
+		F178089E2157030000271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -1511,7 +1215,7 @@
 			};
 			name = Debug;
 		};
-		F16D5BF220CC6971008B6F12 /* Release */ = {
+		F178089F2157030000271E67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -1528,76 +1232,171 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeePass.app/KeePass";
+			};
+			name = Release;
+		};
+		F17809CD2157067C00271E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Salsa20/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.Salsa20;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F17809CE2157067C00271E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Salsa20/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.Salsa20;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F1780A4721570A8700271E67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = KeePassUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KeePass;
+			};
+			name = Debug;
+		};
+		F1780A4821570A8700271E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				INFOPLIST_FILE = KeePassUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KeePass;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F1044C8920DFF78C003D65EC /* Build configuration list for PBXNativeTarget "KeePass AutoFill Extension" */ = {
+		F1780847215702C400271E67 /* Build configuration list for PBXProject "KeePass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1044C7B20DFF78C003D65EC /* Debug */,
-				F1044C7C20DFF78C003D65EC /* Release */,
+				F1780872215702C400271E67 /* Debug */,
+				F1780873215702C400271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5B9820CC6956008B6F12 /* Build configuration list for PBXProject "KeePass" */ = {
+		F1780874215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BC520CC6958008B6F12 /* Debug */,
-				F16D5BC620CC6958008B6F12 /* Release */,
+				F1780875215702C400271E67 /* Debug */,
+				F1780876215702C400271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5BC720CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePass" */ = {
+		F1780877215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePassTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BC820CC6958008B6F12 /* Debug */,
-				F16D5BC920CC6958008B6F12 /* Release */,
+				F1780878215702C400271E67 /* Debug */,
+				F1780879215702C400271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5BCA20CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePassTests" */ = {
+		F17808992157030000271E67 /* Build configuration list for PBXNativeTarget "KeePassSupport" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BCB20CC6958008B6F12 /* Debug */,
-				F16D5BCC20CC6958008B6F12 /* Release */,
+				F178089A2157030000271E67 /* Debug */,
+				F178089B2157030000271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5BCD20CC6958008B6F12 /* Build configuration list for PBXNativeTarget "KeePassUITests" */ = {
+		F178089D2157030000271E67 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BCE20CC6958008B6F12 /* Debug */,
-				F16D5BCF20CC6958008B6F12 /* Release */,
+				F178089E2157030000271E67 /* Debug */,
+				F178089F2157030000271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5BEC20CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupport" */ = {
+		F17809CC2157067C00271E67 /* Build configuration list for PBXNativeTarget "Salsa20" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BED20CC6971008B6F12 /* Debug */,
-				F16D5BEE20CC6971008B6F12 /* Release */,
+				F17809CD2157067C00271E67 /* Debug */,
+				F17809CE2157067C00271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16D5BF020CC6971008B6F12 /* Build configuration list for PBXNativeTarget "KeePassSupportTests" */ = {
+		F1780A4621570A8700271E67 /* Build configuration list for PBXNativeTarget "KeePassUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F16D5BF120CC6971008B6F12 /* Debug */,
-				F16D5BF220CC6971008B6F12 /* Release */,
+				F1780A4721570A8700271E67 /* Debug */,
+				F1780A4821570A8700271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F16D5B9520CC6956008B6F12 /* Project object */;
+	rootObject = F1780844215702C400271E67 /* Project object */;
 }

@@ -25,7 +25,7 @@ class KDBXDocument: UIDocument {
       // and valid.
       let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
       let defaultData = try! Data(contentsOf: defaultURL!)
-      parsedData = KDBXXMLDatabase(withXML: [UInt8](defaultData))
+      parsedData = KDBXXMLDatabase(withXML: [UInt8](defaultData), andFile: file)
     }
     
     super.save(to: url, for: saveOperation, completionHandler: completionHandler)
@@ -45,6 +45,6 @@ class KDBXDocument: UIDocument {
     guard file != nil else {
       return
     }
-    parsedData = KDBXXMLDatabase(withXML: (file?.payloadBytes)!)
+    parsedData = KDBXXMLDatabase(withXML: (file?.payloadBytes)!, andFile: file)
   }
 }
