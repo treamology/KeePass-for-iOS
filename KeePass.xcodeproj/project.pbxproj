@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F1780865215702C400271E67 /* KeyPass_NonborkedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */; };
 		F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
 		F17808922157030000271E67 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808912157030000271E67 /* KeePassSupportTests.swift */; };
 		F17808942157030000271E67 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F17808842157030000271E67 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -189,8 +188,6 @@
 /* Begin PBXFileReference section */
 		F178084C215702C400271E67 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1780860215702C400271E67 /* KeePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPass_NonborkedTests.swift; sourceTree = "<group>"; };
-		F1780866215702C400271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1780882215702FF00271E67 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17808842157030000271E67 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
 		F17808852157030000271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -301,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				F178084E215702C400271E67 /* KeePass */,
-				F1780863215702C400271E67 /* KeyPass NonborkedTests */,
 				F17808832157030000271E67 /* KeePassSupport */,
 				F17808902157030000271E67 /* KeePassSupportTests */,
 				F17809C42157067C00271E67 /* Salsa20 */,
@@ -342,15 +338,6 @@
 				F1780A4D21570B1100271E67 /* KeePass.entitlements */,
 			);
 			path = KeePass;
-			sourceTree = "<group>";
-		};
-		F1780863215702C400271E67 /* KeyPass NonborkedTests */ = {
-			isa = PBXGroup;
-			children = (
-				F1780864215702C400271E67 /* KeyPass_NonborkedTests.swift */,
-				F1780866215702C400271E67 /* Info.plist */,
-			);
-			path = "KeyPass NonborkedTests";
 			sourceTree = "<group>";
 		};
 		F17808832157030000271E67 /* KeePassSupport */ = {
@@ -826,7 +813,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1780865215702C400271E67 /* KeyPass_NonborkedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

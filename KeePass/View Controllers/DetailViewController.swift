@@ -22,10 +22,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   var document: KDBXDocument?
   var database: KDBXDatabase?
   
-  deinit {
-    print("deinit")
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

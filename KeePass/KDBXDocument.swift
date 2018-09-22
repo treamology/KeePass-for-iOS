@@ -32,7 +32,6 @@ class KDBXDocument: UIDocument {
   }
   
   override func contents(forType typeName: String) throws -> Any {
-    let utf8XML = parsedData?.xmlElement.xml.utf8
     let fileData = try file!.encryptPayload()
     return Data(fileData)
   }
