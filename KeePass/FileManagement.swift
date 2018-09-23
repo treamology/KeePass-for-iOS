@@ -8,6 +8,7 @@
 
 import Foundation
 import AEXML
+import KeePassSupport
 
 class FileManagement {
   static var filesManager = FileManager.default
@@ -48,10 +49,31 @@ class FileManagement {
       documentsURL = urls[0]
     }
   }
-  
-  static func createNewDatabase(name: String, completed: @escaping (Bool) -> Void) {
-    let document = KDBXDocument(fileURL: (documentsURL?.appendingPathComponent("\(name).kdbx", isDirectory: false))!)
-
+  // FIXME: We might want to combine these parameters into a struct.
+  static func createNewDatabase(options: DatabaseOptions, completed: @escaping (Bool) -> Void) {
+    // We're force unwrapping our way through this since Default.xml is guaranteed to exist
+    let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
+    let defaultData = try! Data(contentsOf: defaultURL!)
+    let database = KDBXXMLDatabase(withXML: [UInt8](defaultData), andFile: nil)
+    
+    // FIXME: We're creating a KDBX 3 file for now.
+    guard let header = KDBX3Header.generateNewHeader() else {
+      completed(false)
+      return
+    }
+    guard let file = KDBX3File(withHeader: header) else {
+      completed(false)
+      return
+    }
+    
+    file.filePasswordBytes = [UInt8](options.password.data(using: .utf8)!)
+    file.keyfileBytes = options.keyfile
+    file.payloadBytes = [UInt8](database.xmlDocument.xml.data(using: .utf8)!)
+    
+    let document = KDBXDocument(fileURL: (documentsURL?.appendingPathComponent("\(options.name).kdbx", isDirectory: false))!)
+    document.file = file
+    document.parsedData = database
+    
     document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
       if success {
         try! Persistence.addFileBookmark(bookmark: document.fileURL.bookmarkData() as NSData)

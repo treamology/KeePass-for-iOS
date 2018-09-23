@@ -118,7 +118,14 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       dbName = "Database"
     }
     
-    FileManagement.createNewDatabase(name: dbName, completed: {(success: Bool) in
+    var password: String! = controller.passwordTextbox.text
+    if password == nil {
+      password = ""
+    }
+    
+    let options = DatabaseOptions(name: dbName, password: password, keyfile: [])
+    
+    FileManagement.createNewDatabase(options: options, completed: {(success: Bool) in
       if success {
         self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
         self.tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)

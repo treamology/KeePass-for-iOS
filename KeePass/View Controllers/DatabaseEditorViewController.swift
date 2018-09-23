@@ -12,5 +12,7 @@ class DatabaseEditorViewController: UITableViewController {
   
   @IBOutlet var nameTextbox: UITextField!
   @IBOutlet var notesTextView: UITextView!
+  @IBOutlet var passwordTextbox: UITextField!
+  @IBOutlet var confirmPasswordTextbox: UITextField!
   
 }

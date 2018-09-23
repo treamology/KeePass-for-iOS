@@ -61,6 +61,7 @@
 		F1780A532157255100271E67 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1780A4F2157255000271E67 /* BadPayload.kdbx */; };
 		F1780A542157255100271E67 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1780A502157255000271E67 /* BadDynamicHeader.kdbx */; };
 		F1780A552157255100271E67 /* ValidFileXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1780A512157255000271E67 /* ValidFileXML.xml */; };
+		F1780A5721572EE900271E67 /* DatabaseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A5621572EE900271E67 /* DatabaseOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,7 @@
 		F1780A4F2157255000271E67 /* BadPayload.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadPayload.kdbx; sourceTree = "<group>"; };
 		F1780A502157255000271E67 /* BadDynamicHeader.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadDynamicHeader.kdbx; sourceTree = "<group>"; };
 		F1780A512157255000271E67 /* ValidFileXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidFileXML.xml; sourceTree = "<group>"; };
+		F1780A5621572EE900271E67 /* DatabaseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,11 +363,12 @@
 		F17808A02157034C00271E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1780A5621572EE900271E67 /* DatabaseOptions.swift */,
 				F17808A12157034C00271E67 /* KDBXString.swift */,
 				F17808A22157034D00271E67 /* KDBXEntry.swift */,
 				F17808A32157034D00271E67 /* KDBXDatabase.swift */,
-				F17808A42157034D00271E67 /* XML */,
 				F17808AD2157034D00271E67 /* KDBXGroup.swift */,
+				F17808A42157034D00271E67 /* XML */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 			files = (
 				F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */,
 				F17808AE2157034D00271E67 /* KDBXString.swift in Sources */,
+				F1780A5721572EE900271E67 /* DatabaseOptions.swift in Sources */,
 				F17808BF2157036500271E67 /* AES.swift in Sources */,
 				F17808B02157034D00271E67 /* KDBXDatabase.swift in Sources */,
 				F17809B2215705BB00271E67 /* AEXMLElement+Extensions.swift in Sources */,
@@ -1004,8 +1008,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "$(SRCROOT)/KeePass/Info.plist";
+				INFOPLIST_FILE = KeePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1015,6 +1020,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1026,8 +1032,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeePass/KeePass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = WG8875WVRH;
-				INFOPLIST_FILE = "$(SRCROOT)/KeePass/Info.plist";
+				INFOPLIST_FILE = KeePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1036,6 +1043,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1044,11 +1052,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 4;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeePassSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1072,11 +1080,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 4;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeePassSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1140,11 +1148,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 4;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Salsa20/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1167,11 +1175,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 4;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Salsa20/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

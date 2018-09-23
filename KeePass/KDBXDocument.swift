@@ -18,18 +18,17 @@ class KDBXDocument: UIDocument {
   
   var password: String?
   
-  override func save(to url: URL, for saveOperation: UIDocument.SaveOperation, completionHandler: ((Bool) -> Void)? = nil) {
-    if saveOperation == .forCreating {
-      // We're creating the file for the first time, so fill it with the default data.
-      // These unwraps are forced because Default.xml is guaranteed to be in the app bundle
-      // and valid.
-      let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
-      let defaultData = try! Data(contentsOf: defaultURL!)
-      parsedData = KDBXXMLDatabase(withXML: [UInt8](defaultData), andFile: file)
-    }
-    
-    super.save(to: url, for: saveOperation, completionHandler: completionHandler)
-  }
+//  override func save(to url: URL, for saveOperation: UIDocument.SaveOperation, completionHandler: ((Bool) -> Void)? = nil) {
+//    if saveOperation == .forCreating {
+//      // We're creating the file for the first time, so fill it with the default data.
+//      // These unwraps are forced because Default.xml is guaranteed to be in the app bundle
+//      // and valid.
+//
+//      
+//    }
+//
+//    super.save(to: url, for: saveOperation, completionHandler: completionHandler)
+//  }
   
   override func contents(forType typeName: String) throws -> Any {
     let fileData = try file!.encryptPayload()

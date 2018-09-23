@@ -34,15 +34,58 @@ public class KDBX3Header: KDBXHeader {
   var innerRandomStreamID: InnerRandomStreamID!
   
   override init() {
-    cipherID = [UInt8](repeating: 0x00, count: 32) // FIXME: This probably shouldn't be this
+    // Set some reasonable defaults.
+    cipherID = [0x31,0xc1,0xf2,0xe6,0xbf,0x71,0x43,0x50,0xbe,0x58,0x05,0x21,0x6a,0xfc,0x5a,0xff] // AES128 encryption
     compressionFlags = CompressionFlags.GZIP
     innerRandomStreamID = .None
     
     super.init()
     
-    secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32()! // FIXME: Figure out what these bytes mean
+    secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32()!
     majorVersion = 3
     minorVersion = 1
+  }
+  
+  public static func generateNewHeader() -> KDBX3Header? {
+    let header = KDBX3Header()
+    
+    // We'll use GZIP compression by default
+    header.compressionFlags = .GZIP
+    
+    // Generate a random master seed.
+    var masterSeedBytes = [UInt8](repeating: 0, count: 32)
+    let masterGenStatus = SecRandomCopyBytes(kSecRandomDefault, masterSeedBytes.count, &masterSeedBytes)
+    guard masterGenStatus == errSecSuccess else {
+      return nil
+    }
+    header.masterSeed = masterSeedBytes
+    
+    // Generate the transform seed.
+    var transformSeedBytes = [UInt8](repeating: 0, count: 32)
+    let transformGenStatus = SecRandomCopyBytes(kSecRandomDefault, transformSeedBytes.count, &transformSeedBytes)
+    guard transformGenStatus == errSecSuccess else {
+      return nil
+    }
+    header.transformSeed = transformSeedBytes
+    header.transformRounds = 64
+    
+    // Generate the encryption IV.
+    var encryptionIVBytes = [UInt8](repeating: 0, count: 16)
+    let encryptionIVStatus = SecRandomCopyBytes(kSecRandomDefault, encryptionIVBytes.count, &encryptionIVBytes)
+    guard encryptionIVStatus == errSecSuccess else {
+      return nil
+    }
+    header.encryptionIV = encryptionIVBytes
+    
+    // Generate some start bytes.
+    var streamStartBytes = [UInt8](repeating: 0, count: 32)
+    let streamStartStatus = SecRandomCopyBytes(kSecRandomDefault, streamStartBytes.count, &streamStartBytes)
+    guard streamStartStatus == errSecSuccess else {
+      return nil
+    }
+    header.streamStartBytes = streamStartBytes
+    
+    return header
   }
 }
 public struct KDBX3HeaderEntry {
@@ -60,8 +103,8 @@ public struct KDBX3HeaderEntry {
   func bytes() -> [UInt8] {
     var bytes = [UInt8]()
     bytes.append(headerID)
-    bytes.append(contentsOf: headerPayload)
     bytes.append(contentsOf: headerSize.toBytes())
+    bytes.append(contentsOf: headerPayload)
     return bytes
   }
 }
@@ -76,7 +119,7 @@ public protocol KDBXFile: AnyObject {
   var filePasswordBytes: [UInt8]? { get set }
   var keyfileBytes: [UInt8]? { get set }
   
-  init(withHeader header: KDBXHeader) throws
+  init?(withHeader header: KDBXHeader)
   init(withFileBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws
   
   func generateHeaderBytes() -> [UInt8]
@@ -115,6 +158,7 @@ public class KDBX3File: KDBXFile {
   }
   public enum EncryptError: Error {
     case couldntCompress
+    case couldntCreateMasterKey
   }
   
   // This pattern is being used because one can't easily specialize protocols in Swift.
@@ -124,11 +168,11 @@ public class KDBX3File: KDBXFile {
   
   public var filePasswordBytes: [UInt8]?
   public var keyfileBytes: [UInt8]?
-  var masterKey: [UInt8]!
+  var masterKey: [UInt8]?
   
-  required public init(withHeader header: KDBXHeader) throws {
+  required public init?(withHeader header: KDBXHeader) {
     guard header is KDBX3Header else {
-      throw ParseError.badKDBXFile
+      return nil
     }
     self.header = header
     self.header3 = header as! KDBX3Header
@@ -217,10 +261,7 @@ public class KDBX3File: KDBXFile {
     // concatenating the key composites (password, keyfiles, etc)
     // We use the sha256 hash of the password to get its bytes.
     print("Creating composite key...")
-    let concatBytes = filePasswordBytes!.sha256() // FIXME: Don't force unwrap this
-    
-    // TODO: Support composites besides passwords
-    let compositeKey = concatBytes.sha256()
+    let compositeKey = generateCompositeKey(password: password, keyfileBytes: keyfile)
     
     masterKey = try generateMasterKey(compositeKey: compositeKey)
     
@@ -230,7 +271,7 @@ public class KDBX3File: KDBXFile {
     
     guard let AESDecryptContext = AES(operation: .Decrypt,
                                       padding: true,
-                                      key: masterKey,
+                                      key: masterKey!,
                                       iv: encryptionIVArray) else {
       throw ParseError.couldntCreateCryptoContext
     }
@@ -308,14 +349,20 @@ public class KDBX3File: KDBXFile {
     let encryptionIV = KDBX3HeaderEntry(id: 7, payload: header3.encryptionIV)
     headerBytes.append(contentsOf: encryptionIV.bytes())
     
-    let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: header3.protectedStreamKey)
-    headerBytes.append(contentsOf: protectedStreamKey.bytes())
+    if header3.protectedStreamKey != nil {
+      let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: header3.protectedStreamKey)
+      headerBytes.append(contentsOf: protectedStreamKey.bytes())
+    }
     
     let streamStartBytes = KDBX3HeaderEntry(id: 9, payload: header3.streamStartBytes)
     headerBytes.append(contentsOf: streamStartBytes.bytes())
     
-    let innerRandomStreamID = KDBX3HeaderEntry(id: 10, payload: header3.innerRandomStreamID!.rawValue.toBytes())
-    headerBytes.append(contentsOf: innerRandomStreamID.bytes())
+    if header3.innerRandomStreamID != nil {
+      let innerRandomStreamID = KDBX3HeaderEntry(id: 10, payload: header3.innerRandomStreamID!.rawValue.toBytes())
+      headerBytes.append(contentsOf: innerRandomStreamID.bytes())
+    }
+    
+    headerBytes.append(contentsOf: [0x00, 0x04, 0x00, 0xDE, 0xAD, 0xBE, 0xEF])
     
     return headerBytes
   }
@@ -334,22 +381,33 @@ public class KDBX3File: KDBXFile {
     
     let payloadHash = compressedPayload.sha256()
     
+    if masterKey == nil {
+      do {
+        masterKey = try generateMasterKey(compositeKey: generateCompositeKey(password: filePasswordBytes, keyfileBytes: keyfileBytes))
+      } catch {
+        throw EncryptError.couldntCreateMasterKey
+      }
+    }
+    
     // Encrypt the payload.
-    let encryptionIVArray = header3.encryptionIV
     guard let AESEncryptContext = AES(operation: .Encrypt,
                                       padding: true,
-                                      key: masterKey,
-                                      iv: encryptionIVArray) else {
+                                      key: masterKey!,
+                                      iv: header3.encryptionIV) else {
       throw ParseError.couldntCreateCryptoContext
     }
-    let encryptedPayload = AESEncryptContext.performOperation(compressedPayload)
     
-    fileBytes.append(contentsOf: header3.streamStartBytes)
-    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID
-    fileBytes.append(contentsOf: payloadHash) // payload hash
-    fileBytes.append(contentsOf: encryptedPayload.count.toBytes()) // payload length
-    fileBytes.append(contentsOf: encryptedPayload) // the payload
-    fileBytes.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
+    var payloadPayload: [UInt8] = []
+    payloadPayload.append(contentsOf: header3.streamStartBytes)
+    payloadPayload.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID
+    payloadPayload.append(contentsOf: payloadHash) // payload hash
+    payloadPayload.append(contentsOf: UInt32(compressedPayload.count).toBytes()) // payload length
+    payloadPayload.append(contentsOf: compressedPayload) // the payload
+    payloadPayload.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
+    
+    let encryptedPayload = AESEncryptContext.performOperation(payloadPayload)
+    
+    fileBytes.append(contentsOf: encryptedPayload)
     
     return fileBytes
   }
@@ -390,5 +448,16 @@ public class KDBX3File: KDBXFile {
     masterKey.append(contentsOf: transformedKey)
     masterKey = masterKey.sha256()
     return masterKey
+  }
+  
+  func generateCompositeKey(password: [UInt8]?, keyfileBytes: [UInt8]?) -> [UInt8] {
+    var concat: [UInt8] = []
+    if password != nil {
+      concat.append(contentsOf: password!.sha256())
+    }
+    if keyfileBytes != nil {
+      concat.append(contentsOf: keyfileBytes!)
+    }
+    return concat.sha256()
   }
 }

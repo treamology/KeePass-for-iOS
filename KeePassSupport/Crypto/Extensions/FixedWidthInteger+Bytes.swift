@@ -10,11 +10,10 @@ import Foundation
 
 extension FixedWidthInteger {
   func toBytes() -> [UInt8] {
-    var converted: [UInt8]!
-    withUnsafePointer(to: self) {
-      let bufferPtr = UnsafeRawBufferPointer(start: $0, count: 4)
-      converted = bufferPtr.bindMemory(to: [UInt8].self).baseAddress?.pointee
+    return withUnsafePointer(to: self) {
+      $0.withMemoryRebound(to: UInt8.self, capacity: MemoryLayout<Self>.size) {
+        Array(UnsafeBufferPointer(start: $0, count: MemoryLayout<Self>.size))
+      }
     }
-    return converted
   }
 }

@@ -104,7 +104,7 @@
                         <sections>
                             <tableViewSection headerTitle="Name" id="1fr-V3-xFM">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o1y-Zw-Rhu" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="o1y-Zw-Rhu" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o1y-Zw-Rhu" id="HCe-rp-8mN">
@@ -129,7 +129,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Password" id="WCa-HZ-l8I">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JhG-X1-XSn" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="JhG-X1-XSn" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhG-X1-XSn" id="h50-H4-3ct">
@@ -150,7 +150,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L6y-Nf-T08" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="L6y-Nf-T08" customClass="TextboxTableViewCell" customModule="KeePass" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L6y-Nf-T08" id="b1m-DJ-qY4">
@@ -218,8 +218,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="confirmPasswordTextbox" destination="eLy-lH-XQ9" id="Sou-Kp-rNv"/>
                         <outlet property="nameTextbox" destination="uw4-mZ-B4Z" id="XaH-Pr-iA7"/>
                         <outlet property="notesTextView" destination="q4G-Wj-oCq" id="geX-VK-1pK"/>
+                        <outlet property="passwordTextbox" destination="0Ok-mH-seI" id="LG0-RX-WHo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hs-MS-CGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
