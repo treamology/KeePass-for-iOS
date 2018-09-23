@@ -452,9 +452,9 @@
 				F1780A0D215707AB00271E67 /* SplitViewController.swift */,
 				F1780A0E215707AB00271E67 /* DatabaseEditorViewController.swift */,
 				F1780A0F215707AB00271E67 /* DetailViewController.swift */,
-				F1780A10215707AB00271E67 /* Segues */,
 				F1780A12215707AB00271E67 /* DatabaseViewController.swift */,
 				F1780A13215707AB00271E67 /* MasterViewController.swift */,
+				F1780A10215707AB00271E67 /* Segues */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

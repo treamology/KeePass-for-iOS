@@ -216,6 +216,7 @@ class MasterViewController: UITableViewController, UIDocumentPickerDelegate {
       self.tableView.reloadData()
     }))
     sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    sheet.popoverPresentationController?.barButtonItem = navigationItem.leftBarButtonItem
     present(sheet, animated: true, completion: nil)
   }
 }
