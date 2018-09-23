@@ -56,8 +56,11 @@
 		F1780A2F215707AB00271E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1B215707AB00271E67 /* AppDelegate.swift */; };
 		F1780A30215707AB00271E67 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1C215707AB00271E67 /* Persistence.swift */; };
 		F1780A31215707AB00271E67 /* FileManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A1D215707AB00271E67 /* FileManagement.swift */; };
-		F1780A4B21570ACA00271E67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1780A4921570ACA00271E67 /* Info.plist */; };
 		F1780A4C21570ACA00271E67 /* KeePassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A4A21570ACA00271E67 /* KeePassUITests.swift */; };
+		F1780A522157255100271E67 /* ValidFile.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1780A4E2157255000271E67 /* ValidFile.kdbx */; };
+		F1780A532157255100271E67 /* BadPayload.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1780A4F2157255000271E67 /* BadPayload.kdbx */; };
+		F1780A542157255100271E67 /* BadDynamicHeader.kdbx in Resources */ = {isa = PBXBuildFile; fileRef = F1780A502157255000271E67 /* BadDynamicHeader.kdbx */; };
+		F1780A552157255100271E67 /* ValidFileXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1780A512157255000271E67 /* ValidFileXML.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +236,10 @@
 		F1780A4921570ACA00271E67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1780A4A21570ACA00271E67 /* KeePassUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeePassUITests.swift; sourceTree = "<group>"; };
 		F1780A4D21570B1100271E67 /* KeePass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeePass.entitlements; sourceTree = "<group>"; };
+		F1780A4E2157255000271E67 /* ValidFile.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ValidFile.kdbx; sourceTree = "<group>"; };
+		F1780A4F2157255000271E67 /* BadPayload.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadPayload.kdbx; sourceTree = "<group>"; };
+		F1780A502157255000271E67 /* BadDynamicHeader.kdbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = BadDynamicHeader.kdbx; sourceTree = "<group>"; };
+		F1780A512157255000271E67 /* ValidFileXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidFileXML.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +348,10 @@
 		F17808902157030000271E67 /* KeePassSupportTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1780A502157255000271E67 /* BadDynamicHeader.kdbx */,
+				F1780A4F2157255000271E67 /* BadPayload.kdbx */,
+				F1780A4E2157255000271E67 /* ValidFile.kdbx */,
+				F1780A512157255000271E67 /* ValidFileXML.xml */,
 				F17808912157030000271E67 /* KeePassSupportTests.swift */,
 				F17808932157030000271E67 /* Info.plist */,
 			);
@@ -720,6 +731,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1780A552157255100271E67 /* ValidFileXML.xml in Resources */,
+				F1780A542157255100271E67 /* BadDynamicHeader.kdbx in Resources */,
+				F1780A522157255100271E67 /* ValidFile.kdbx in Resources */,
+				F1780A532157255100271E67 /* BadPayload.kdbx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +749,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1780A4B21570ACA00271E67 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

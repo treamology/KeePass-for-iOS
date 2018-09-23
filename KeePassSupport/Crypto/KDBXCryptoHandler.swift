@@ -225,7 +225,7 @@ public class KDBX3File: KDBXFile {
     masterKey = try generateMasterKey(compositeKey: compositeKey)
     
     // Now that we have the master key, we can split up the payload
-    print("Getting the payload...")
+    print("Decrypting payload...")
     let encryptionIVArray = header.encryptionIV
     
     guard let AESDecryptContext = AES(operation: .Decrypt,
@@ -278,9 +278,6 @@ public class KDBX3File: KDBXFile {
       }
     }
 
-//    guard let payloadString = String(bytes: decompressedPayload, encoding: .utf8) else {
-//      throw ParseError.badPayloadString
-//    }
     self.payloadBytes = decompressedPayload
     self.header = header
     self.header3 = header
