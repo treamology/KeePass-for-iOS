@@ -68,11 +68,10 @@ class FileManagement {
     
     file.filePasswordBytes = [UInt8](options.password.data(using: .utf8)!)
     file.keyfileBytes = options.keyfile
-    file.payloadBytes = [UInt8](database.xmlDocument.xml.data(using: .utf8)!)
+    file.database = database
     
     let document = KDBXDocument(fileURL: (documentsURL?.appendingPathComponent("\(options.name).kdbx", isDirectory: false))!)
     document.file = file
-    document.parsedData = database
     
     document.save(to: document.fileURL, for: .forCreating) { (success: Bool) in
       if success {

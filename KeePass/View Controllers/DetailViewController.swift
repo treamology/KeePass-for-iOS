@@ -96,7 +96,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     document.open(completionHandler: { (success) in
       if success {
-        self.database = document.parsedData!
+        self.database = document.file!.database
         self.performSegue(withIdentifier: "UnlockSegue", sender: self)
       } else {
         let alert = UIAlertController(title: "Failed to open the database.", message: nil, preferredStyle: .alert)

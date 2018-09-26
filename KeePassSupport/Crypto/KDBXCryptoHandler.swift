@@ -114,7 +114,8 @@ public protocol KDBXFile: AnyObject {
   static var HEADER_SIZE: UInt8 { get }
   
   var header: KDBXHeader { get }
-  var payloadBytes: [UInt8] { get set }
+  var payloadBytes: [UInt8]? { get }
+  var database: KDBXXMLDatabase? { get set }
   
   var filePasswordBytes: [UInt8]? { get set }
   var keyfileBytes: [UInt8]? { get set }
@@ -164,11 +165,30 @@ public class KDBX3File: KDBXFile {
   // This pattern is being used because one can't easily specialize protocols in Swift.
   public var header: KDBXHeader
   public var header3: KDBX3Header
-  public var payloadBytes: [UInt8] = []
+  public var payloadBytes: [UInt8]? {
+    get {
+      guard let utf = database?.xmlDocument.xml.utf8 else {
+        return nil
+      }
+      return [UInt8](utf)
+    }
+  }
+  public var database: KDBXXMLDatabase?
   
   public var filePasswordBytes: [UInt8]?
   public var keyfileBytes: [UInt8]?
   var masterKey: [UInt8]?
+  
+  var headerLength: Int?
+  public var headerSHA: String? {
+    get {
+      guard let headerLength = headerLength, let keyfileBytes = keyfileBytes else {
+        return nil
+      }
+      let sha = keyfileBytes[0..<headerLength].sha256()
+      return String(bytes: sha, encoding: .utf8)
+    }
+  }
   
   required public init?(withHeader header: KDBXHeader) {
     guard header is KDBX3Header else {
@@ -192,6 +212,7 @@ public class KDBX3File: KDBXFile {
     let header = KDBX3Header()
     self.header = header
     self.header3 = header
+    
     
     filePasswordBytes = password
     keyfileBytes = keyfile
@@ -275,7 +296,9 @@ public class KDBX3File: KDBXFile {
                                       iv: encryptionIVArray) else {
       throw ParseError.couldntCreateCryptoContext
     }
-
+    
+    headerLength = cb
+    
     let encryptedPayload = [UInt8](bytes[cb...])
     let decryptedPayload = AESDecryptContext.performOperation(encryptedPayload)
 
@@ -318,8 +341,8 @@ public class KDBX3File: KDBXFile {
         throw ParseError.couldntDecompressPayload
       }
     }
-
-    self.payloadBytes = decompressedPayload
+    
+    database = KDBXXMLDatabase(withXML: decompressedPayload, andFile: self)
     self.header = header
     self.header3 = header
   }
@@ -374,7 +397,7 @@ public class KDBX3File: KDBXFile {
     // Recompress the payload.
     let compressedPayload: [UInt8]
     do {
-      compressedPayload = try [UInt8](Data(payloadBytes).gzipped())
+      compressedPayload = try [UInt8](Data(payloadBytes!).gzipped())
     } catch {
       throw EncryptError.couldntCompress
     }

@@ -14,21 +14,8 @@ import AEXML
 class KDBXDocument: UIDocument {
   
   var file: KDBXFile?
-  var parsedData: KDBXXMLDatabase?
   
   var password: String?
-  
-//  override func save(to url: URL, for saveOperation: UIDocument.SaveOperation, completionHandler: ((Bool) -> Void)? = nil) {
-//    if saveOperation == .forCreating {
-//      // We're creating the file for the first time, so fill it with the default data.
-//      // These unwraps are forced because Default.xml is guaranteed to be in the app bundle
-//      // and valid.
-//
-//      
-//    }
-//
-//    super.save(to: url, for: saveOperation, completionHandler: completionHandler)
-//  }
   
   override func contents(forType typeName: String) throws -> Any {
     let fileData = try file!.encryptPayload()
@@ -39,10 +26,5 @@ class KDBXDocument: UIDocument {
     let rawData = contents as! Data
     let utf8password = password!.utf8
     file = try KDBXFileMagician.kdbxFile(withBytes: [UInt8](rawData), password: [UInt8](utf8password), keyfile: nil)
-    
-    guard file != nil else {
-      return
-    }
-    parsedData = KDBXXMLDatabase(withXML: (file?.payloadBytes)!, andFile: file)
   }
 }
