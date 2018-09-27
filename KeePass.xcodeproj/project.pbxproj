@@ -12,17 +12,17 @@
 		F17808942157030000271E67 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F17808842157030000271E67 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F17808972157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
 		F17808982157030000271E67 /* KeePassSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F17808AE2157034D00271E67 /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A12157034C00271E67 /* KDBXString.swift */; };
-		F17808AF2157034D00271E67 /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A22157034D00271E67 /* KDBXEntry.swift */; };
-		F17808B02157034D00271E67 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A32157034D00271E67 /* KDBXDatabase.swift */; };
-		F17808B12157034D00271E67 /* KDBXXMLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */; };
+		F17808AE2157034D00271E67 /* KDBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A12157034C00271E67 /* KDBString.swift */; };
+		F17808AF2157034D00271E67 /* KDBEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A22157034D00271E67 /* KDBEntry.swift */; };
+		F17808B02157034D00271E67 /* KDBDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A32157034D00271E67 /* KDBDatabase.swift */; };
+		F17808B12157034D00271E67 /* KDBXDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A52157034D00271E67 /* KDBXDatabase.swift */; };
 		F17808B22157034D00271E67 /* KDBXXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A62157034D00271E67 /* KDBXXMLElement.swift */; };
-		F17808B32157034D00271E67 /* KDBXXMLEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A72157034D00271E67 /* KDBXXMLEntry.swift */; };
-		F17808B42157034D00271E67 /* KDBXXMLGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A82157034D00271E67 /* KDBXXMLGroup.swift */; };
-		F17808B52157034D00271E67 /* KDBXXMLDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AA2157034D00271E67 /* KDBXXMLDict.swift */; };
-		F17808B62157034D00271E67 /* KDBXXMLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AB2157034D00271E67 /* KDBXXMLList.swift */; };
-		F17808B72157034D00271E67 /* KDBXXMLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AC2157034D00271E67 /* KDBXXMLString.swift */; };
-		F17808B82157034D00271E67 /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AD2157034D00271E67 /* KDBXGroup.swift */; };
+		F17808B32157034D00271E67 /* KDBXEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A72157034D00271E67 /* KDBXEntry.swift */; };
+		F17808B42157034D00271E67 /* KDBXGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808A82157034D00271E67 /* KDBXGroup.swift */; };
+		F17808B52157034D00271E67 /* KDBXDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AA2157034D00271E67 /* KDBXDict.swift */; };
+		F17808B62157034D00271E67 /* KDBXList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AB2157034D00271E67 /* KDBXList.swift */; };
+		F17808B72157034D00271E67 /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AC2157034D00271E67 /* KDBXString.swift */; };
+		F17808B82157034D00271E67 /* KDBGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AD2157034D00271E67 /* KDBGroup.swift */; };
 		F17808BF2157036500271E67 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BA2157036500271E67 /* AES.swift */; };
 		F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */; };
 		F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */; };
@@ -190,17 +190,17 @@
 		F178088A2157030000271E67 /* KeePassSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeePassSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17808912157030000271E67 /* KeePassSupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeePassSupportTests.swift; sourceTree = "<group>"; };
 		F17808932157030000271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F17808A12157034C00271E67 /* KDBXString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
-		F17808A22157034D00271E67 /* KDBXEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
-		F17808A32157034D00271E67 /* KDBXDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
-		F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLDatabase.swift; sourceTree = "<group>"; };
+		F17808A12157034C00271E67 /* KDBString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBString.swift; sourceTree = "<group>"; };
+		F17808A22157034D00271E67 /* KDBEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBEntry.swift; sourceTree = "<group>"; };
+		F17808A32157034D00271E67 /* KDBDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBDatabase.swift; sourceTree = "<group>"; };
+		F17808A52157034D00271E67 /* KDBXDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDatabase.swift; sourceTree = "<group>"; };
 		F17808A62157034D00271E67 /* KDBXXMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLElement.swift; sourceTree = "<group>"; };
-		F17808A72157034D00271E67 /* KDBXXMLEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLEntry.swift; sourceTree = "<group>"; };
-		F17808A82157034D00271E67 /* KDBXXMLGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLGroup.swift; sourceTree = "<group>"; };
-		F17808AA2157034D00271E67 /* KDBXXMLDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLDict.swift; sourceTree = "<group>"; };
-		F17808AB2157034D00271E67 /* KDBXXMLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLList.swift; sourceTree = "<group>"; };
-		F17808AC2157034D00271E67 /* KDBXXMLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXXMLString.swift; sourceTree = "<group>"; };
-		F17808AD2157034D00271E67 /* KDBXGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
+		F17808A72157034D00271E67 /* KDBXEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXEntry.swift; sourceTree = "<group>"; };
+		F17808A82157034D00271E67 /* KDBXGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXGroup.swift; sourceTree = "<group>"; };
+		F17808AA2157034D00271E67 /* KDBXDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDict.swift; sourceTree = "<group>"; };
+		F17808AB2157034D00271E67 /* KDBXList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXList.swift; sourceTree = "<group>"; };
+		F17808AC2157034D00271E67 /* KDBXString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
+		F17808AD2157034D00271E67 /* KDBGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBGroup.swift; sourceTree = "<group>"; };
 		F17808BA2157036500271E67 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 		F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
 		F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
@@ -364,10 +364,10 @@
 			isa = PBXGroup;
 			children = (
 				F1780A5621572EE900271E67 /* DatabaseOptions.swift */,
-				F17808A12157034C00271E67 /* KDBXString.swift */,
-				F17808A22157034D00271E67 /* KDBXEntry.swift */,
-				F17808A32157034D00271E67 /* KDBXDatabase.swift */,
-				F17808AD2157034D00271E67 /* KDBXGroup.swift */,
+				F17808A12157034C00271E67 /* KDBString.swift */,
+				F17808A22157034D00271E67 /* KDBEntry.swift */,
+				F17808A32157034D00271E67 /* KDBDatabase.swift */,
+				F17808AD2157034D00271E67 /* KDBGroup.swift */,
 				F17808A42157034D00271E67 /* XML */,
 			);
 			path = Models;
@@ -377,11 +377,11 @@
 			isa = PBXGroup;
 			children = (
 				F17808A92157034D00271E67 /* Convenience */,
-				F17808A52157034D00271E67 /* KDBXXMLDatabase.swift */,
+				F17808A52157034D00271E67 /* KDBXDatabase.swift */,
 				F17808A62157034D00271E67 /* KDBXXMLElement.swift */,
-				F17808A72157034D00271E67 /* KDBXXMLEntry.swift */,
-				F17808A82157034D00271E67 /* KDBXXMLGroup.swift */,
-				F17808AC2157034D00271E67 /* KDBXXMLString.swift */,
+				F17808A72157034D00271E67 /* KDBXEntry.swift */,
+				F17808A82157034D00271E67 /* KDBXGroup.swift */,
+				F17808AC2157034D00271E67 /* KDBXString.swift */,
 			);
 			path = XML;
 			sourceTree = "<group>";
@@ -389,8 +389,8 @@
 		F17808A92157034D00271E67 /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
-				F17808AA2157034D00271E67 /* KDBXXMLDict.swift */,
-				F17808AB2157034D00271E67 /* KDBXXMLList.swift */,
+				F17808AA2157034D00271E67 /* KDBXDict.swift */,
+				F17808AB2157034D00271E67 /* KDBXList.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -785,20 +785,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */,
-				F17808AE2157034D00271E67 /* KDBXString.swift in Sources */,
+				F17808AE2157034D00271E67 /* KDBString.swift in Sources */,
 				F1780A5721572EE900271E67 /* DatabaseOptions.swift in Sources */,
 				F17808BF2157036500271E67 /* AES.swift in Sources */,
-				F17808B02157034D00271E67 /* KDBXDatabase.swift in Sources */,
+				F17808B02157034D00271E67 /* KDBDatabase.swift in Sources */,
 				F17809B2215705BB00271E67 /* AEXMLElement+Extensions.swift in Sources */,
-				F17808B52157034D00271E67 /* KDBXXMLDict.swift in Sources */,
-				F17808B62157034D00271E67 /* KDBXXMLList.swift in Sources */,
-				F17808AF2157034D00271E67 /* KDBXEntry.swift in Sources */,
-				F17808B32157034D00271E67 /* KDBXXMLEntry.swift in Sources */,
-				F17808B42157034D00271E67 /* KDBXXMLGroup.swift in Sources */,
-				F17808B82157034D00271E67 /* KDBXGroup.swift in Sources */,
+				F17808B52157034D00271E67 /* KDBXDict.swift in Sources */,
+				F17808B62157034D00271E67 /* KDBXList.swift in Sources */,
+				F17808AF2157034D00271E67 /* KDBEntry.swift in Sources */,
+				F17808B32157034D00271E67 /* KDBXEntry.swift in Sources */,
+				F17808B42157034D00271E67 /* KDBXGroup.swift in Sources */,
+				F17808B82157034D00271E67 /* KDBGroup.swift in Sources */,
 				F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */,
-				F17808B72157034D00271E67 /* KDBXXMLString.swift in Sources */,
-				F17808B12157034D00271E67 /* KDBXXMLDatabase.swift in Sources */,
+				F17808B72157034D00271E67 /* KDBXString.swift in Sources */,
+				F17808B12157034D00271E67 /* KDBXDatabase.swift in Sources */,
 				F17808B22157034D00271E67 /* KDBXXMLElement.swift in Sources */,
 				F17808C22157036500271E67 /* ByteArray+Crypto.swift in Sources */,
 			);
@@ -1011,6 +1011,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1035,6 +1036,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = WG8875WVRH;
 				INFOPLIST_FILE = KeePass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1060,6 +1062,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeePassSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1088,6 +1091,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeePassSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1156,6 +1160,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Salsa20/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1183,6 +1188,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Salsa20/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
