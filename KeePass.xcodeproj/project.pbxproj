@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F174DB45215C66C80035AD37 /* KDBXFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174DB44215C66C80035AD37 /* KDBXFile.swift */; };
 		F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
 		F17808922157030000271E67 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808912157030000271E67 /* KeePassSupportTests.swift */; };
 		F17808942157030000271E67 /* KeePassSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F17808842157030000271E67 /* KeePassSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +25,7 @@
 		F17808B72157034D00271E67 /* KDBXString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AC2157034D00271E67 /* KDBXString.swift */; };
 		F17808B82157034D00271E67 /* KDBGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808AD2157034D00271E67 /* KDBGroup.swift */; };
 		F17808BF2157036500271E67 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BA2157036500271E67 /* AES.swift */; };
-		F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */; };
+		F17808C02157036500271E67 /* KDBXHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BB2157036500271E67 /* KDBXHeader.swift */; };
 		F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */; };
 		F17808C22157036500271E67 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BE2157036500271E67 /* ByteArray+Crypto.swift */; };
 		F178098B2157048000271E67 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178097F2157044300271E67 /* Gzip.framework */; };
@@ -183,6 +184,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F174DB44215C66C80035AD37 /* KDBXFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXFile.swift; sourceTree = "<group>"; };
 		F178084C215702C400271E67 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1780882215702FF00271E67 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17808842157030000271E67 /* KeePassSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeePassSupport.h; sourceTree = "<group>"; };
@@ -202,7 +204,7 @@
 		F17808AC2157034D00271E67 /* KDBXString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXString.swift; sourceTree = "<group>"; };
 		F17808AD2157034D00271E67 /* KDBGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBGroup.swift; sourceTree = "<group>"; };
 		F17808BA2157036500271E67 /* AES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
-		F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXCryptoHandler.swift; sourceTree = "<group>"; };
+		F17808BB2157036500271E67 /* KDBXHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXHeader.swift; sourceTree = "<group>"; };
 		F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
 		F17808BE2157036500271E67 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
 		F17809462157043E00271E67 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
@@ -288,6 +290,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F174DB43215C66AC0035AD37 /* KDBX */ = {
+			isa = PBXGroup;
+			children = (
+				F17808BB2157036500271E67 /* KDBXHeader.swift */,
+				F174DB44215C66C80035AD37 /* KDBXFile.swift */,
+			);
+			path = KDBX;
+			sourceTree = "<group>";
+		};
 		F1780843215702C400271E67 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +349,7 @@
 			children = (
 				F17809902157052F00271E67 /* AEXML.xcodeproj */,
 				F17809462157043E00271E67 /* Gzip.xcodeproj */,
+				F174DB43215C66AC0035AD37 /* KDBX */,
 				F17808A02157034C00271E67 /* Models */,
 				F17808B92157036500271E67 /* Crypto */,
 				F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */,
@@ -399,7 +411,6 @@
 			isa = PBXGroup;
 			children = (
 				F17808BA2157036500271E67 /* AES.swift */,
-				F17808BB2157036500271E67 /* KDBXCryptoHandler.swift */,
 				F17808BC2157036500271E67 /* Extensions */,
 			);
 			path = Crypto;
@@ -784,7 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17808C02157036500271E67 /* KDBXCryptoHandler.swift in Sources */,
+				F17808C02157036500271E67 /* KDBXHeader.swift in Sources */,
 				F17808AE2157034D00271E67 /* KDBString.swift in Sources */,
 				F1780A5721572EE900271E67 /* DatabaseOptions.swift in Sources */,
 				F17808BF2157036500271E67 /* AES.swift in Sources */,
@@ -794,6 +805,7 @@
 				F17808B62157034D00271E67 /* KDBXList.swift in Sources */,
 				F17808AF2157034D00271E67 /* KDBEntry.swift in Sources */,
 				F17808B32157034D00271E67 /* KDBXEntry.swift in Sources */,
+				F174DB45215C66C80035AD37 /* KDBXFile.swift in Sources */,
 				F17808B42157034D00271E67 /* KDBXGroup.swift in Sources */,
 				F17808B82157034D00271E67 /* KDBGroup.swift in Sources */,
 				F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */,
