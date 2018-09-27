@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   var resolvedURL: URL!
   var document: KDBXDocument?
-  var database: KDBXDatabase?
+  var database: KDBDatabase?
   
   override func viewDidLoad() {
     super.viewDidLoad()

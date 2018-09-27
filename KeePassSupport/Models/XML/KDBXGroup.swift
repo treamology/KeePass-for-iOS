@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public class KDBXXMLGroup: KDBXXMLElement, KDBXGroup {
+public class KDBXGroup: KDBXXMLElement, KDBGroup {
   
   public var xmlElement: AEXMLElement
   
@@ -35,8 +35,8 @@ public class KDBXXMLGroup: KDBXXMLElement, KDBXGroup {
       if let unwrappedGroupName = xmlElement["Name"].value {
         return unwrappedGroupName
       } else {
-        xmlElement["Name"].value = KDBXXMLGroup.defaultGroupName
-        return KDBXXMLGroup.defaultGroupName
+        xmlElement["Name"].value = KDBXGroup.defaultGroupName
+        return KDBXGroup.defaultGroupName
       }
     }
     set {
@@ -56,23 +56,23 @@ public class KDBXXMLGroup: KDBXXMLElement, KDBXGroup {
     }
   }
   
-  private var entriesList: KDBXXMLList<KDBXXMLEntry>
-  public var entries: [KDBXEntry] {
+  private var entriesList: KDBXList<KDBXEntry>
+  public var entries: [KDBEntry] {
     get {
       return entriesList.elements
     }
   }
   
-  private var childGroupsList: KDBXXMLList<KDBXXMLGroup>
-  public var childGroups: [KDBXGroup] {
+  private var childGroupsList: KDBXList<KDBXGroup>
+  public var childGroups: [KDBGroup] {
     get {
       return childGroupsList.elements
     }
   }
   
-  required public init(withElement element: AEXMLElement = AEXMLElement(name: KDBXXMLGroup.elementName)) {
-    entriesList = KDBXXMLList(withRootElement: element)
-    childGroupsList = KDBXXMLList(withRootElement: element)
+  required public init(withElement element: AEXMLElement = AEXMLElement(name: KDBXGroup.elementName)) {
+    entriesList = KDBXList(withRootElement: element)
+    childGroupsList = KDBXList(withRootElement: element)
     
     xmlElement = element
   }

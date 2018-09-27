@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol KDBXDatabase {
+public protocol KDBDatabase {
   var generator: String? { get }
   var dbName: String? { get set }
   var description: String? { get set }
@@ -20,5 +20,5 @@ public protocol KDBXDatabase {
   var dateOfMasterKeyChange: Date? { get set }
   var dateOfRecycleBinChange: Date? { get set }
   
-  var groups: [KDBXGroup] { get }
+  var groups: [KDBGroup] { get }
 }

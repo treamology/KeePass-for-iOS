@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol KDBXEntry {
+public protocol KDBEntry {
   var uuid: String { get set }
   var name: String { get set }
   var website: String? { get set }

@@ -115,7 +115,7 @@ public protocol KDBXFile: AnyObject {
   
   var header: KDBXHeader { get }
   var payloadBytes: [UInt8]? { get }
-  var database: KDBXXMLDatabase? { get set }
+  var database: KDBXDatabase? { get set }
   
   var filePasswordBytes: [UInt8]? { get set }
   var keyfileBytes: [UInt8]? { get set }
@@ -173,7 +173,7 @@ public class KDBX3File: KDBXFile {
       return [UInt8](utf)
     }
   }
-  public var database: KDBXXMLDatabase?
+  public var database: KDBXDatabase?
   
   public var filePasswordBytes: [UInt8]?
   public var keyfileBytes: [UInt8]?
@@ -342,7 +342,7 @@ public class KDBX3File: KDBXFile {
       }
     }
     
-    database = KDBXXMLDatabase(withXML: decompressedPayload, andFile: self)
+    database = KDBXDatabase(withXML: decompressedPayload, andFile: self)
     self.header = header
     self.header3 = header
   }

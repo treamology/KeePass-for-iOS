@@ -72,7 +72,7 @@ class KDBXParseTests: XCTestCase {
     let data = try! Data(contentsOf: url!)
 
     let handler = try! KDBX3File(withFileBytes: [UInt8](data), password: [UInt8]("password".data(using: .utf8)!), keyfile: nil)
-    let decodedXML = String(bytes: handler.payloadBytes, encoding: .utf8)
+    let decodedXML = String(bytes: handler.payloadBytes!, encoding: .utf8)
     let refURL = Bundle(for: type(of: self)).url(forResource: "ValidFileXML", withExtension: "xml")
     let refXML = String(bytes: try! Data(contentsOf: refURL!), encoding: .utf8)
 

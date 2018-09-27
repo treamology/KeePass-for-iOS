@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public class KDBXXMLString: KDBXXMLElement {
+public class KDBXString: KDBXXMLElement {
   public static var elementName = "String"
   public var xmlElement: AEXMLElement
   

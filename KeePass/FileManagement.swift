@@ -54,7 +54,7 @@ class FileManagement {
     // We're force unwrapping our way through this since Default.xml is guaranteed to exist
     let defaultURL = Bundle.main.url(forResource: "Default", withExtension: "xml")
     let defaultData = try! Data(contentsOf: defaultURL!)
-    let database = KDBXXMLDatabase(withXML: [UInt8](defaultData), andFile: nil)
+    let database = KDBXDatabase(withXML: [UInt8](defaultData), andFile: nil)
     
     // FIXME: We're creating a KDBX 3 file for now.
     guard let header = KDBX3Header.generateNewHeader() else {

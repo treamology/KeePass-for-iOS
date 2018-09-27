@@ -17,9 +17,9 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   @IBOutlet var tableView: UITableView!
   
   var document: KDBXDocument?
-  var database: KDBXDatabase!
+  var database: KDBDatabase!
   
-  var baseGroup: KDBXGroup!
+  var baseGroup: KDBGroup!
   
   var copiedViewAnimating = false
   
@@ -108,7 +108,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    var group: KDBXGroup!
+    var group: KDBGroup!
     var count: Int!
     if section == 0 {
       group = baseGroup
@@ -122,7 +122,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let entry: KDBXEntry!
+    let entry: KDBEntry!
     if indexPath.section == 0 {
       entry = baseGroup.entries[indexPath.row]
     } else {
@@ -154,7 +154,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     if cell?.reuseIdentifier == "DatabaseEntryCell" {
       passwordCopiedPopup()
       
-      let group: KDBXGroup!
+      let group: KDBGroup!
       if indexPath.section == 0 {
         group = baseGroup
       } else {

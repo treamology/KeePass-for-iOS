@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
+class KDBXEntry: KDBXXMLElement, KDBEntry {
   
   static var elementName = "Entry"
   
@@ -42,13 +42,13 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
   var modificationTime: Date? {
     get {
       if let modTimeString = xmlElement["Times"]["LastModificationTime"].value {
-        return KDBXXMLDatabase.dateFormatter.date(from: modTimeString)
+        return KDBXDatabase.dateFormatter.date(from: modTimeString)
       }
       return nil
     }
     set {
       if let date = newValue {
-        xmlElement["Times"]["LastModificationTime"].value = KDBXXMLDatabase.dateFormatter.string(from: date)
+        xmlElement["Times"]["LastModificationTime"].value = KDBXDatabase.dateFormatter.string(from: date)
         return
       }
       xmlElement["Times"]["LastModificationTime"].value = nil
@@ -57,13 +57,13 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
   var creationTime: Date? {
     get {
       if let createTimeString = xmlElement["Times"]["CreationTime"].value {
-        return KDBXXMLDatabase.dateFormatter.date(from: createTimeString)
+        return KDBXDatabase.dateFormatter.date(from: createTimeString)
       }
       return nil
     }
     set {
       if let date = newValue {
-        xmlElement["Times"]["CreationTime"].value = KDBXXMLDatabase.dateFormatter.string(from: date)
+        xmlElement["Times"]["CreationTime"].value = KDBXDatabase.dateFormatter.string(from: date)
         return
       }
       xmlElement["Times"]["CreationTime"].value = nil
@@ -72,13 +72,13 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
   var lastAccessTime: Date? {
     get {
       if let lastAccessString = xmlElement["Times"]["LastAccessTime"].value {
-        return KDBXXMLDatabase.dateFormatter.date(from: lastAccessString)
+        return KDBXDatabase.dateFormatter.date(from: lastAccessString)
       }
       return nil
     }
     set {
       if let date = newValue {
-        xmlElement["Times"]["LastAccessTime"].value = KDBXXMLDatabase.dateFormatter.string(from: date)
+        xmlElement["Times"]["LastAccessTime"].value = KDBXDatabase.dateFormatter.string(from: date)
         return
       }
       xmlElement["Times"]["LastAccessTime"].value = nil
@@ -87,13 +87,13 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
   var locationChangedTime: Date? {
     get {
       if let locationChangeString = xmlElement["Times"]["LocationChanged"].value {
-        return KDBXXMLDatabase.dateFormatter.date(from: locationChangeString)
+        return KDBXDatabase.dateFormatter.date(from: locationChangeString)
       }
       return nil
     }
     set {
       if let date = newValue {
-        xmlElement["Times"]["LocationChanged"].value = KDBXXMLDatabase.dateFormatter.string(from: date)
+        xmlElement["Times"]["LocationChanged"].value = KDBXDatabase.dateFormatter.string(from: date)
         return
       }
       xmlElement["Times"]["LocationChanged"].value = nil
@@ -102,13 +102,13 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
   var expiryTime: Date? {
     get {
       if let expiryTimeString = xmlElement["Times"]["ExpiryTime"].value {
-        return KDBXXMLDatabase.dateFormatter.date(from: expiryTimeString)
+        return KDBXDatabase.dateFormatter.date(from: expiryTimeString)
       }
       return nil
     }
     set {
       if let date = newValue {
-        xmlElement["Times"]["ExpiryTime"].value = KDBXXMLDatabase.dateFormatter.string(from: date)
+        xmlElement["Times"]["ExpiryTime"].value = KDBXDatabase.dateFormatter.string(from: date)
         return
       }
       xmlElement["Times"]["ExpiryTime"].value = nil
@@ -152,10 +152,10 @@ class KDBXXMLEntry: KDBXXMLElement, KDBXEntry {
     }
   }
   
-  private var strings: KDBXXMLDict<KDBXXMLString>
+  private var strings: KDBXDict<KDBXString>
   
-  required init(withElement element: AEXMLElement = AEXMLElement(name: KDBXXMLEntry.elementName)) {
+  required init(withElement element: AEXMLElement = AEXMLElement(name: KDBXEntry.elementName)) {
     xmlElement = element
-    strings = KDBXXMLDict(withRootElement: xmlElement)
+    strings = KDBXDict(withRootElement: xmlElement)
   }
 }

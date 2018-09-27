@@ -8,11 +8,11 @@
 
 import Foundation
 
-public protocol KDBXGroup: AnyObject {
+public protocol KDBGroup: AnyObject {
   var uuid: String { get set }
   var groupName: String { get set }
   var iconID: UInt8? { get set }
   
-  var entries: [KDBXEntry] { get }
-  var childGroups: [KDBXGroup] { get }
+  var entries: [KDBEntry] { get }
+  var childGroups: [KDBGroup] { get }
 }

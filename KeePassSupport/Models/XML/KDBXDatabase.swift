@@ -10,7 +10,7 @@ import Foundation
 import AEXML
 import Salsa20
 
-public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
+public class KDBXDatabase: KDBXXMLElement, KDBDatabase {
   
   public static var dateFormatter = DateFormatter()
   public static var elementName = "Root"
@@ -20,8 +20,8 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
   
   private var dateFormatter: DateFormatter
   
-  public var groupList: KDBXXMLList<KDBXXMLGroup>
-  public var groups: [KDBXGroup] {
+  public var groupList: KDBXList<KDBXGroup>
+  public var groups: [KDBGroup] {
     get {
       return groupList.elements
     }
@@ -29,8 +29,8 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
   
   public weak var kdbxFile: KDBXFile?
   
-  public static func newEmptyDatabase() -> KDBXXMLDatabase {
-    let database = KDBXXMLDatabase()
+  public static func newEmptyDatabase() -> KDBXDatabase {
+    let database = KDBXDatabase()
     database.generator = "KeePass for iOS"
     database.dbName = "Database"
     database.description = ""
@@ -54,7 +54,7 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
     
     // Reinitialize this with the new root element now that we've loaded
     // some data.
-    groupList = KDBXXMLList(withRootElement: xmlDocument.root["Root"])
+    groupList = KDBXList(withRootElement: xmlDocument.root["Root"])
     
     kdbxFile = file
     decryptProtectedValues()
@@ -64,10 +64,10 @@ public class KDBXXMLDatabase: KDBXXMLElement, KDBXDatabase {
     xmlElement = element
     xmlDocument = element as! AEXMLDocument
   
-    dateFormatter = KDBXXMLDatabase.dateFormatter
+    dateFormatter = KDBXDatabase.dateFormatter
     dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
     
-    groupList = KDBXXMLList(withRootElement: xmlDocument.root["Root"])
+    groupList = KDBXList(withRootElement: xmlDocument.root["Root"])
   }
   
   public func decryptProtectedValues() {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol KDBXString {
+public protocol KDBString {
   var key: String { get }
   var value: String { get set }
 }
