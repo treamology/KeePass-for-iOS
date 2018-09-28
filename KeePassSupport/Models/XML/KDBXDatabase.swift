@@ -12,39 +12,38 @@ import Salsa20
 
 public class KDBXDatabase: KDBXXMLElement, KDBDatabase {
   
-  public static var dateFormatter = DateFormatter()
+  private static var _dateFormatter: DateFormatter?
+  internal static var dateFormatter: DateFormatter {
+    if _dateFormatter == nil {
+      _dateFormatter = DateFormatter()
+      _dateFormatter!.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
+    }
+    return _dateFormatter!
+  }
+  
   public static var elementName = "Root"
   
-  public var xmlElement: AEXMLElement
-  public var xmlDocument: AEXMLDocument
+  internal var xmlElement: AEXMLElement
+  var xmlDocument: AEXMLDocument
   
-  private var dateFormatter: DateFormatter
-  
-  public var groupList: KDBXList<KDBXGroup>
-  public var groups: [KDBGroup] {
-    get {
-      return groupList.elements
-    }
+  internal var groupList: KDBXList<KDBXGroup>?
+  public var groups: [KDBGroup]? {
+    return groupList?.elements
   }
   
   public weak var kdbxFile: KDBXFile?
   
-  public static func newEmptyDatabase() -> KDBXDatabase {
-    let database = KDBXDatabase()
-    database.generator = "KeePass for iOS"
-    database.dbName = "Database"
-    database.description = ""
-    
-    database.dateOfNameChange = Date()
-    database.dateOfUsernameChange = Date()
-    database.dateOfMasterKeyChange = Date()
-    database.dateOfRecycleBinChange = Date()
-    
-    return database
-  }
-  
   public convenience init(withXML xml: [UInt8], andFile file: KDBXFile?) {
     self.init()
+    
+    generator = "KeePass for iOS"
+    dbName = "Database"
+    description = ""
+    
+    dateOfNameChange = Date()
+    dateOfUsernameChange = Date()
+    dateOfMasterKeyChange = Date()
+    dateOfRecycleBinChange = Date()
     
     do {
       try xmlDocument.loadXML(Data(xml))
@@ -63,9 +62,6 @@ public class KDBXDatabase: KDBXXMLElement, KDBDatabase {
   public required init(withElement element: AEXMLElement = AEXMLDocument()) {
     xmlElement = element
     xmlDocument = element as! AEXMLDocument
-  
-    dateFormatter = KDBXDatabase.dateFormatter
-    dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
     
     groupList = KDBXList(withRootElement: xmlDocument.root["Root"])
   }
@@ -162,52 +158,52 @@ public class KDBXDatabase: KDBXXMLElement, KDBDatabase {
   public var dateOfNameChange: Date? {
     get {
       if let nameChangeString = xmlDocument.root["Meta"]["DatabaseNameChanged"].value {
-        return dateFormatter.date(from: nameChangeString)
+        return KDBXDatabase.dateFormatter.date(from: nameChangeString)
       }
       return nil
     }
     set {
       if let newValueUnwrapped = newValue {
-        xmlDocument.root["Meta"]["DatabaseNameChanged"].value = dateFormatter.string(from: newValueUnwrapped)
+        xmlDocument.root["Meta"]["DatabaseNameChanged"].value = KDBXDatabase.dateFormatter.string(from: newValueUnwrapped)
       }
     }
   }
   public var dateOfUsernameChange: Date? {
     get {
       if let usernameChangeString = xmlDocument.root["Meta"]["DefaultUserNameChanged"].value {
-        return dateFormatter.date(from: usernameChangeString)
+        return KDBXDatabase.dateFormatter.date(from: usernameChangeString)
       }
       return nil
     }
     set {
       if let newValueUnwrapped = newValue {
-        xmlDocument.root["Meta"]["DefaultUserNameChanged"].value = dateFormatter.string(from: newValueUnwrapped)
+        xmlDocument.root["Meta"]["DefaultUserNameChanged"].value = KDBXDatabase.dateFormatter.string(from: newValueUnwrapped)
       }
     }
   }
   public var dateOfMasterKeyChange: Date? {
     get {
       if let masterkeyChangeString = xmlDocument.root["Meta"]["MasterKeyChanged"].value {
-        return dateFormatter.date(from: masterkeyChangeString)
+        return KDBXDatabase.dateFormatter.date(from: masterkeyChangeString)
       }
       return nil
     }
     set {
       if let newValueUnwrapped = newValue {
-        xmlDocument.root["Meta"]["MasterKeyChanged"].value = dateFormatter.string(from: newValueUnwrapped)
+        xmlDocument.root["Meta"]["MasterKeyChanged"].value = KDBXDatabase.dateFormatter.string(from: newValueUnwrapped)
       }
     }
   }
   public var dateOfRecycleBinChange: Date? {
     get {
       if let recycleBinChangeString = xmlDocument.root["Meta"]["RecycleBinChanged"].value {
-        return dateFormatter.date(from: recycleBinChangeString)
+        return KDBXDatabase.dateFormatter.date(from: recycleBinChangeString)
       }
       return nil
     }
     set {
       if let newValueUnwrapped = newValue {
-        xmlDocument.root["Meta"]["RecycleBinChanged"].value = dateFormatter.string(from: newValueUnwrapped)
+        xmlDocument.root["Meta"]["RecycleBinChanged"].value = KDBXDatabase.dateFormatter.string(from: newValueUnwrapped)
       }
     }
   }

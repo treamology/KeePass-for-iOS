@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public class KDBXList<ElementType: KDBXXMLElement> {
+internal class KDBXList<ElementType: KDBXXMLElement> {
   private var root: AEXMLElement
   
   public var elements: [ElementType] {

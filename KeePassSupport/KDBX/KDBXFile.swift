@@ -33,7 +33,6 @@ public protocol KDBXFile: AnyObject {
   init?(withHeader header: KDBXHeader)
   init(withFileBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws
   
-  func generateHeaderBytes() -> [UInt8]
   func encryptPayload() throws -> [UInt8]
 }
 
@@ -60,6 +59,7 @@ public class KDBX3File: KDBXFile {
   public enum EncryptError: Error {
     case couldntCompress
     case couldntCreateMasterKey
+    case randomNumNotAvailable
   }
   
   // This pattern is being used because one can't easily specialize protocols in Swift.
@@ -88,6 +88,12 @@ public class KDBX3File: KDBXFile {
       let sha = keyfileBytes[0..<headerLength].sha256()
       return String(bytes: sha, encoding: .utf8)
     }
+  }
+  
+  public init(withExistingDatabase: KDBXDatabase) throws {
+    self.header3 = try KDBX3Header.generateValidHeader()
+    self.header = self.header3
+    
   }
   
   required public init?(withHeader header: KDBXHeader) {
@@ -247,52 +253,9 @@ public class KDBX3File: KDBXFile {
     self.header3 = header
   }
   
-  public func generateHeaderBytes() -> [UInt8] {
-    var headerBytes = [UInt8]()
-    headerBytes.append(contentsOf: KDBX3File.MAGIC)
-    headerBytes.append(contentsOf: header.secondaryID.toBytes())
-    headerBytes.append(contentsOf: header.minorVersion.toBytes())
-    headerBytes.append(contentsOf: header.majorVersion.toBytes())
-    
-    let cipherID = KDBX3HeaderEntry(id: 2, payload: header3.cipherID)
-    headerBytes.append(contentsOf: cipherID.bytes())
-    
-    let compressionFlags = KDBX3HeaderEntry(id: 3, payload: header3.compressionFlags!.rawValue.toBytes())
-    headerBytes.append(contentsOf: compressionFlags.bytes())
-    
-    let masterSeed = KDBX3HeaderEntry(id: 4, payload: header3.masterSeed)
-    headerBytes.append(contentsOf: masterSeed.bytes())
-    
-    let transformSeed = KDBX3HeaderEntry(id: 5, payload: header3.transformSeed)
-    headerBytes.append(contentsOf: transformSeed.bytes())
-    
-    let transformRounds = KDBX3HeaderEntry(id: 6, payload: header3.transformRounds!.toBytes())
-    headerBytes.append(contentsOf: transformRounds.bytes())
-    
-    let encryptionIV = KDBX3HeaderEntry(id: 7, payload: header3.encryptionIV)
-    headerBytes.append(contentsOf: encryptionIV.bytes())
-    
-    if header3.protectedStreamKey != nil {
-      let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: header3.protectedStreamKey)
-      headerBytes.append(contentsOf: protectedStreamKey.bytes())
-    }
-    
-    let streamStartBytes = KDBX3HeaderEntry(id: 9, payload: header3.streamStartBytes)
-    headerBytes.append(contentsOf: streamStartBytes.bytes())
-    
-    if header3.innerRandomStreamID != nil {
-      let innerRandomStreamID = KDBX3HeaderEntry(id: 10, payload: header3.innerRandomStreamID!.rawValue.toBytes())
-      headerBytes.append(contentsOf: innerRandomStreamID.bytes())
-    }
-    
-    headerBytes.append(contentsOf: [0x00, 0x04, 0x00, 0xDE, 0xAD, 0xBE, 0xEF])
-    
-    return headerBytes
-  }
-  
   public func encryptPayload() throws -> [UInt8] {
     // Start by generating a fresh header for the container.
-    var fileBytes = generateHeaderBytes()
+    var fileBytes = header.bytes
     
     // Recompress the payload.
     let compressedPayload: [UInt8]

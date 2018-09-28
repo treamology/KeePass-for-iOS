@@ -57,9 +57,11 @@ class FileManagement {
     let database = KDBXDatabase(withXML: [UInt8](defaultData), andFile: nil)
     
     // FIXME: We're creating a KDBX 3 file for now.
-    guard let header = KDBX3Header.generateNewHeader() else {
+    var header: KDBX3Header!
+    do {
+      header = try KDBX3Header.generateValidHeader()
+    } catch {
       completed(false)
-      return
     }
     guard let file = KDBX3File(withHeader: header) else {
       completed(false)

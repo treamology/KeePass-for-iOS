@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public protocol KDBXXMLElement {
+internal protocol KDBXXMLElement {
   static var elementName: String { get }
   var xmlElement: AEXMLElement { get set }
   

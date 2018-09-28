@@ -9,7 +9,7 @@
 import Foundation
 import AEXML
 
-public class KDBXDict<ElementType: KDBXXMLElement>: KDBXList<ElementType> {
+internal class KDBXDict<ElementType: KDBXXMLElement>: KDBXList<ElementType> {
   private var indexCache: [String: Int]?
   
   subscript(key: String) -> String? {

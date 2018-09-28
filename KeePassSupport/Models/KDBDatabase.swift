@@ -20,5 +20,5 @@ public protocol KDBDatabase {
   var dateOfMasterKeyChange: Date? { get set }
   var dateOfRecycleBinChange: Date? { get set }
   
-  var groups: [KDBGroup] { get }
+  var groups: [KDBGroup]? { get }
 }

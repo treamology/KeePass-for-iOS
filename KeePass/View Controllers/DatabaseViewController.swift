@@ -28,7 +28,7 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     
     if baseGroup == nil {
       navigationItem.title = document!.localizedName
-      baseGroup = database.groups[0]
+      baseGroup = database.groups![0]
     } else {
       navigationItem.title = baseGroup.groupName
     }
