@@ -8,6 +8,7 @@
 
 import Foundation
 import Gzip
+import AEXML
 
 public class KDBXFileMagician {
   public static func kdbxFile(withBytes bytes: [UInt8], password: [UInt8]?, keyfile: [UInt8]?) throws -> KDBXFile {
@@ -60,6 +61,8 @@ public class KDBX3File: KDBXFile {
     case couldntCompress
     case couldntCreateMasterKey
     case randomNumNotAvailable
+    case couldntHashPayload
+    case invalidDatabaseState
   }
   
   // This pattern is being used because one can't easily specialize protocols in Swift.
@@ -77,6 +80,7 @@ public class KDBX3File: KDBXFile {
   
   public var filePasswordBytes: [UInt8]?
   public var keyfileBytes: [UInt8]?
+
   var masterKey: [UInt8]?
   
   var headerLength: Int?
@@ -152,6 +156,7 @@ public class KDBX3File: KDBXFile {
       
       switch (unwrappedID) {
       case .end:
+        header.headerEndBytes = [UInt8](headerPayload)
         reachedHeaderEnd = true
       case .comment:
         continue
@@ -254,6 +259,10 @@ public class KDBX3File: KDBXFile {
   }
   
   public func encryptPayload() throws -> [UInt8] {
+    guard let database = database else {
+      throw EncryptError.invalidDatabaseState
+    }
+    
     // Start by generating a fresh header for the container.
     var fileBytes = header.bytes
     
@@ -265,7 +274,12 @@ public class KDBX3File: KDBXFile {
       throw EncryptError.couldntCompress
     }
     
-    let payloadHash = compressedPayload.sha256()
+    let headerHash = header.bytes.sha256()
+    let headerHashElem = database.xmlDocument.root["Meta"]["HeaderHash"]
+    if headerHashElem.error != nil {
+      database.xmlDocument.root["Meta"].addChild(AEXMLElement(name: "HeaderHash"))
+    }
+    database.xmlDocument.root["Meta"]["HeaderHash"].value = Data(headerHash).base64EncodedString()
     
     if masterKey == nil {
       do {
@@ -283,6 +297,7 @@ public class KDBX3File: KDBXFile {
                                         throw ParseError.couldntCreateCryptoContext
     }
     
+    let payloadHash = compressedPayload.sha256()
     var payloadPayload: [UInt8] = []
     payloadPayload.append(contentsOf: header3.streamStartBytes)
     payloadPayload.append(contentsOf: [UInt8](repeating: 0x00, count: 4)) // payload ID

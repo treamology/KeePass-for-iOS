@@ -37,6 +37,7 @@ public class KDBX3Header: KDBXHeader {
   var protectedStreamKey: [UInt8]?
   var streamStartBytes: [UInt8]!
   var innerRandomStreamID: InnerRandomStreamID!
+  var headerEndBytes: [UInt8]?
   
   public override var bytes: [UInt8] {
     get {
@@ -55,14 +56,14 @@ public class KDBX3Header: KDBXHeader {
       let masterSeed = KDBX3HeaderEntry(id: 4, payload: self.masterSeed)
       headerBytes.append(contentsOf: masterSeed.bytes())
       
+      let encryptionIV = KDBX3HeaderEntry(id: 7, payload: self.encryptionIV)
+      headerBytes.append(contentsOf: encryptionIV.bytes())
+      
       let transformSeed = KDBX3HeaderEntry(id: 5, payload: self.transformSeed)
       headerBytes.append(contentsOf: transformSeed.bytes())
       
       let transformRounds = KDBX3HeaderEntry(id: 6, payload: self.transformRounds!.toBytes())
       headerBytes.append(contentsOf: transformRounds.bytes())
-      
-      let encryptionIV = KDBX3HeaderEntry(id: 7, payload: self.encryptionIV)
-      headerBytes.append(contentsOf: encryptionIV.bytes())
       
       if self.protectedStreamKey != nil {
         let protectedStreamKey = KDBX3HeaderEntry(id: 8, payload: self.protectedStreamKey)
@@ -77,7 +78,8 @@ public class KDBX3Header: KDBXHeader {
         headerBytes.append(contentsOf: innerRandomStreamID.bytes())
       }
       
-      headerBytes.append(contentsOf: [0x00, 0x04, 0x00, 0xDE, 0xAD, 0xBE, 0xEF]) // header end block
+      let headerEndBytesEntry = KDBX3HeaderEntry(id: 0, payload: self.headerEndBytes)
+      headerBytes.append(contentsOf: headerEndBytesEntry.bytes())
       
       return headerBytes
     }
@@ -94,6 +96,8 @@ public class KDBX3Header: KDBXHeader {
     secondaryID = ([0x67,0xFB,0x4B,0xB5] as ArraySlice<UInt8>).toUInt32()!
     majorVersion = 3
     minorVersion = 1
+    
+    headerEndBytes = [0xDE, 0xAD, 0xBE, 0xEF]
   }
   
   public static func generateValidHeader() throws -> KDBX3Header {

@@ -78,4 +78,18 @@ class KDBXParseTests: XCTestCase {
 
     XCTAssertEqual(decodedXML, refXML!)
   }
+  
+  func testReadWriteEquivalentHeaders() {
+    let url = Bundle(for: type(of: self)).url(forResource: "ValidFile", withExtension: "kdbx")
+    let data = try! Data(contentsOf: url!)
+    
+    let file = try! KDBX3File(withFileBytes: [UInt8](data), password: [UInt8]("password".data(using: .utf8)!), keyfile: nil)
+    let realHeaderBytes = data[0..<file.headerLength!]
+    let calcHeaderBytes = file.header.bytes
+    
+    print(Data(realHeaderBytes).hexEncodedString())
+    print(Data(calcHeaderBytes).hexEncodedString())
+    
+    XCTAssertTrue(realHeaderBytes.elementsEqual(calcHeaderBytes))
+  }
 }
