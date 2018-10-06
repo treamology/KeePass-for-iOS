@@ -89,7 +89,7 @@ public class KDBX3Header: KDBXHeader {
     // Set some reasonable defaults.
     cipherID = [0x31,0xc1,0xf2,0xe6,0xbf,0x71,0x43,0x50,0xbe,0x58,0x05,0x21,0x6a,0xfc,0x5a,0xff] // AES128 encryption
     compressionFlags = CompressionFlags.GZIP
-    innerRandomStreamID = .None
+    innerRandomStreamID = .Salsa20
     
     super.init()
     
