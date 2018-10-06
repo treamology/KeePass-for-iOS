@@ -304,7 +304,8 @@ public class KDBX3File: KDBXFile {
     payloadPayload.append(contentsOf: payloadHash) // payload hash
     payloadPayload.append(contentsOf: UInt32(compressedPayload.count).toBytes()) // payload length
     payloadPayload.append(contentsOf: compressedPayload) // the payload
-    payloadPayload.append(contentsOf: [UInt8](repeating: 0x00, count: 40)) // blank ID, hash, and length
+    payloadPayload.append(contentsOf: [0x01, 0x00, 0x00, 0x00])
+    payloadPayload.append(contentsOf: [UInt8](repeating: 0x00, count: 36)) // blank ID, hash, and length
     
     let encryptedPayload = AESEncryptContext.performOperation(payloadPayload)
     
