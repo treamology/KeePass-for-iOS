@@ -64,6 +64,7 @@
 		F1780A552157255100271E67 /* ValidFileXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = F1780A512157255000271E67 /* ValidFileXML.xml */; };
 		F1780A5721572EE900271E67 /* DatabaseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A5621572EE900271E67 /* DatabaseOptions.swift */; };
 		F19DD321215ECD9200BE9BC5 /* Data+HexPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19DD320215ECD9200BE9BC5 /* Data+HexPrint.swift */; };
+		F1B2BD41219FDDB60063D608 /* EntryEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2BD40219FDDB60063D608 /* EntryEditorTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +247,7 @@
 		F1780A512157255000271E67 /* ValidFileXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidFileXML.xml; sourceTree = "<group>"; };
 		F1780A5621572EE900271E67 /* DatabaseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOptions.swift; sourceTree = "<group>"; };
 		F19DD320215ECD9200BE9BC5 /* Data+HexPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexPrint.swift"; sourceTree = "<group>"; };
+		F1B2BD40219FDDB60063D608 /* EntryEditorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEditorTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +473,7 @@
 				F1780A0F215707AB00271E67 /* DetailViewController.swift */,
 				F1780A12215707AB00271E67 /* DatabaseViewController.swift */,
 				F1780A13215707AB00271E67 /* MasterViewController.swift */,
+				F1B2BD40219FDDB60063D608 /* EntryEditorTableViewController.swift */,
 				F1780A10215707AB00271E67 /* Segues */,
 			);
 			path = "View Controllers";
@@ -791,6 +794,7 @@
 				F1780A28215707AB00271E67 /* MasterViewController.swift in Sources */,
 				F1780A31215707AB00271E67 /* FileManagement.swift in Sources */,
 				F1780A25215707AB00271E67 /* DetailViewController.swift in Sources */,
+				F1B2BD41219FDDB60063D608 /* EntryEditorTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

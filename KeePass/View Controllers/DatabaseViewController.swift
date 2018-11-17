@@ -166,4 +166,14 @@ class DatabaseViewController: UIViewController, UITableViewDelegate, UITableView
     }
     tableView.deselectRow(at: indexPath, animated: true)
   }
+  
+  // MARK: - Segues
+  
+  @IBAction func doneCreatingEntry(segue: UIStoryboardSegue) {
+    
+  }
+  
+  @IBAction func cancelCreatingEntry(segue: UIStoryboardSegue) {
+    
+  }
 }
