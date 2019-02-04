@@ -1,7 +1,9 @@
 [submodule "Dependencies/AEXML"]
 	path = Dependencies/AEXML
-	url = https://github.com/tadija/AEXML.git
+	url = git@github.com:tadija/AEXML.git
+[submodule "Dependencies/Salsa20"]
+	path = Dependencies/Salsa20
+	url = git@github.com:alexwebr/salsa20.git
 [submodule "Dependencies/GzipSwift"]
 	path = Dependencies/GzipSwift
-	url = https://github.com/1024jp/GzipSwift.git
-
+	url = git@github.com:1024jp/GzipSwift.git

@@ -1,0 +1,4 @@
+module Salsa20 {
+  header "../../Dependencies/Salsa20/salsa20.h"
+  export *
+}

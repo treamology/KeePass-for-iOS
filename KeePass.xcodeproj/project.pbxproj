@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F11B44312207E39900CA734F /* libSalsa20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11B44202207E02D00CA734F /* libSalsa20.a */; };
+		F11B44422207E49800CA734F /* salsa20.h in Headers */ = {isa = PBXBuildFile; fileRef = F11B44392207E49000CA734F /* salsa20.h */; };
+		F11B44432207E49D00CA734F /* salsa20.c in Sources */ = {isa = PBXBuildFile; fileRef = F11B44402207E49000CA734F /* salsa20.c */; };
 		F174DB45215C66C80035AD37 /* KDBXFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174DB44215C66C80035AD37 /* KDBXFile.swift */; };
 		F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1780882215702FF00271E67 /* KeePassSupport.framework */; };
 		F17808922157030000271E67 /* KeePassSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808912157030000271E67 /* KeePassSupportTests.swift */; };
@@ -28,15 +31,7 @@
 		F17808C02157036500271E67 /* KDBXHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BB2157036500271E67 /* KDBXHeader.swift */; };
 		F17808C12157036500271E67 /* FixedWidthInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */; };
 		F17808C22157036500271E67 /* ByteArray+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17808BE2157036500271E67 /* ByteArray+Crypto.swift */; };
-		F178098B2157048000271E67 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178097F2157044300271E67 /* Gzip.framework */; };
-		F178098D215704CA00271E67 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F178097F2157044300271E67 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F17809A82157056E00271E67 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178099B2157052F00271E67 /* AEXML.framework */; };
-		F17809AC2157057E00271E67 /* AEXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F178099B2157052F00271E67 /* AEXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F17809B2215705BB00271E67 /* AEXMLElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */; };
-		F17809D1215706C600271E67 /* salsa20.h in Headers */ = {isa = PBXBuildFile; fileRef = F17809CF215706C600271E67 /* salsa20.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F17809D2215706C600271E67 /* salsa20.c in Sources */ = {isa = PBXBuildFile; fileRef = F17809D0215706C600271E67 /* salsa20.c */; };
-		F17809D3215706F600271E67 /* Salsa20.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F17809C32157067B00271E67 /* Salsa20.framework */; };
-		F17809D72157072C00271E67 /* Salsa20.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F17809C32157067B00271E67 /* Salsa20.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1780A1E215707AB00271E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1780A06215707AB00271E67 /* Assets.xcassets */; };
 		F1780A1F215707AB00271E67 /* KDBXDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1780A08215707AB00271E67 /* KDBXDocument.swift */; };
 		F1780A20215707AB00271E67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1780A09215707AB00271E67 /* LaunchScreen.storyboard */; };
@@ -68,6 +63,118 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F11B43D02207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AE050881D4A2C070040E4C9;
+			remoteInfo = "Gzip macOS";
+		};
+		F11B43D22207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2AE050991D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
+		};
+		F11B43D42207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A321EE71D4A6138002B0245;
+			remoteInfo = "Gzip watchOS";
+		};
+		F11B43D62207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A321F071D4A635F002B0245;
+			remoteInfo = "Gzip tvOS";
+		};
+		F11B43D82207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A58A7571B00F414005FBBC2;
+			remoteInfo = "Tests macOS";
+		};
+		F11B43DA2207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2A58A77D1B00FBEF005FBBC2;
+			remoteInfo = "Tests iOS";
+		};
+		F11B43E62207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92791BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F11B43E82207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92DF1BDD5D330011F36F;
+			remoteInfo = "AEXML watchOS";
+		};
+		F11B43EA2207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92991BDD4CEF0011F36F;
+			remoteInfo = "AEXML iOS Tests";
+		};
+		F11B43EC2207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92BE1BDD5B300011F36F;
+			remoteInfo = "AEXML tvOS";
+		};
+		F11B43EE2207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92CC1BDD5BB20011F36F;
+			remoteInfo = "AEXML tvOS Tests";
+		};
+		F11B43F02207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A928A1BDD49390011F36F;
+			remoteInfo = "AEXML OSX";
+		};
+		F11B43F22207DEB700CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B4A92AB1BDD54F50011F36F;
+			remoteInfo = "AEXML OSX Tests";
+		};
+		F11B44062207DF3C00CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
+			remoteInfo = "AEXML iOS";
+		};
+		F11B44082207DF4200CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
+			remoteInfo = "Gzip iOS";
+		};
+		F11B442C2207E06600CA734F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1780844215702C400271E67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F11B441F2207E02D00CA734F;
+			remoteInfo = Salsa20;
+		};
 		F178088C2157030000271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F1780844215702C400271E67 /* Project object */;
@@ -89,76 +196,6 @@
 			remoteGlobalIDString = F1780881215702FF00271E67;
 			remoteInfo = KeePassSupport;
 		};
-		F178097E2157044300271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2AE050991D4A2DC30040E4C9;
-			remoteInfo = "Gzip iOS";
-		};
-		F17809862157044300271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2A58A77D1B00FBEF005FBBC2;
-			remoteInfo = "Tests iOS";
-		};
-		F17809882157047500271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
-			remoteInfo = "Gzip iOS";
-		};
-		F178098E215704CA00271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809462157043E00271E67 /* Gzip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2AE050981D4A2DC30040E4C9;
-			remoteInfo = "Gzip iOS";
-		};
-		F178099A2157052F00271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92791BDD47210011F36F;
-			remoteInfo = "AEXML iOS";
-		};
-		F178099E2157052F00271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8B4A92991BDD4CEF0011F36F;
-			remoteInfo = "AEXML iOS Tests";
-		};
-		F17809A92157057400271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
-			remoteInfo = "AEXML iOS";
-		};
-		F17809AD2157057E00271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F17809902157052F00271E67 /* AEXML.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B4A92781BDD47210011F36F;
-			remoteInfo = "AEXML iOS";
-		};
-		F17809D42157070800271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1780844215702C400271E67 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F17809C22157067B00271E67;
-			remoteInfo = Salsa20;
-		};
-		F17809D82157072C00271E67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1780844215702C400271E67 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F17809C22157067B00271E67;
-			remoteInfo = Salsa20;
-		};
 		F1780A4421570A8700271E67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F1780844215702C400271E67 /* Project object */;
@@ -169,16 +206,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F11B441E2207E02D00CA734F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F178089C2157030000271E67 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F178098D215704CA00271E67 /* Gzip.framework in Embed Frameworks */,
-				F17809AC2157057E00271E67 /* AEXML.framework in Embed Frameworks */,
 				F17808982157030000271E67 /* KeePassSupport.framework in Embed Frameworks */,
-				F17809D72157072C00271E67 /* Salsa20.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +229,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F11B43C62207DEB700CA734F /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = Dependencies/GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
+		F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AEXML.xcodeproj; path = Dependencies/AEXML/AEXML.xcodeproj; sourceTree = "<group>"; };
+		F11B44202207E02D00CA734F /* libSalsa20.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSalsa20.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11B442E2207E1C400CA734F /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		F11B44352207E49000CA734F /* cli.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cli.c; sourceTree = "<group>"; };
+		F11B44362207E49000CA734F /* perf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = perf.c; sourceTree = "<group>"; };
+		F11B44372207E49000CA734F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		F11B44382207E49000CA734F /* vectors_to_tests_128.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = vectors_to_tests_128.sh; sourceTree = "<group>"; };
+		F11B44392207E49000CA734F /* salsa20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = salsa20.h; sourceTree = "<group>"; };
+		F11B443A2207E49000CA734F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F11B443B2207E49000CA734F /* test_vectors.256 */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_vectors.256; sourceTree = "<group>"; };
+		F11B443C2207E49000CA734F /* test_vectors.128 */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_vectors.128; sourceTree = "<group>"; };
+		F11B443D2207E49000CA734F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		F11B443E2207E49000CA734F /* aunit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aunit.h; sourceTree = "<group>"; };
+		F11B443F2207E49000CA734F /* vectors_to_tests_256.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = vectors_to_tests_256.sh; sourceTree = "<group>"; };
+		F11B44402207E49000CA734F /* salsa20.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = salsa20.c; sourceTree = "<group>"; };
+		F11B44412207E49000CA734F /* unit_tests.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = unit_tests.c; sourceTree = "<group>"; };
 		F174DB44215C66C80035AD37 /* KDBXFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDBXFile.swift; sourceTree = "<group>"; };
 		F178084C215702C400271E67 /* KeePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1780882215702FF00271E67 /* KeePassSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeePassSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,13 +269,7 @@
 		F17808BB2157036500271E67 /* KDBXHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXHeader.swift; sourceTree = "<group>"; };
 		F17808BD2157036500271E67 /* FixedWidthInteger+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FixedWidthInteger+Bytes.swift"; sourceTree = "<group>"; };
 		F17808BE2157036500271E67 /* ByteArray+Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ByteArray+Crypto.swift"; sourceTree = "<group>"; };
-		F17809462157043E00271E67 /* Gzip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Gzip.xcodeproj; path = GzipSwift/Gzip.xcodeproj; sourceTree = "<group>"; };
-		F17809902157052F00271E67 /* AEXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AEXML.xcodeproj; path = AEXML/AEXML.xcodeproj; sourceTree = "<group>"; };
 		F17809B1215705BB00271E67 /* AEXMLElement+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AEXMLElement+Extensions.swift"; sourceTree = "<group>"; };
-		F17809C32157067B00271E67 /* Salsa20.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Salsa20.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F17809C62157067C00271E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F17809CF215706C600271E67 /* salsa20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = salsa20.h; path = ../../KeePass/Salsa20/salsa20.h; sourceTree = "<group>"; };
-		F17809D0215706C600271E67 /* salsa20.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = salsa20.c; sourceTree = "<group>"; };
 		F1780A06215707AB00271E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1780A08215707AB00271E67 /* KDBXDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDBXDocument.swift; sourceTree = "<group>"; };
 		F1780A09215707AB00271E67 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -251,6 +305,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F11B441D2207E02D00CA734F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1780849215702C400271E67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,9 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17809D3215706F600271E67 /* Salsa20.framework in Frameworks */,
-				F17809A82157056E00271E67 /* AEXML.framework in Frameworks */,
-				F178098B2157048000271E67 /* Gzip.framework in Frameworks */,
+				F11B44312207E39900CA734F /* libSalsa20.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,13 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F178088B2157030000271E67 /* KeePassSupport.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F17809C02157067B00271E67 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +346,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F11B43A92207DEB100CA734F /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F11B44342207E49000CA734F /* Salsa20 */,
+				F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */,
+				F11B43C62207DEB700CA734F /* Gzip.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		F11B43C72207DEB700CA734F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F11B43D12207DEB700CA734F /* Gzip.framework */,
+				F11B43D32207DEB700CA734F /* Gzip.framework */,
+				F11B43D52207DEB700CA734F /* Gzip.framework */,
+				F11B43D72207DEB700CA734F /* Gzip.framework */,
+				F11B43D92207DEB700CA734F /* Tests macOS.xctest */,
+				F11B43DB2207DEB700CA734F /* Tests iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F11B43DD2207DEB700CA734F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F11B43E72207DEB700CA734F /* AEXML.framework */,
+				F11B43E92207DEB700CA734F /* AEXML.framework */,
+				F11B43EB2207DEB700CA734F /* AEXML iOS Tests.xctest */,
+				F11B43ED2207DEB700CA734F /* AEXML.framework */,
+				F11B43EF2207DEB700CA734F /* AEXML tvOS Tests.xctest */,
+				F11B43F12207DEB700CA734F /* AEXML.framework */,
+				F11B43F32207DEB700CA734F /* AEXML OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F11B442F2207E21D00CA734F /* Salsa20 */ = {
+			isa = PBXGroup;
+			children = (
+				F11B442E2207E1C400CA734F /* module.modulemap */,
+			);
+			path = Salsa20;
+			sourceTree = "<group>";
+		};
+		F11B44342207E49000CA734F /* Salsa20 */ = {
+			isa = PBXGroup;
+			children = (
+				F11B44352207E49000CA734F /* cli.c */,
+				F11B44362207E49000CA734F /* perf.c */,
+				F11B44372207E49000CA734F /* Makefile */,
+				F11B44382207E49000CA734F /* vectors_to_tests_128.sh */,
+				F11B44392207E49000CA734F /* salsa20.h */,
+				F11B443A2207E49000CA734F /* README.md */,
+				F11B443B2207E49000CA734F /* test_vectors.256 */,
+				F11B443C2207E49000CA734F /* test_vectors.128 */,
+				F11B443D2207E49000CA734F /* LICENSE.txt */,
+				F11B443E2207E49000CA734F /* aunit.h */,
+				F11B443F2207E49000CA734F /* vectors_to_tests_256.sh */,
+				F11B44402207E49000CA734F /* salsa20.c */,
+				F11B44412207E49000CA734F /* unit_tests.c */,
+			);
+			name = Salsa20;
+			path = Dependencies/Salsa20;
+			sourceTree = "<group>";
+		};
 		F174DB43215C66AC0035AD37 /* KDBX */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,10 +424,10 @@
 		F1780843215702C400271E67 = {
 			isa = PBXGroup;
 			children = (
+				F11B43A92207DEB100CA734F /* Dependencies */,
 				F178084E215702C400271E67 /* KeePass */,
 				F17808832157030000271E67 /* KeePassSupport */,
 				F17808902157030000271E67 /* KeePassSupportTests */,
-				F17809C42157067C00271E67 /* Salsa20 */,
 				F1780A4021570A8700271E67 /* KeePassUITests */,
 				F178084D215702C400271E67 /* Products */,
 				F178098A2157048000271E67 /* Frameworks */,
@@ -322,8 +440,8 @@
 				F178084C215702C400271E67 /* KeePass.app */,
 				F1780882215702FF00271E67 /* KeePassSupport.framework */,
 				F178088A2157030000271E67 /* KeePassSupportTests.xctest */,
-				F17809C32157067B00271E67 /* Salsa20.framework */,
 				F1780A3F21570A8700271E67 /* KeePassUITests.xctest */,
+				F11B44202207E02D00CA734F /* libSalsa20.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,8 +469,7 @@
 		F17808832157030000271E67 /* KeePassSupport */ = {
 			isa = PBXGroup;
 			children = (
-				F17809902157052F00271E67 /* AEXML.xcodeproj */,
-				F17809462157043E00271E67 /* Gzip.xcodeproj */,
+				F11B442F2207E21D00CA734F /* Salsa20 */,
 				F174DB43215C66AC0035AD37 /* KDBX */,
 				F17808A02157034C00271E67 /* Models */,
 				F17808B92157036500271E67 /* Crypto */,
@@ -430,39 +547,11 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F17809732157044300271E67 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F178097F2157044300271E67 /* Gzip.framework */,
-				F17809872157044300271E67 /* Tests iOS.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F178098A2157048000271E67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F17809912157052F00271E67 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F178099B2157052F00271E67 /* AEXML.framework */,
-				F178099F2157052F00271E67 /* AEXML iOS Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F17809C42157067C00271E67 /* Salsa20 */ = {
-			isa = PBXGroup;
-			children = (
-				F17809CF215706C600271E67 /* salsa20.h */,
-				F17809D0215706C600271E67 /* salsa20.c */,
-				F17809C62157067C00271E67 /* Info.plist */,
-			);
-			path = Salsa20;
 			sourceTree = "<group>";
 		};
 		F1780A0C215707AB00271E67 /* View Controllers */ = {
@@ -511,6 +600,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		F11B44292207E05400CA734F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11B44422207E49800CA734F /* salsa20.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F178087D215702FF00271E67 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,17 +616,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F17809BE2157067B00271E67 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17809D1215706C600271E67 /* salsa20.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F11B441F2207E02D00CA734F /* Salsa20 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F11B44262207E02D00CA734F /* Build configuration list for PBXNativeTarget "Salsa20" */;
+			buildPhases = (
+				F11B44292207E05400CA734F /* Headers */,
+				F11B441C2207E02D00CA734F /* Sources */,
+				F11B441D2207E02D00CA734F /* Frameworks */,
+				F11B441E2207E02D00CA734F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Salsa20;
+			productName = Salsa20;
+			productReference = F11B44202207E02D00CA734F /* libSalsa20.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		F178084B215702C400271E67 /* KeePass */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1780874215702C400271E67 /* Build configuration list for PBXNativeTarget "KeePass" */;
@@ -543,9 +650,6 @@
 			);
 			dependencies = (
 				F17808962157030000271E67 /* PBXTargetDependency */,
-				F178098F215704CA00271E67 /* PBXTargetDependency */,
-				F17809AE2157057E00271E67 /* PBXTargetDependency */,
-				F17809D92157072C00271E67 /* PBXTargetDependency */,
 			);
 			name = KeePass;
 			productName = "KeyPass Nonborked";
@@ -564,9 +668,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				F17809D52157070800271E67 /* PBXTargetDependency */,
-				F17809AA2157057400271E67 /* PBXTargetDependency */,
-				F17809892157047500271E67 /* PBXTargetDependency */,
+				F11B442D2207E06600CA734F /* PBXTargetDependency */,
+				F11B44092207DF4200CA734F /* PBXTargetDependency */,
+				F11B44072207DF3C00CA734F /* PBXTargetDependency */,
 			);
 			name = KeePassSupport;
 			productName = KeePassSupport;
@@ -591,24 +695,6 @@
 			productName = KeePassSupportTests;
 			productReference = F178088A2157030000271E67 /* KeePassSupportTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F17809C22157067B00271E67 /* Salsa20 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F17809CC2157067C00271E67 /* Build configuration list for PBXNativeTarget "Salsa20" */;
-			buildPhases = (
-				F17809BE2157067B00271E67 /* Headers */,
-				F17809BF2157067B00271E67 /* Sources */,
-				F17809C02157067B00271E67 /* Frameworks */,
-				F17809C12157067B00271E67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Salsa20;
-			productName = Salsa20;
-			productReference = F17809C32157067B00271E67 /* Salsa20.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		F1780A3E21570A8700271E67 /* KeePassUITests */ = {
 			isa = PBXNativeTarget;
@@ -638,6 +724,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Donny Lawrence";
 				TargetAttributes = {
+					F11B441F2207E02D00CA734F = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					F178084B215702C400271E67 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
@@ -653,9 +742,6 @@
 					F17808892157030000271E67 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = F178084B215702C400271E67;
-					};
-					F17809C22157067B00271E67 = {
-						CreatedOnToolsVersion = 10.0;
 					};
 					F1780A3E21570A8700271E67 = {
 						CreatedOnToolsVersion = 10.0;
@@ -677,12 +763,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F17809912157052F00271E67 /* Products */;
-					ProjectRef = F17809902157052F00271E67 /* AEXML.xcodeproj */;
+					ProductGroup = F11B43DD2207DEB700CA734F /* Products */;
+					ProjectRef = F11B43DC2207DEB700CA734F /* AEXML.xcodeproj */;
 				},
 				{
-					ProductGroup = F17809732157044300271E67 /* Products */;
-					ProjectRef = F17809462157043E00271E67 /* Gzip.xcodeproj */;
+					ProductGroup = F11B43C72207DEB700CA734F /* Products */;
+					ProjectRef = F11B43C62207DEB700CA734F /* Gzip.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -690,39 +776,102 @@
 				F178084B215702C400271E67 /* KeePass */,
 				F1780881215702FF00271E67 /* KeePassSupport */,
 				F17808892157030000271E67 /* KeePassSupportTests */,
-				F17809C22157067B00271E67 /* Salsa20 */,
 				F1780A3E21570A8700271E67 /* KeePassUITests */,
+				F11B441F2207E02D00CA734F /* Salsa20 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F178097F2157044300271E67 /* Gzip.framework */ = {
+		F11B43D12207DEB700CA734F /* Gzip.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Gzip.framework;
-			remoteRef = F178097E2157044300271E67 /* PBXContainerItemProxy */;
+			remoteRef = F11B43D02207DEB700CA734F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F17809872157044300271E67 /* Tests iOS.xctest */ = {
+		F11B43D32207DEB700CA734F /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F11B43D22207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43D52207DEB700CA734F /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F11B43D42207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43D72207DEB700CA734F /* Gzip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Gzip.framework;
+			remoteRef = F11B43D62207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43D92207DEB700CA734F /* Tests macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Tests macOS.xctest";
+			remoteRef = F11B43D82207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43DB2207DEB700CA734F /* Tests iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Tests iOS.xctest";
-			remoteRef = F17809862157044300271E67 /* PBXContainerItemProxy */;
+			remoteRef = F11B43DA2207DEB700CA734F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F178099B2157052F00271E67 /* AEXML.framework */ = {
+		F11B43E72207DEB700CA734F /* AEXML.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = AEXML.framework;
-			remoteRef = F178099A2157052F00271E67 /* PBXContainerItemProxy */;
+			remoteRef = F11B43E62207DEB700CA734F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F178099F2157052F00271E67 /* AEXML iOS Tests.xctest */ = {
+		F11B43E92207DEB700CA734F /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F11B43E82207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43EB2207DEB700CA734F /* AEXML iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "AEXML iOS Tests.xctest";
-			remoteRef = F178099E2157052F00271E67 /* PBXContainerItemProxy */;
+			remoteRef = F11B43EA2207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43ED2207DEB700CA734F /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F11B43EC2207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43EF2207DEB700CA734F /* AEXML tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML tvOS Tests.xctest";
+			remoteRef = F11B43EE2207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43F12207DEB700CA734F /* AEXML.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AEXML.framework;
+			remoteRef = F11B43F02207DEB700CA734F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F11B43F32207DEB700CA734F /* AEXML OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AEXML OSX Tests.xctest";
+			remoteRef = F11B43F22207DEB700CA734F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -758,13 +907,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F17809C12157067B00271E67 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F1780A3D21570A8700271E67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -775,6 +917,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F11B441C2207E02D00CA734F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11B44432207E49D00CA734F /* salsa20.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1780848215702C400271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -832,14 +982,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F17809BF2157067B00271E67 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17809D2215706C600271E67 /* salsa20.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F1780A3B21570A8700271E67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -851,6 +993,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F11B44072207DF3C00CA734F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AEXML iOS";
+			targetProxy = F11B44062207DF3C00CA734F /* PBXContainerItemProxy */;
+		};
+		F11B44092207DF4200CA734F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Gzip iOS";
+			targetProxy = F11B44082207DF4200CA734F /* PBXContainerItemProxy */;
+		};
+		F11B442D2207E06600CA734F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F11B441F2207E02D00CA734F /* Salsa20 */;
+			targetProxy = F11B442C2207E06600CA734F /* PBXContainerItemProxy */;
+		};
 		F178088D2157030000271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F1780881215702FF00271E67 /* KeePassSupport */;
@@ -866,36 +1023,6 @@
 			target = F1780881215702FF00271E67 /* KeePassSupport */;
 			targetProxy = F17808952157030000271E67 /* PBXContainerItemProxy */;
 		};
-		F17809892157047500271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Gzip iOS";
-			targetProxy = F17809882157047500271E67 /* PBXContainerItemProxy */;
-		};
-		F178098F215704CA00271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Gzip iOS";
-			targetProxy = F178098E215704CA00271E67 /* PBXContainerItemProxy */;
-		};
-		F17809AA2157057400271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AEXML iOS";
-			targetProxy = F17809A92157057400271E67 /* PBXContainerItemProxy */;
-		};
-		F17809AE2157057E00271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AEXML iOS";
-			targetProxy = F17809AD2157057E00271E67 /* PBXContainerItemProxy */;
-		};
-		F17809D52157070800271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F17809C22157067B00271E67 /* Salsa20 */;
-			targetProxy = F17809D42157070800271E67 /* PBXContainerItemProxy */;
-		};
-		F17809D92157072C00271E67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F17809C22157067B00271E67 /* Salsa20 */;
-			targetProxy = F17809D82157072C00271E67 /* PBXContainerItemProxy */;
-		};
 		F1780A4521570A8700271E67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F178084B215702C400271E67 /* KeePass */;
@@ -904,6 +1031,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F11B44272207E02D00CA734F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F11B44282207E02D00CA734F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WG8875WVRH;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F1780872215702C400271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1091,6 +1244,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/KeePassSupport/Salsa20";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1120,6 +1274,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.KeePassSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/KeePassSupport/Salsa20";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1167,62 +1322,6 @@
 			};
 			name = Release;
 		};
-		F17809CD2157067C00271E67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 4;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Salsa20/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.Salsa20;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F17809CE2157067C00271E67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WG8875WVRH;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 4;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Salsa20/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.treamous.Salsa20;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F1780A4721570A8700271E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1267,6 +1366,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F11B44262207E02D00CA734F /* Build configuration list for PBXNativeTarget "Salsa20" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F11B44272207E02D00CA734F /* Debug */,
+				F11B44282207E02D00CA734F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F1780847215702C400271E67 /* Build configuration list for PBXProject "KeePass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1299,15 +1407,6 @@
 			buildConfigurations = (
 				F178089E2157030000271E67 /* Debug */,
 				F178089F2157030000271E67 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F17809CC2157067C00271E67 /* Build configuration list for PBXNativeTarget "Salsa20" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F17809CD2157067C00271E67 /* Debug */,
-				F17809CE2157067C00271E67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
